@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: c9f121317b42ba94cb7607417d7845a3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Saira SemiCondensed
+  fontNames:
+  - Saira SemiCondensed
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 008ccf132ae4611418a4980b8e348c35, type: 3}
+  - {fileID: 12800000, guid: a6e6e2d3d7b27e840b850fcc3d04b406, type: 3}
+  - {fileID: 12800000, guid: d45690358e4059249b107678a49be5e9, type: 3}
+  - {fileID: 12800000, guid: 745b1b07bffa921448afd08425541c59, type: 3}
+  - {fileID: 12800000, guid: 82e7942c2c4f5a247a7b3429da227d6d, type: 3}
+  - {fileID: 12800000, guid: a401fedfe37bdad4fa3f00b5806dcee5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
