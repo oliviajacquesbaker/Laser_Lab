@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\My Assets\Scripts\Board\BoardObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObject.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\WallObjectBlank.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
     <None Include="Assets\My Assets\Fonts\Source_Code_Pro\OFL.txt" />
