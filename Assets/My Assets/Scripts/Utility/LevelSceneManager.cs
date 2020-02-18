@@ -13,20 +13,22 @@ public static class LevelSceneManager
     public static void loadLevel(string name)
     {
         SceneManager.LoadScene(name, LoadSceneMode.Single);
-        SceneManager.LoadScene(2, LoadSceneMode.Additive);
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
 
     public static void loadLevel(int id)
     {
         SceneManager.LoadScene(id, LoadSceneMode.Single);
-        SceneManager.LoadScene(2, LoadSceneMode.Additive);
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
 
-    public static void loadMenu ()
+    public static void loadMenu()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
-        SceneManager.LoadScene(2, LoadSceneMode.Additive);
+    }
+
+    public static void loadLevelSelect()
+    {
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
 }
