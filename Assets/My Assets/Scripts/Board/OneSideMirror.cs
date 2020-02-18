@@ -6,25 +6,24 @@ public class OneSideMirror : BoardObject
 {
     //rotation of zero is a mirror in this position: \
     // with the facing direction (the mirrored side) facing northeast
-    public int rotation = 0;
     private Laser.Direction getNewDirection(Laser laser)
     {
         Laser.Direction dir = laser.direction;
-        if (rotation == 0)
+        if (Rotation == 0)
         {
             if (dir == Laser.Direction.DOWN)
                 return Laser.Direction.RIGHT;
             else if (dir == Laser.Direction.LEFT)
                 return Laser.Direction.UP;
         }
-        else if (rotation == 1)
+        else if (Rotation == 1)
         {
             if (dir == Laser.Direction.DOWN)
                 return Laser.Direction.LEFT;
             else if (dir == Laser.Direction.RIGHT)
                 return Laser.Direction.UP;
         }
-        else if (rotation == 2)
+        else if (Rotation == 2)
         {
             if (dir == Laser.Direction.UP)
                 return Laser.Direction.LEFT;
@@ -41,6 +40,7 @@ public class OneSideMirror : BoardObject
 
         return Laser.Direction.UP;
     }
+
     public override Laser[] OnLaserHit(Laser laser)
     {
         //assumes that the facing direction is the side with the mirror
@@ -60,7 +60,7 @@ public class OneSideMirror : BoardObject
         }
         else
         {
-            return null;
+            return new Laser[0];
         }
 
     }
