@@ -68,6 +68,10 @@
     <Compile Include="Assets\My Assets\Scripts\Board\WallObjectBlank.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Menu\MenuFunctions.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\LevelSceneManager.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\PlatformSpecific.cs" />
     <None Include="Assets\My Assets\Fonts\Source_Code_Pro\OFL.txt" />
     <None Include="Assets\My Assets\Fonts\Righteous\OFL.txt" />
     <None Include="Assets\My Assets\Fonts\Exo_2\OFL.txt" />
