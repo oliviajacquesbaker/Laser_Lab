@@ -18,11 +18,11 @@ public class MenuFunctions : MonoBehaviour
 
     public void LoadScene(int id)
     {
-        
+        LevelSceneManager.loadLevel(id);
     }
 
     public void LoadScene(string name)
     {
-
+        LevelSceneManager.loadLevel(name);
     }
 }
