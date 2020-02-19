@@ -25,4 +25,14 @@ public class MenuFunctions : MonoBehaviour
     {
         LevelSceneManager.loadLevel(name);
     }
+
+    public void LoadMenu()
+    {
+        LevelSceneManager.loadMenu();
+    }
+
+    public void LoadLevelSelect()
+    {
+        LevelSceneManager.loadLevelSelect();
+    }
 }
