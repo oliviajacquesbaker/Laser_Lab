@@ -22,8 +22,8 @@ public class Laser
     public enum Direction
     {
         UP,
+        RIGHT,
         DOWN,
-        LEFT,
-        RIGHT
+        LEFT
     }
 }

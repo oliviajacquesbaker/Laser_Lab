@@ -2,19 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneSideMirror : BoardObject
+public class OneWayMirror : BoardObject
 {
-    //rotation of zero is a mirror in this position: \
-    // with the facing direction (the mirrored side) facing northeast
-
-    OneSideMirror()
+    OneWayMirror()
     {
         Rotation = 0;
     }
 
-    OneSideMirror(int rotation)
+    OneWayMirror(int rotation)
     {
-        if(rotation>=0 && rotation <=3)
+        if (rotation >= 0 && rotation <= 3)
             Rotation = rotation;
     }
 
@@ -55,26 +52,27 @@ public class OneSideMirror : BoardObject
 
     public override Laser[] OnLaserHit(Laser laser)
     {
-        //assumes that the facing direction is the side with the mirror
+        //assumes that the facing direction is the side that's reflective
 
         Vector3 laserOrigin = new Vector3(laser.origin.x, laser.origin.y);
         Vector3 mirrorLaserDir = transform.position - laserOrigin;
         float dotProduct = Vector3.Dot(mirrorLaserDir, transform.forward);
 
+        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Laser newLaser;
         if (dotProduct > 0)
         {
-            Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
             Laser.Direction newDirection = getNewDirection(laser);
-            Laser newLaser = new Laser(newOrigin, newDirection, laser.red, laser.green, laser.blue);
-            Laser[] returning = new Laser[1];
-            returning[0] = newLaser;
-            return returning;
+            newLaser = new Laser(newOrigin, newDirection, laser.red, laser.green, laser.blue);
         }
         else
         {
-            return new Laser[0];
+            newLaser = new Laser(newOrigin, laser.direction, laser.red, laser.green, laser.blue);
         }
+
+        Laser[] returning = new Laser[1];
+        returning[0] = newLaser;
+        return returning;
 
     }
 }
-
