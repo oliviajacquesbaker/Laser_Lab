@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BoardObject : MonoBehaviour, ILaserTarget
 {
+    public bool placed;
     public int Rotation { get; protected set; }
     public abstract Laser[] OnLaserHit(Laser laser);
 }
