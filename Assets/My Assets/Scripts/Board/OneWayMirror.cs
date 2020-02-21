@@ -56,9 +56,9 @@ public class OneWayMirror : BoardObject
 
         Vector3 laserOrigin = new Vector3(laser.origin.x, laser.origin.y);
         Vector3 mirrorLaserDir = transform.position - laserOrigin;
-        float dotProduct = Vector3.Dot(mirrorLaserDir, transform.forward);
+        float dotProduct = Vector3.Dot(mirrorLaserDir, Quaternion.Euler(0,45,0) * transform.forward);
 
-        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int newOrigin = getBoardPosition();
         Laser newLaser;
         if (dotProduct > 0)
         {

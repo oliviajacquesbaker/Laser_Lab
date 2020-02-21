@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Level : MonoBehaviour
 {
+    public static Level current;
     [HideInInspector]
     public BoardObject[,] board;
     [HideInInspector]
@@ -18,6 +19,14 @@ public class Level : MonoBehaviour
 
     public int width { get { return maxPos.x - minPos.x + 1; } }
     public int height { get { return maxPos.y - minPos.y + 1; } }
+
+    void Start()
+    {
+        if (current == null)
+            current = this;
+        else
+            throw new System.Exception("Multiple level objects created");
+    }
 
     void Update()
     {
@@ -89,6 +98,11 @@ public class Level : MonoBehaviour
             }
         }
 #endif
+    }
+
+    void OnDestroy()
+    {
+        current = null;
     }
 
     public Vector2Int convertCoordinates (Transform transform)

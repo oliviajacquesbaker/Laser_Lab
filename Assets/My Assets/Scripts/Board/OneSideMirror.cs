@@ -63,7 +63,7 @@ public class OneSideMirror : BoardObject
 
         if (dotProduct > 0)
         {
-            Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+            Vector2Int newOrigin = getBoardPosition();
             Laser.Direction newDirection = getNewDirection(laser);
             Laser newLaser = new Laser(newOrigin, newDirection, laser.red, laser.green, laser.blue);
             Laser[] returning = new Laser[1];

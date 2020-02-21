@@ -63,8 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\My Assets\Scripts\Board\Block.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\BoardObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectWall.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\DiffractionGrid.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\DoubleSideMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\OneSideMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\OneWayMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\Prism.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\Tile.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\TwoWayMirror.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObjectBlank.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />

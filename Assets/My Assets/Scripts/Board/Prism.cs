@@ -51,7 +51,7 @@ public class Prism : BoardObject
     public override Laser[] OnLaserHit(Laser laser)
     {
 
-        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int newOrigin = getBoardPosition();
         Laser.Direction redDirection = getNewDirection(laser, 0);
         Laser.Direction blueDirection = getNewDirection(laser, 1);
         Laser red = new Laser(newOrigin, redDirection, laser.red, 0, 0);

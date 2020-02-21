@@ -51,7 +51,7 @@ public class DiffractionGrid : BoardObject
     public override Laser[] OnLaserHit(Laser laser)
     {
 
-        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int newOrigin = getBoardPosition();
         Laser.Direction first25Dir = getNewDirection(laser, 0);
         Laser.Direction second25Dir = getNewDirection(laser, 1);
         Laser first25 = new Laser(newOrigin, first25Dir, (laser.red/4), (laser.green/4), (laser.blue/4));

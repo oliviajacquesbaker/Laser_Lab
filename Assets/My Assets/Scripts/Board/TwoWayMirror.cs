@@ -98,7 +98,7 @@ public class TwoWayMirror : BoardObject
         else
             return new Laser[0];
 
-        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int newOrigin = getBoardPosition();
         Laser.Direction newDirection = getNewDirection(laser, side);
         Laser reflected = new Laser(newOrigin, newDirection, (laser.red/2), (laser.green/2), (laser.blue/2));
         Laser straightThrough = new Laser(newOrigin, laser.direction, (laser.red/2), (laser.green/2), (laser.blue/2));

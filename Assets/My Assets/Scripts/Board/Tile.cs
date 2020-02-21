@@ -18,7 +18,7 @@ public class Tile : BoardObject
 
     public override Laser[] OnLaserHit(Laser laser)
     {
-        Vector2Int newOrigin = new Vector2Int((int)transform.position.x, (int)transform.position.y);
+        Vector2Int newOrigin = getBoardPosition();
         Laser newLaser = new Laser(newOrigin, laser.direction, laser.red, laser.green, laser.blue);
 
         Laser[] returning = new Laser[1];
