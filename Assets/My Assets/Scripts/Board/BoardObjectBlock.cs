@@ -6,13 +6,12 @@ public class BoardObjectBlock : BoardObject
 {
     public BoardObjectBlock()
     {
-        Orientation = 0;
+        Orientation = Direction.UP;
     }
 
-    public BoardObjectBlock(int rotation)
+    public BoardObjectBlock(Direction orientation)
     {
-        if (rotation >= 0 && rotation <= 3)
-            Orientation = rotation;
+        Orientation = orientation;
     }
 
    

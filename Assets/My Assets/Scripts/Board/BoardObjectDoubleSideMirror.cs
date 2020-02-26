@@ -8,7 +8,7 @@ public class BoardObjectDoubleSideMirror : BoardObject
     {
         Orientation = 0;
     }
-
+    /*
     public BoardObjectDoubleSideMirror(int rotation)
     {
         if (rotation >= 0 && rotation <= 3)
@@ -107,5 +107,11 @@ public class BoardObjectDoubleSideMirror : BoardObject
         return returning;
 
 
+    }
+    */
+
+    public override Laser[] OnLaserHit(Laser laser)
+    {
+        return null;
     }
 }

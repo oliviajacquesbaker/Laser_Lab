@@ -9,6 +9,7 @@ public class BoardObjectOneWayMirror : BoardObject
         Orientation = 0;
     }
 
+    /*
     public BoardObjectOneWayMirror(int rotation)
     {
         if (rotation >= 0 && rotation <= 3)
@@ -73,5 +74,11 @@ public class BoardObjectOneWayMirror : BoardObject
         returning[0] = newLaser;
         return returning;
 
+    }
+    */
+
+    public override Laser[] OnLaserHit(Laser laser)
+    {
+        return null;
     }
 }

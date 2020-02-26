@@ -9,6 +9,7 @@ public class BoardObjectDiffractionGrid : BoardObject
         Orientation = 0;
     }
 
+    /*
     public BoardObjectDiffractionGrid(int rotation)
     {
         if (rotation >= 0 && rotation <= 3)
@@ -63,5 +64,11 @@ public class BoardObjectDiffractionGrid : BoardObject
         returning[2] = second25;
         return returning;
 
+    }
+    */
+
+    public override Laser[] OnLaserHit(Laser laser)
+    {
+        return null;
     }
 }

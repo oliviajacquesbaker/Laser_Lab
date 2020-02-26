@@ -74,6 +74,8 @@
     <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectTwoWayMirror.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObjectBlank.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />

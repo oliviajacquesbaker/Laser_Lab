@@ -2,9 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public abstract class BoardObject : ILaserTarget
 {
     public Direction Orientation;
+    public bool CanMove;
+    public bool CanRotate;
+
+    public BoardObject(Direction orientation, bool canMove, bool canRotate)
+    {
+        Orientation = orientation;
+        CanMove = canMove;
+        CanRotate = canRotate;
+    }
+
+    public BoardObject(Direction orientation) : this(orientation, true, true) { }
+
+    public BoardObject() : this(Direction.UP, true, true) { }
+
     public abstract Laser[] OnLaserHit(Laser laser);
 
     //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3

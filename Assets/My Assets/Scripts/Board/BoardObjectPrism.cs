@@ -8,7 +8,7 @@ public class BoardObjectPrism : BoardObject
     {
         Orientation = 0;
     }
-
+    /*
     public BoardObjectPrism(int rotation)
     {
         if (rotation >= 0 && rotation <= 3)
@@ -63,5 +63,11 @@ public class BoardObjectPrism : BoardObject
         returning[2] = blue;
         return returning;
 
+    }
+    */
+
+    public override Laser[] OnLaserHit(Laser laser)
+    {
+        return null;
     }
 }

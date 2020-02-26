@@ -9,6 +9,7 @@ public class BoardObjectTile : BoardObject
         Orientation = 0;
     }
 
+    /*
     public BoardObjectTile(int rotation)
     {
         if (rotation >= 0 && rotation <= 3)
@@ -21,5 +22,11 @@ public class BoardObjectTile : BoardObject
         Laser newLaser = new Laser(laser.direction, laser.red, laser.green, laser.blue);
 
         return new Laser[] { newLaser };
+    }
+    */
+
+    public override Laser[] OnLaserHit(Laser laser)
+    {
+        return null;
     }
 }
