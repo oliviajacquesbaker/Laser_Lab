@@ -63,33 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\My Assets\Scripts\Board\Block.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\BoardObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\DiffractionGrid.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\DoubleSideMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\OneSideMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\OneWayMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Prism.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Tile.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\TwoWayMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectBlock.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectDiffractionGrid.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectDoubleSideMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectOneSideMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectOneWayMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectPrism.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectTile.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\BoardObjectTwoWayMirror.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\WallObjectBlank.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\MenuFunctions.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\Pause.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\Direction.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\LevelSceneManager.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\PlatformSpecific.cs" />
-    <None Include="Assets\My Assets\Fonts\Source_Code_Pro\OFL.txt" />
-    <None Include="Assets\My Assets\Fonts\Righteous\OFL.txt" />
-    <None Include="Assets\My Assets\Fonts\Exo_2\OFL.txt" />
     <None Include="Assets\My Assets\Fonts\Tomorrow\OFL.txt" />
-    <None Include="Assets\My Assets\Fonts\Comfortaa\OFL.txt" />
-    <None Include="Assets\My Assets\Fonts\Odibee_Sans\OFL.txt" />
-    <None Include="Assets\My Assets\Fonts\Saira_Semi_Condensed\OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

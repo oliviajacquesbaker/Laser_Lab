@@ -18,12 +18,7 @@ public class Laser
     }
 
     public Laser(Vector2Int origin, Direction direction) : this(origin, direction, 1, 1, 1) { }
+    public Laser(Direction direction) : this(new Vector2Int(), direction, 1, 1, 1) { }
+    public Laser(Direction direction, float red, float green, float blue) : this(new Vector2Int(), direction, red, green, blue) { }
 
-    public enum Direction
-    {
-        UP,
-        RIGHT,
-        DOWN,
-        LEFT
-    }
 }

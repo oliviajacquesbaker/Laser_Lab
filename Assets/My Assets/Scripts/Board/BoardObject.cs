@@ -2,22 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BoardObject : MonoBehaviour, ILaserTarget
+public abstract class BoardObject : ILaserTarget
 {
-    public bool placed;
-    public int Rotation { get; protected set; }
+    public Direction Orientation;
     public abstract Laser[] OnLaserHit(Laser laser);
 
-    protected Vector2Int getBoardPosition()
+    //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3
+    public static Direction Reflect(Direction dir, Direction orientation)
     {
-        return Level.current.convertCoordinates(transform);
+        switch ((int)orientation % 2)
+        {
+            case 0:
+                switch ((int)dir / 2)
+                {
+                    case 0:
+                        return dir + 3 % 4;
+                    case 1:
+                        return dir + 1 % 4;
+                    default:
+                        return dir;
+                }
+            case 1:
+                switch ((int)dir / 2)
+                {
+                    case 0:
+                        return dir + 1 % 4;
+                    case 1:
+                        return dir + 3 % 4;
+                    default:
+                        return dir;
+                }
+            default:
+                return dir;
+        }
+    }
+    
+    public Direction Reflect(Direction dir)
+    {
+        return Reflect(dir, Orientation);
     }
 
-    void Update()
+    /* Returns a direction to represent the relative face on the board
+     * object that is hit by a laser moving in the direction dir.
+     * 
+     * If the object is rotated to the "right" (1) and a laser is going "left" (3), the result should
+     * be "up" (0) because the face in contact would be the top relative to the original rotation.
+     */
+    public static int getFace(Direction dir, Direction orientation)
     {
-        
-        update();
+        return (((int)dir + 6) % 4) - (int)orientation;
     }
 
-    protected virtual void update() { }
+    public int getFace(Direction dir)
+    {
+        return getFace(dir, Orientation);
+    }
 }
