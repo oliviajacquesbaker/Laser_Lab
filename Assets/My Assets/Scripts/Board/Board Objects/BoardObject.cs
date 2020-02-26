@@ -21,6 +21,10 @@ public abstract class BoardObject : ILaserTarget
     public BoardObject() : this(Direction.UP, true, true) { }
 
     public abstract Laser[] OnLaserHit(Laser laser);
+    public virtual Texture GetPreview()
+    {
+        return null;
+    }
 
     //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3
     public static Direction Reflect(Direction dir, Direction orientation)
