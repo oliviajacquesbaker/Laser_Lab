@@ -6,6 +6,6 @@ public class LoadMenu : MonoBehaviour
 {
     void Start()
     {
-        LevelSceneManager.loadMenu();
+        LevelSceneManager.LoadMenu();
     }
 }

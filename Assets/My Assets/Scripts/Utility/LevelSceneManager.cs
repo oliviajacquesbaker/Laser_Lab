@@ -5,29 +5,20 @@ using UnityEngine.SceneManagement;
 
 public static class LevelSceneManager
 {
-    public static void loadLevel (Scene scene)
+    public static Level CurrentLevel { get; private set; }
+
+    public static void LoadLevel(Level level)
     {
-        loadLevel(scene.buildIndex);
+        CurrentLevel = level;
+        SceneManager.LoadScene(3, LoadSceneMode.Single);
     }
 
-    public static void loadLevel(string name)
-    {
-        SceneManager.LoadScene(name, LoadSceneMode.Single);
-        SceneManager.LoadScene(3, LoadSceneMode.Additive);
-    }
-
-    public static void loadLevel(int id)
-    {
-        SceneManager.LoadScene(id, LoadSceneMode.Single);
-        SceneManager.LoadScene(3, LoadSceneMode.Additive);
-    }
-
-    public static void loadMenu()
+    public static void LoadMenu()
     {
         SceneManager.LoadScene(1, LoadSceneMode.Single);
     }
 
-    public static void loadLevelSelect()
+    public static void LoadLevelSelect()
     {
         SceneManager.LoadScene(2, LoadSceneMode.Single);
     }
