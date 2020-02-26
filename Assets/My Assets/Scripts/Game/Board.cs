@@ -8,8 +8,8 @@ public class Board
     public BoardObject[,] Tiles;
     public WallObject[] Walls;
 
-    public int Width { get { return Tiles.GetLength(0); } }
-    public int Height { get { return Tiles.GetLength(1); } }
+    public int Width { get { return Tiles.GetLength(0); } set { SetDimensions(value, Height); } }
+    public int Height { get { return Tiles.GetLength(1); } set { SetDimensions(Width, value); } }
 
     public Board(int width, int height)
     {
@@ -26,6 +26,41 @@ public class Board
         {
             Walls[i] = new WallObjectBlank();
         }
+    }
+
+    public void SetDimensions(int width, int height)
+    {
+        if (width < 1)
+            width = 1;
+        if (height < 1)
+            height = 1;
+
+        BoardObject[,] newTiles = new BoardObject[width, height];
+        WallObject[] newWalls = new WallObject[width * 2 + height * 2];
+
+        for (int i = 0; i < width && i < Width; i++)
+        {
+            for (int j = 0; j < height && j < Height; j++)
+            {
+                newTiles[i, j] = Tiles[i, j];
+            }
+        }
+
+        for (int i = 0; i < Walls.Length && i < newWalls.Length; i++)
+        {
+            newWalls[i] = Walls[i];
+        }
+
+        if (Walls.Length < newWalls.Length)
+        {
+            for (int i = Walls.Length; i < newWalls.Length; i++)
+            {
+                newWalls[i] = new WallObjectBlank();
+            }
+        }
+
+        Tiles = newTiles;
+        Walls = newWalls;
     }
 
     public BoardObject GetBoardObject(int x, int y)

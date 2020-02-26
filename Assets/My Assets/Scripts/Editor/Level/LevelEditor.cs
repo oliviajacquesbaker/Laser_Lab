@@ -7,6 +7,7 @@ using UnityEditor;
 public class LevelEditor : Editor
 {
     Level level;
+    Vector2Int selected = new Vector2Int(-1,-1);
 
     public override void OnInspectorGUI()
     {
@@ -14,6 +15,16 @@ public class LevelEditor : Editor
 
         level = (Level)target;
         EditorGUILayout.BeginVertical();
+
+        EditorGUILayout.BeginHorizontal();
+        {
+            Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", new Vector2Int(level.board.Width, level.board.Height));
+            tmpSize.x = Mathf.Max(1, tmpSize.x);
+            tmpSize.y = Mathf.Max(1, tmpSize.y);
+            level.board.SetDimensions(tmpSize.x, tmpSize.y);
+        }
+        EditorGUILayout.EndHorizontal();
+
         DrawGridView();
         EditorGUILayout.EndVertical();
     }
@@ -29,21 +40,29 @@ public class LevelEditor : Editor
             {
                 Vector2Int pos = new Vector2Int(i, j);
 
-                if (level.board.IsWithinBoard(pos))
+                if (level.board.IsWithinWalls(pos))
                 {
-                    BoardObject obj = level.board.GetBoardObject(pos);
-                    if (GUILayout.Button(BoardObjectEditor.FindPreview(obj), gridObjectStyle))
+                    Color oldCol = GUI.backgroundColor;
+                    if (pos == selected)
+                        GUI.backgroundColor = Color.grey;
+
+                    if (GUILayout.Button("", gridObjectStyle))
                     {
-                        BoardObjectEditor.Open(obj);
+                        selected = pos;
                     }
-                } else if (level.board.IsWallTile(pos))
+                    GUI.backgroundColor = oldCol;
+                }
+                else if (pos.x == -1 && pos.y == -1)
                 {
-                    WallObject obj = level.board.GetWallObject(pos);
-                    if (GUILayout.Button(WallObjectEditor.FindPreview(obj), gridObjectStyle))
+                    Color oldCol = GUI.backgroundColor;
+                    GUI.backgroundColor = new Color(1,.5f,.5f);
+                    if (GUILayout.Button("X", gridObjectStyle))
                     {
-                        WallObjectEditor.Open(obj);
+                        selected = pos;
                     }
-                } else
+                    GUI.backgroundColor = oldCol;
+                }
+                else
                 {
                     GUILayout.Box("", gridObjectStyleEmpty);
                 }
@@ -98,7 +117,7 @@ public class LevelEditor : Editor
             padding = new RectOffset()
         };
 
-        gridObjectStyle = new GUIStyle(EditorStyles.miniButton)
+        gridObjectStyle = new GUIStyle(EditorStyles.miniButtonMid)
         {
             fixedWidth = 25,
             fixedHeight = 25,
