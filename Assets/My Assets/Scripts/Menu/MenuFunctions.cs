@@ -16,23 +16,18 @@ public class MenuFunctions : MonoBehaviour
 #endif
     }
 
-    public void LoadScene(int id)
+    public void StartGame()
     {
-        LevelSceneManager.loadLevel(id);
-    }
-
-    public void LoadScene(string name)
-    {
-        LevelSceneManager.loadLevel(name);
+        LevelSceneManager.LoadLevel(null);
     }
 
     public void LoadMenu()
     {
-        LevelSceneManager.loadMenu();
+        LevelSceneManager.LoadMenu();
     }
 
     public void LoadLevelSelect()
     {
-        LevelSceneManager.loadLevelSelect();
+        LevelSceneManager.LoadLevelSelect();
     }
 }
