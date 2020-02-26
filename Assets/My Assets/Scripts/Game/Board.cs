@@ -49,21 +49,24 @@ public class Board
 
     public WallObject GetWallObject(Vector2Int pos)
     {
+        if (!IsWallTile(pos))
+            return null;
+
         if (pos.x < 0)
         {
             return Walls[pos.y];
         }
-        else if (pos.y > Height)
+        else if (pos.y >= Height)
         {
             return Walls[Height + pos.x];
         }
-        else if (pos.x > Width)
+        else if (pos.x >= Width)
         {
-            return Walls[Height * 2 + Width - pos.y];
+            return Walls[Height * 2 + Width - pos.y - 1];
         }
-        else if (pos.x > Height)
+        else if (pos.y < 0)
         {
-            return Walls[Height * 2 + Width * 2 - pos.y];
+            return Walls[Height * 2 + Width * 2 - pos.x - 1];
         }
         else throw new System.IndexOutOfRangeException("Position " + pos + " is not within the bounds of the walls");
     }
@@ -93,6 +96,13 @@ public class Board
 
     public bool IsWithinWalls(Vector2Int pos)
     {
+        if (pos.x < 0 && pos.y < 0 || pos.x >= Width && pos.y < 0 || pos.x < 0 && pos.y >= Height || pos.x >= Width && pos.y >= Height)
+            return false;
         return pos.x >= -1 && pos.y >= -1 && pos.x <= Width && pos.y <= Height;
+    }
+
+    public bool IsWallTile(Vector2Int pos)
+    {
+        return !IsWithinBoard(pos) && IsWithinWalls(pos);
     }
 }

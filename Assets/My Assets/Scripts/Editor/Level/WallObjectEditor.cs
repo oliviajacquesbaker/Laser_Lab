@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEditor;
 using System;
 
-public class BoardObjectEditor : EditorWindow
+public class WallObjectEditor : EditorWindow
 {
-    BoardObject Target;
-    public static void Open(BoardObject target)
+    WallObject Target;
+    public static void Open(WallObject target)
     {
-        BoardObjectEditor editor = (BoardObjectEditor)GetWindow(typeof(BoardObjectEditor));
+        WallObjectEditor editor = (WallObjectEditor)GetWindow(typeof(WallObjectEditor));
         editor.Target = target;
     }
 
@@ -18,10 +18,11 @@ public class BoardObjectEditor : EditorWindow
         
     }
 
-    public static Texture FindPreview(BoardObject obj)
+    public static Texture FindPreview(WallObject obj)
     {
         if (obj == null)
             return null;
+        return null;
         throw new NotImplementedException();
     }
 }
