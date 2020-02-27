@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class WallObject : Object, ILaserTarget
+public abstract class WallObject : LaserLabObject
 {
-    public abstract Laser[] OnLaserHit(Laser laser);
+    public WallObject()
+    {
+
+    }
 }

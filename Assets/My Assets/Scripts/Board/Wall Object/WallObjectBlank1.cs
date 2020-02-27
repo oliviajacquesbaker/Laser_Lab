@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallObjectBlank : WallObject
+public class WallObjectBlank1 : WallObject
 {
     public float testfloat;
 
-    public WallObjectBlank()
+    public WallObjectBlank1()
     {
 
     }

@@ -72,8 +72,10 @@
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectPrism.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTile.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTwoWayMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\LaserLabObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectBlank.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectBlank1.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\LevelSet.cs" />

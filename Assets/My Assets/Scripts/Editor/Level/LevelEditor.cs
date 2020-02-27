@@ -26,6 +26,31 @@ public class LevelEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         DrawGridView();
+
+        if (level.board.IsWithinWalls(selected)) {
+            LaserLabObject obj = level.board.GetLaserLabObject(selected);
+
+            if (obj != null)
+            {
+                SerializedObject serialObj = new SerializedObject(obj);
+                SerializedProperty script = serialObj.FindProperty("m_Script");
+                EditorGUILayout.LabelField(script.objectReferenceValue.name);
+
+                SerializedProperty prop = serialObj.GetIterator();
+                prop.Next(true);
+                for (int i = 0; i < 10; i++)
+                    prop.Next(false);
+
+                do
+                {
+                    EditorGUILayout.PropertyField(prop, true);
+                } while (prop.Next(false));
+
+                serialObj.ApplyModifiedProperties();
+            } else
+                EditorGUILayout.LabelField("Empty");
+        }
+
         EditorGUILayout.EndVertical();
     }
 
@@ -82,6 +107,8 @@ public class LevelEditor : Editor
             AssetDatabase.CreateAsset(asset, AssetDatabase.GetAssetPath(Selection.activeObject) + "/New Level.asset");
         else
             asset = CreateNew(1);
+
+        asset.board.fillDefaultWalls();
 
         AssetDatabase.SaveAssets();
 

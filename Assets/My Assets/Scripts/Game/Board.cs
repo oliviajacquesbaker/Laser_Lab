@@ -15,21 +15,22 @@ public class Board
     {
         Tiles = new BoardObject[width, height];
         Walls = new WallObject[Width * 2 + Height * 2];
-        fillDefaultWalls();
     }
 
     public Board() : this(3, 3) { }
 
-    private void fillDefaultWalls()
+    public void fillDefaultWalls()
     {
         for (int i = 0; i < Walls.Length; i++)
         {
-            Walls[i] = new WallObjectBlank();
+            Walls[i] = (WallObject)ScriptableObject.CreateInstance(typeof(WallObjectBlank));
         }
     }
 
     public void SetDimensions(int width, int height)
     {
+        if (width == Width && height == Height)
+            return;
         if (width < 1)
             width = 1;
         if (height < 1)
@@ -106,12 +107,12 @@ public class Board
         else throw new System.IndexOutOfRangeException("Position " + pos + " is not within the bounds of the walls");
     }
 
-    public ILaserTarget GetLaserTarget(int x, int y)
+    public LaserLabObject GetLaserLabObject(int x, int y)
     {
-        return GetLaserTarget(new Vector2Int(x, y));
+        return GetLaserLabObject(new Vector2Int(x, y));
     }
 
-    public ILaserTarget GetLaserTarget(Vector2Int pos)
+    public LaserLabObject GetLaserLabObject(Vector2Int pos)
     {
         if (IsWithinBoard(pos))
         {
