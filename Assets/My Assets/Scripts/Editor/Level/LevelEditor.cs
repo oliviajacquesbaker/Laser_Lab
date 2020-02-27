@@ -216,11 +216,11 @@ public class LevelEditor : Editor
 
         for (int i = 1; i < wallObjectTypes.Length; i++)
         {
-            wallObjectTypeNames[i] = wallObjectTypes[i].Name;
+            wallObjectTypeNames[i] = wallObjectTypes[i].Name.Remove(0,10);
         }
         for (int i = 1; i < boardObjectTypes.Length; i++)
         {
-            boardObjectTypeNames[i] = boardObjectTypes[i].Name;
+            boardObjectTypeNames[i] = boardObjectTypes[i].Name.Remove(0, 11);
         }
     }
 
