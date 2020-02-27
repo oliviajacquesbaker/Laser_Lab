@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: Test Level
   m_EditorClassIdentifier: 
   board:
+    Tiles:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     Walls:
     - {fileID: 0}
     - {fileID: 0}
@@ -26,8 +36,6 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    m_width: 3
+    m_height: 3
   UnplacedObjects: []

@@ -5,15 +5,24 @@ using UnityEngine;
 [System.Serializable]
 public class Board
 {
-    public BoardObject[,] Tiles;
-    public WallObject[] Walls;
+    [SerializeField]
+    private BoardObject[] Tiles;
+    [SerializeField]
+    private WallObject[] Walls;
 
-    public int Width { get { return Tiles.GetLength(0); } set { SetDimensions(value, Height); } }
-    public int Height { get { return Tiles.GetLength(1); } set { SetDimensions(Width, value); } }
+    [SerializeField]
+    private int m_width;
+    [SerializeField]
+    private int m_height;
+
+    public int Width { get { return m_width; } set { SetDimensions(value, Height); } }
+    public int Height { get { return m_height; } set { SetDimensions(Width, value); } }
 
     public Board(int width, int height)
     {
-        Tiles = new BoardObject[width, height];
+        Tiles = new BoardObject[width*height];
+        m_height = height;
+        m_width = width;
         Walls = new WallObject[Width * 2 + Height * 2];
     }
 
@@ -22,7 +31,7 @@ public class Board
     public void SetBoardObject(Vector2Int pos, BoardObject newObject)
     {
         if (IsWithinBoard(pos))
-            Tiles[pos.x, pos.y] = newObject;
+            Tiles[ConvertPositionToBoardCoord(pos)] = newObject;
     }
 
     public void SetWallObject(Vector2Int pos, WallObject newObject)
@@ -52,6 +61,15 @@ public class Board
         return -1;
     }
 
+    public int ConvertPositionToBoardCoord(Vector2Int pos)
+    {
+        return ConvertPositionToBoardCoord(pos, Width);
+    }
+    public int ConvertPositionToBoardCoord(Vector2Int pos, int width)
+    {
+        return pos.x + pos.y * width;
+    }
+
     public void SetDimensions(int width, int height)
     {
         if (width == Width && height == Height)
@@ -61,14 +79,14 @@ public class Board
         if (height < 1)
             height = 1;
 
-        BoardObject[,] newTiles = new BoardObject[width, height];
+        BoardObject[] newTiles = new BoardObject[width * height];
         WallObject[] newWalls = new WallObject[width * 2 + height * 2];
 
         for (int i = 0; i < width && i < Width; i++)
         {
             for (int j = 0; j < height && j < Height; j++)
             {
-                newTiles[i, j] = Tiles[i, j];
+                newTiles[ConvertPositionToBoardCoord(new Vector2Int(i,j), width)] = Tiles[ConvertPositionToBoardCoord(new Vector2Int(i, j))];
             }
         }
 
@@ -76,6 +94,9 @@ public class Board
         {
             newWalls[i] = Walls[i];
         }
+
+        m_width = width;
+        m_height = height;
 
         Tiles = newTiles;
         Walls = newWalls;
@@ -90,7 +111,7 @@ public class Board
     {
         if (pos.x < Width && pos.y < Height)
         {
-            return Tiles[pos.x, pos.y];
+            return Tiles[ConvertPositionToBoardCoord(pos)];
         }
         else throw new System.IndexOutOfRangeException("Position " + pos + " is outside the bounds of the board");
     }

@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\My Assets\Scripts\Editor\Level\LevelEditor.cs" />
+    <Compile Include="Assets\My Assets\Editor\Scripts\Level\LevelEditor.cs" />
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
