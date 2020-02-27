@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class LaserLabObject : ScriptableObject, ILaserTarget
+[System.Serializable]
+public abstract class LaserLabObject : MonoBehaviour, ILaserTarget
 {
     public abstract Laser[] OnLaserHit(Laser laser);
 }

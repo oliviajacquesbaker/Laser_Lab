@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using System;
 
 [CustomEditor(typeof(Level))]
@@ -20,9 +21,30 @@ public class LevelEditor : Editor
 
     static bool initialized = false;
 
+    private void OnSceneGUI()
+    {
+        
+    }
+
     public override void OnInspectorGUI()
     {
-        //base.OnInspectorGUI();
+        //if (Event.current.type != EventType.)
+        //    return;
+        {
+            SerializedProperty script = serializedObject.FindProperty("m_Script");
+
+            GUI.enabled = false;
+            EditorGUILayout.ObjectField("Script", script.objectReferenceValue, typeof(MonoBehaviour), false);
+            GUI.enabled = true;
+        }
+        {
+            SerializedProperty unplaced = serializedObject.FindProperty("UnplacedObjects");
+            if (EditorGUILayout.PropertyField(unplaced))
+            {
+                Undo.RecordObject(unplaced.objectReferenceValue, "Unplaced Objects");
+                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+            }
+        }
 
         level = (Level)target;
 
@@ -44,62 +66,9 @@ public class LevelEditor : Editor
 
         DrawGridView();
 
-        if (level.board.IsWithinWalls(selected)) {
-            LaserLabObject obj = level.board.GetLaserLabObject(selected);
-
-            if (level.board.IsWithinBoard(selected))
-            {
-                int index = 0;
-                if (obj != null)
-                    index = findIndex(boardObjectTypes, obj.GetType());
-
-                int newIndex = EditorGUILayout.Popup(index, boardObjectTypeNames);
-
-                if (newIndex != index)
-                {
-                    level.board.SetBoardObject(selected, (BoardObject)CreateInstance(boardObjectTypes[newIndex]));
-                    EditorUtility.SetDirty(target);
-                }
-            } else
-            {
-                int index = 0;
-                if (obj != null)
-                    index = findIndex(wallObjectTypes, obj.GetType());
-
-                int newIndex = EditorGUILayout.Popup(index, wallObjectTypeNames);
-
-                if (newIndex != index)
-                {
-                    level.board.SetWallObject(selected, (WallObject)CreateInstance(wallObjectTypes[newIndex]));
-                    EditorUtility.SetDirty(target);
-                }
-            }
-
-            if (obj != null)
-            {
-                SerializedObject serialObj = new SerializedObject(obj);
-                SerializedProperty script = serialObj.FindProperty("m_Script");
-                
-                //(script.objectReferenceValue.name);
-
-                SerializedProperty prop = serialObj.GetIterator();
-                prop.Next(true);
-                for (int i = 0; i < 10; i++)
-                    prop.Next(false);
-
-                do
-                {
-                    EditorGUILayout.PropertyField(prop, true);
-                } while (prop.Next(false));
-
-                if (serialObj.ApplyModifiedProperties())
-                {
-                    EditorUtility.SetDirty(target);
-                }
-            }
-        }
-
         EditorGUILayout.EndVertical();
+
+        serializedObject.ApplyModifiedProperties();
     }
 
     private int findIndex<T> (T[] list, T value)
@@ -171,36 +140,6 @@ public class LevelEditor : Editor
         }
 
         return null;
-    }
-
-    [MenuItem("Assets/Create/Game/Level")]
-    public static void Create()
-    {
-        Level asset = CreateInstance<Level>();
-
-        if (!System.IO.File.Exists(Application.dataPath.Remove(Application.dataPath.LastIndexOf('/') + 1, 6) + AssetDatabase.GetAssetPath(Selection.activeObject) + "/New Level.asset"))
-            AssetDatabase.CreateAsset(asset, AssetDatabase.GetAssetPath(Selection.activeObject) + "/New Level.asset");
-        else
-            asset = CreateNew(1);
-
-        AssetDatabase.SaveAssets();
-
-        EditorUtility.FocusProjectWindow();
-
-        Selection.activeObject = asset;
-    }
-
-    private static Level CreateNew(int index)
-    {
-        Level asset = CreateInstance<Level>();
-
-        if (!System.IO.File.Exists(Application.dataPath.Remove(Application.dataPath.LastIndexOf('/') + 1, 6) + AssetDatabase.GetAssetPath(Selection.activeObject) + "/New Level " + index + ".asset"))
-        {
-            AssetDatabase.CreateAsset(asset, AssetDatabase.GetAssetPath(Selection.activeObject) + "/New Level " + index + ".asset");
-        }
-        else return CreateNew(index + 1);
-
-        return asset;
     }
 
     private void Init()
