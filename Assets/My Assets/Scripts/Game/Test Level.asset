@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed14fd0466f448344b4b7b8fd715e79f, type: 3}
-  m_Name: New Level
+  m_Name: Test Level
   m_EditorClassIdentifier: 
   board:
     Walls:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}

@@ -8,6 +8,10 @@ public class LevelEditor : Editor
 {
     Level level;
     Vector2Int selected = new Vector2Int(-1,-1);
+    System.Type[] boardObjectTypes;
+    string[] boardObjectTypeNames;
+    System.Type[] wallObjectTypes;
+    string[] wallObjectTypeNames;
 
     public override void OnInspectorGUI()
     {
@@ -30,11 +34,38 @@ public class LevelEditor : Editor
         if (level.board.IsWithinWalls(selected)) {
             LaserLabObject obj = level.board.GetLaserLabObject(selected);
 
+            if (level.board.IsWithinBoard(selected))
+            {
+                int index = 0;
+                if (obj != null)
+                    index = findIndex(boardObjectTypes, obj.GetType());
+
+                int newIndex = EditorGUILayout.Popup(index, boardObjectTypeNames);
+
+                if (newIndex != index)
+                {
+                    level.board.SetBoardObject(selected, (BoardObject)CreateInstance(boardObjectTypes[newIndex]));
+                }
+            } else
+            {
+                int index = 0;
+                if (obj != null)
+                    index = findIndex(wallObjectTypes, obj.GetType());
+
+                int newIndex = EditorGUILayout.Popup(index, wallObjectTypeNames);
+
+                if (newIndex != index)
+                {
+                    level.board.SetWallObject(selected, (WallObject)CreateInstance(wallObjectTypes[newIndex]));
+                }
+            }
+
             if (obj != null)
             {
                 SerializedObject serialObj = new SerializedObject(obj);
                 SerializedProperty script = serialObj.FindProperty("m_Script");
-                EditorGUILayout.LabelField(script.objectReferenceValue.name);
+                
+                //(script.objectReferenceValue.name);
 
                 SerializedProperty prop = serialObj.GetIterator();
                 prop.Next(true);
@@ -47,11 +78,25 @@ public class LevelEditor : Editor
                 } while (prop.Next(false));
 
                 serialObj.ApplyModifiedProperties();
-            } else
-                EditorGUILayout.LabelField("Empty");
+            }
         }
 
         EditorGUILayout.EndVertical();
+    }
+
+    private int findIndex<T> (T[] list, T value)
+    {
+        for (int i = 0; i < list.Length; i++)
+        {
+            if (list[i] == null)
+            {
+                if (value == null)
+                    return i;
+            }
+            else if (list[i].Equals(value))
+                return i;
+        }
+        return -1;
     }
 
     private void DrawGridView()
@@ -108,8 +153,6 @@ public class LevelEditor : Editor
         else
             asset = CreateNew(1);
 
-        asset.board.fillDefaultWalls();
-
         AssetDatabase.SaveAssets();
 
         EditorUtility.FocusProjectWindow();
@@ -159,6 +202,38 @@ public class LevelEditor : Editor
             padding = new RectOffset(),
             margin = new RectOffset(2, 2, 2, 2)
         };
+
+        wallObjectTypes = getTypes(typeof(WallObject));
+        ArrayUtility.Insert(ref wallObjectTypes, 0, null);
+        boardObjectTypes = getTypes(typeof(BoardObject));
+        ArrayUtility.Insert(ref boardObjectTypes, 0, null);
+
+        wallObjectTypeNames = new string[wallObjectTypes.Length];
+        boardObjectTypeNames = new string[boardObjectTypes.Length];
+
+        wallObjectTypeNames[0] = "Empty";
+        boardObjectTypeNames[0] = "Empty";
+
+        for (int i = 1; i < wallObjectTypes.Length; i++)
+        {
+            wallObjectTypeNames[i] = wallObjectTypes[i].Name;
+        }
+        for (int i = 1; i < boardObjectTypes.Length; i++)
+        {
+            boardObjectTypeNames[i] = boardObjectTypes[i].Name;
+        }
+    }
+
+    private System.Type[] getTypes(System.Type baseClass)
+    {
+        System.Type[] allTypes = System.Reflection.Assembly.GetAssembly(baseClass).GetTypes();
+        List<System.Type> result = new List<System.Type>();
+        for (int i = 0; i < allTypes.Length; i++)
+        {
+            if (allTypes[i].IsSubclassOf(baseClass))
+                result.Add(allTypes[i]);
+        }
+        return result.ToArray();
     }
 
     public static GUIStyle gridContainerStyle;

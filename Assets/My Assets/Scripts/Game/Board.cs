@@ -19,12 +19,37 @@ public class Board
 
     public Board() : this(3, 3) { }
 
-    public void fillDefaultWalls()
+    public void SetBoardObject(Vector2Int pos, BoardObject newObject)
     {
-        for (int i = 0; i < Walls.Length; i++)
+        if (IsWithinBoard(pos))
+            Tiles[pos.x, pos.y] = newObject;
+    }
+
+    public void SetWallObject(Vector2Int pos, WallObject newObject)
+    {
+        if (IsWallTile(pos))
+            Walls[ConvertPositionToWallCoord(pos)] = newObject;
+    }
+
+    public int ConvertPositionToWallCoord(Vector2Int pos)
+    {
+        if (pos.x < 0)
         {
-            Walls[i] = (WallObject)ScriptableObject.CreateInstance(typeof(WallObjectBlank));
+            return pos.y;
         }
+        else if (pos.y >= Height)
+        {
+            return Height + pos.x;
+        }
+        else if (pos.x >= Width)
+        {
+            return Height * 2 + Width - pos.y - 1;
+        }
+        else if (pos.y < 0)
+        {
+            return Height * 2 + Width * 2 - pos.x - 1;
+        }
+        return -1;
     }
 
     public void SetDimensions(int width, int height)
@@ -50,14 +75,6 @@ public class Board
         for (int i = 0; i < Walls.Length && i < newWalls.Length; i++)
         {
             newWalls[i] = Walls[i];
-        }
-
-        if (Walls.Length < newWalls.Length)
-        {
-            for (int i = Walls.Length; i < newWalls.Length; i++)
-            {
-                newWalls[i] = new WallObjectBlank();
-            }
         }
 
         Tiles = newTiles;
@@ -88,22 +105,9 @@ public class Board
         if (!IsWallTile(pos))
             return null;
 
-        if (pos.x < 0)
-        {
-            return Walls[pos.y];
-        }
-        else if (pos.y >= Height)
-        {
-            return Walls[Height + pos.x];
-        }
-        else if (pos.x >= Width)
-        {
-            return Walls[Height * 2 + Width - pos.y - 1];
-        }
-        else if (pos.y < 0)
-        {
-            return Walls[Height * 2 + Width * 2 - pos.x - 1];
-        }
+        int wallCoord = ConvertPositionToWallCoord(pos);
+        if (wallCoord >= 0)
+            return Walls[wallCoord];
         else throw new System.IndexOutOfRangeException("Position " + pos + " is not within the bounds of the walls");
     }
 
