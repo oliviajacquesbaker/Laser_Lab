@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallObjectWallReciever : WallObject
+public class WallObjectWallReciever : WallObject, ILaserReciever
 {
     private float redReq;
     private float greenReq;
@@ -44,5 +44,15 @@ public class WallObjectWallReciever : WallObject
     public void Reset()
     {
         redMet = greenMet = blueMet = false;
+    }
+
+    public bool IsLaserConditionSatisfied()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void ResetLaserCondition()
+    {
+        throw new System.NotImplementedException();
     }
 }

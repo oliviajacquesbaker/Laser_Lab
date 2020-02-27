@@ -17,7 +17,7 @@ public class BoardObjectTwoWayMirror : BoardObject
     private Direction getNewDirection(Laser laser, int face)
     {
         Direction dir = laser.direction;
-        if (face == 0)
+        if (face == 0 || face == 1)
         {
             return Reflect(laser.direction);
         }

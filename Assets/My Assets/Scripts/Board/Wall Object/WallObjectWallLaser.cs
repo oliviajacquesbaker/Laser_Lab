@@ -7,6 +7,7 @@ public class WallObjectWallLaser : WallObject, ILaserEmitter
     private float redOut;
     private float greenOut;
     private float blueOut;
+
     WallObjectWallLaser()
     {
         redOut = greenOut = blueOut = 1;
@@ -18,6 +19,7 @@ public class WallObjectWallLaser : WallObject, ILaserEmitter
         greenOut = green;
         blueOut = blue;
     }
+
     public override Laser[] OnLaserHit(Laser laser)
     {
         return new Laser[0];

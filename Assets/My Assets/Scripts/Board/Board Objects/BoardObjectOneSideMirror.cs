@@ -26,7 +26,7 @@ public class BoardObjectOneSideMirror : BoardObject
     {
         int face = getFace(laser.direction, Orientation);
 
-        if (face == 0)
+        if (face == 0 || face == 1)
         {
             Direction newDirection = getNewDirection(laser);
             Laser newLaser = new Laser(newDirection, laser.red, laser.green, laser.blue);
