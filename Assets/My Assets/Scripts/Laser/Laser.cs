@@ -21,4 +21,5 @@ public class Laser
     public Laser(Direction direction) : this(new Vector2Int(), direction, 1, 1, 1) { }
     public Laser(Direction direction, float red, float green, float blue) : this(new Vector2Int(), direction, red, green, blue) { }
 
+    public Laser(float red, float green, float blue) : this(new Vector2Int(), new Direction(), red, green, blue) { }
 }

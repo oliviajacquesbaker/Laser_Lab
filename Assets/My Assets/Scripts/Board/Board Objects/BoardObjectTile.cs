@@ -9,11 +9,10 @@ public class BoardObjectTile : BoardObject
         Orientation = 0;
     }
 
-    /*
+    
     public BoardObjectTile(int rotation)
     {
-        if (rotation >= 0 && rotation <= 3)
-            Orientation = rotation;
+        Orientation = (Direction)(rotation % 4);
     }
 
 
@@ -23,10 +22,5 @@ public class BoardObjectTile : BoardObject
 
         return new Laser[] { newLaser };
     }
-    */
-
-    public override Laser[] OnLaserHit(Laser laser)
-    {
-        return null;
-    }
+   
 }
