@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
+    public TileSet tileSet;
     public Board board;
     public BoardObject[] UnplacedObjects;
 

@@ -37,14 +37,6 @@ public class LevelEditor : Editor
             EditorGUILayout.ObjectField("Script", script.objectReferenceValue, typeof(MonoBehaviour), false);
             GUI.enabled = true;
         }
-        {
-            SerializedProperty unplaced = serializedObject.FindProperty("UnplacedObjects");
-            if (EditorGUILayout.PropertyField(unplaced))
-            {
-                Undo.RecordObject(unplaced.objectReferenceValue, "Unplaced Objects");
-                EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-            }
-        }
 
         level = (Level)target;
 
@@ -60,7 +52,7 @@ public class LevelEditor : Editor
             Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", new Vector2Int(level.board.Width, level.board.Height));
             tmpSize.x = Mathf.Max(1, tmpSize.x);
             tmpSize.y = Mathf.Max(1, tmpSize.y);
-            level.board.SetDimensions(tmpSize.x, tmpSize.y);
+            ResizeBoard(tmpSize);
         }
         EditorGUILayout.EndHorizontal();
 
@@ -69,6 +61,74 @@ public class LevelEditor : Editor
         EditorGUILayout.EndVertical();
 
         serializedObject.ApplyModifiedProperties();
+    }
+
+    private void ResizeBoard(Vector2Int newSize)
+    {
+        Board oldBoard = level.board;
+        Board newBoard = new Board(newSize.x, newSize.y);
+
+        for (int j = -1; j <= oldBoard.Height || j <= newBoard.Height; j++)
+        {
+            for (int i = -1; i <= oldBoard.Width || i <= newBoard.Width; i++)
+            {
+                Vector2Int pos = new Vector2Int(i, j);
+
+                if (oldBoard.IsWithinBoard(pos) && newBoard.IsWithinBoard(pos)) //Common tile
+                {
+                    newBoard.SetBoardObject(pos, oldBoard.GetBoardObject(pos));
+                } else if (oldBoard.IsWithinBoard(pos) && !newBoard.IsWithinBoard(pos)) //Outside new boundary
+                {
+                    DestroyImmediate(oldBoard.GetBoardObject(pos), false);
+                } else if (newBoard.IsWithinWalls(pos))
+                {
+                    if (pos.x == -1)
+                    {
+                        if (pos.y < oldBoard.Height)
+                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(pos));
+                        else
+                        {
+                            //todo new wall
+                        }
+                    }
+                    else if (pos.y == -1)
+                    {
+                        if (pos.x < oldBoard.Width)
+                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(pos));
+                        else
+                        {
+                            //todo new wall
+                        }
+                    }
+                    else if (pos.x == newBoard.Width)
+                    {
+                        if (pos.y < oldBoard.Height)
+                        {
+                            Vector2Int oldPos = new Vector2Int(oldBoard.Width, pos.y);
+                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(oldPos));
+                        }
+                        else
+                        {
+                            //todo new wall
+                        }
+                    }
+                    else if (pos.y == newBoard.Height)
+                    {
+                        if (pos.x < oldBoard.Width)
+                        {
+                            Vector2Int oldPos = new Vector2Int(pos.x, oldBoard.Height);
+                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(oldPos));
+                        }
+                        else
+                        {
+                            //todo new wall
+                        }
+                    }
+                }
+            }
+        }
+
+        level.board = newBoard;
     }
 
     private int findIndex<T> (T[] list, T value)

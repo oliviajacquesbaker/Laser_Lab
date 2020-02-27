@@ -78,6 +78,7 @@
     <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\LevelSet.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\TileSet.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />

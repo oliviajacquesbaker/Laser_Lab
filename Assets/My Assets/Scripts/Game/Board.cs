@@ -15,8 +15,8 @@ public class Board
     [SerializeField]
     private int m_height;
 
-    public int Width { get { return m_width; } set { SetDimensions(value, Height); } }
-    public int Height { get { return m_height; } set { SetDimensions(Width, value); } }
+    public int Width { get { return m_width; } }
+    public int Height { get { return m_height; } }
 
     public Board(int width, int height)
     {
@@ -68,38 +68,6 @@ public class Board
     public int ConvertPositionToBoardCoord(Vector2Int pos, int width)
     {
         return pos.x + pos.y * width;
-    }
-
-    public void SetDimensions(int width, int height)
-    {
-        if (width == Width && height == Height)
-            return;
-        if (width < 1)
-            width = 1;
-        if (height < 1)
-            height = 1;
-
-        BoardObject[] newTiles = new BoardObject[width * height];
-        WallObject[] newWalls = new WallObject[width * 2 + height * 2];
-
-        for (int i = 0; i < width && i < Width; i++)
-        {
-            for (int j = 0; j < height && j < Height; j++)
-            {
-                newTiles[ConvertPositionToBoardCoord(new Vector2Int(i,j), width)] = Tiles[ConvertPositionToBoardCoord(new Vector2Int(i, j))];
-            }
-        }
-
-        for (int i = 0; i < Walls.Length && i < newWalls.Length; i++)
-        {
-            newWalls[i] = Walls[i];
-        }
-
-        m_width = width;
-        m_height = height;
-
-        Tiles = newTiles;
-        Walls = newWalls;
     }
 
     public BoardObject GetBoardObject(int x, int y)
