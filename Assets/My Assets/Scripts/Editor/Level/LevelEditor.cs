@@ -8,15 +8,20 @@ public class LevelEditor : Editor
 {
     Level level;
     Vector2Int selected = new Vector2Int(-1,-1);
-    System.Type[] boardObjectTypes;
-    string[] boardObjectTypeNames;
-    System.Type[] wallObjectTypes;
-    string[] wallObjectTypeNames;
+    static System.Type[] boardObjectTypes;
+    static string[] boardObjectTypeNames;
+    static System.Type[] wallObjectTypes;
+    static string[] wallObjectTypeNames;
 
     public override void OnInspectorGUI()
     {
         //base.OnInspectorGUI();
 
+        if (gridObjectStyleEmpty == null)
+            if (EditorStyles.miniButton != null)
+                Init();
+            else return;
+        
         level = (Level)target;
         EditorGUILayout.BeginVertical();
 
@@ -173,7 +178,7 @@ public class LevelEditor : Editor
         return asset;
     }
 
-    private void OnEnable()
+    private void Init()
     {
         gridContainerStyle = new GUIStyle()
         {
