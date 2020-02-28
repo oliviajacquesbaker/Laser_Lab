@@ -16,15 +16,8 @@ public class BoardObjectDoubleSideMirror : BoardObject
 
     private Direction getNewDirection(Laser laser, int face)
     {
-        if (face == 0 || face == 1)
-        {
-            return Reflect(laser.direction);
-        }
-        else
-        {
-            Direction flippedOrientation = (Direction)(((int)Orientation + 2) % 4);
-            return Reflect(laser.direction, flippedOrientation);
-        }
+        return Reflect(laser.direction);
+        
     }
 
     public override Laser[] OnLaserHit(Laser laser)

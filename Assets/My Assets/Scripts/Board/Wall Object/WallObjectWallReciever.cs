@@ -12,47 +12,103 @@ public class WallObjectWallReciever : WallObject, ILaserReciever
     public bool greenMet = false;
     public bool blueMet = false;
 
+    public Requirement reqType;
+
     public WallObjectWallReciever()
     {
         redReq = greenReq = blueReq = 1;
+        reqType = Requirement.EQUAL;
     }
 
-    public WallObjectWallReciever(int red, int green, int blue)
+    public WallObjectWallReciever(int red, int green, int blue, Requirement req)
     {
         redReq = red;
         greenReq = green;
         blueReq = blue;
+        reqType = req;
+
     }
 
     public override Laser[] OnLaserHit(Laser laser)
     {
-        if(laser.red == redReq)
+        if(reqType == Requirement.EQUAL)
         {
-            redMet = true;
+            CheckEqual(laser);
         }
-        if(laser.green == greenReq)
+        else if (reqType == Requirement.AT_MOST)
         {
-            greenMet = true;
+            CheckUnder(laser);
         }
-        if(laser.blue == blueReq)
+        else if (reqType == Requirement.AT_LEAST)
         {
-            blueMet = true;
+            CheckOver(laser);
         }
         return new Laser[0];
     }
 
-    public void Reset()
-    {
-        redMet = greenMet = blueMet = false;
-    }
 
     public bool IsLaserConditionSatisfied()
     {
-        throw new System.NotImplementedException();
+        if (redMet == greenMet == blueMet == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     public void ResetLaserCondition()
     {
-        throw new System.NotImplementedException();
+        redMet = greenMet = blueMet = false;
+    }
+
+    public void CheckEqual(Laser laser)
+    {
+        if (laser.red == redReq)
+        {
+            redMet = true;
+        }
+        if (laser.green == greenReq)
+        {
+            greenMet = true;
+        }
+        if (laser.blue == blueReq)
+        {
+            blueMet = true;
+        }
+    }
+
+    public void CheckUnder(Laser laser)
+    {
+        if (laser.red <= redReq)
+        {
+            redMet = true;
+        }
+        if (laser.green <= greenReq)
+        {
+            greenMet = true;
+        }
+        if (laser.blue <= blueReq)
+        {
+            blueMet = true;
+        }
+    }
+
+    public void CheckOver(Laser laser)
+    {
+        if (laser.red >= redReq)
+        {
+            redMet = true;
+        }
+        if (laser.green >= greenReq)
+        {
+            greenMet = true;
+        }
+        if (laser.blue >= blueReq)
+        {
+            blueMet = true;
+        }
     }
 }
