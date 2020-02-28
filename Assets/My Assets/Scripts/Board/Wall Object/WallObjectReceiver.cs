@@ -2,31 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallObjectWallReciever : WallObject, ILaserReciever
+public class WallObjectReceiver : WallObject, ILaserReceiver
 {
     private float redReq;
     private float greenReq;
     private float blueReq;
 
-    public bool redMet = false;
-    public bool greenMet = false;
-    public bool blueMet = false;
+    private bool redMet = false;
+    private bool greenMet = false;
+    private bool blueMet = false;
 
     public Requirement reqType;
 
-    public WallObjectWallReciever()
+    public WallObjectReceiver()
     {
         redReq = greenReq = blueReq = 1;
         reqType = Requirement.EQUAL;
     }
 
-    public WallObjectWallReciever(int red, int green, int blue, Requirement req)
+    public WallObjectReceiver(int red, int green, int blue, Requirement req)
     {
         redReq = red;
         greenReq = green;
         blueReq = blue;
         reqType = req;
-
     }
 
     public override Laser[] OnLaserHit(Laser laser)
@@ -110,5 +109,12 @@ public class WallObjectWallReciever : WallObject, ILaserReciever
         {
             blueMet = true;
         }
+    }
+
+    public enum Requirement
+    {
+        EQUAL,
+        AT_MOST,
+        AT_LEAST
     }
 }

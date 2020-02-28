@@ -9,10 +9,3 @@ public enum Direction
     DOWN,
     LEFT
 }
-
-public enum Requirement
-{
-    EQUAL,
-    AT_MOST,
-    AT_LEAST
-}

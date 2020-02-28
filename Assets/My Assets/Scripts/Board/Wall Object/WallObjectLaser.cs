@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WallObjectWallLaser : WallObject, ILaserEmitter
+public class WallObjectLaser : WallObject, ILaserEmitter
 {
     private float redOut;
     private float greenOut;
     private float blueOut;
 
-    WallObjectWallLaser()
+    WallObjectLaser()
     {
         redOut = greenOut = blueOut = 1;
     }
 
-    WallObjectWallLaser(float red, float green, float blue)
+    WallObjectLaser(float red, float green, float blue)
     {
         redOut = red;
         greenOut = green;

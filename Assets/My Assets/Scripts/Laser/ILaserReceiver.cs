@@ -1,4 +1,4 @@
-﻿interface ILaserReciever
+﻿interface ILaserReceiver
 {
     bool IsLaserConditionSatisfied();
     void ResetLaserCondition();
