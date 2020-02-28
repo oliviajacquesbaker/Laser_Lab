@@ -21,8 +21,15 @@ public class TileSet : ScriptableObject
     [Serializable]
     public class Environment
     {
-        public GameObject Corner;
-        public GameObject Floor;
-        public GameObject Outside;
+        public EnvironmentPiece Corner;
+        public EnvironmentPiece Floor;
+        public EnvironmentPiece Outside;
+    }
+
+    [Serializable]
+    public class EnvironmentPiece
+    {
+        public GameObject Tile;
+        public Direction defaultOrientation;
     }
 }
