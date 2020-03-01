@@ -9,13 +9,22 @@ public class TileSet : ScriptableObject
     public Environment environment;
     public List<Piece> pieces;
 
+    public Piece FindPieceFromType(Type type)
+    {
+        for (int i = 0; i < pieces.Count; i++)
+        {
+            if (pieces[i].objectType.Equals(type.ToString()))
+                return pieces[i];
+        }
+        return null;
+    }
+
     [Serializable]
     public class Piece
     {
-        public Type BoardType { get { if (boardObjectScript.GetType().IsSubclassOf(typeof(LaserLabObject))) return boardObjectScript.GetType(); return null; } }
-        public MonoBehaviour boardObjectScript;
+        public string objectType;
         public GameObject Tile;
-        public Direction defaultOrientation;
+        public Direction modelOrientation;
     }
 
     [Serializable]
@@ -30,6 +39,6 @@ public class TileSet : ScriptableObject
     public class EnvironmentPiece
     {
         public GameObject Tile;
-        public Direction defaultOrientation;
+        public Direction modelOrientation;
     }
 }

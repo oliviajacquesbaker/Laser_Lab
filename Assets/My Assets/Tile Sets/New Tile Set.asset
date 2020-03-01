@@ -13,9 +13,18 @@ MonoBehaviour:
   m_Name: New Tile Set
   m_EditorClassIdentifier: 
   environment:
-    Corner: {fileID: 3381460199996579860, guid: 1e3eb7ab41aa1184fba9640a131f3275,
-      type: 3}
-    Floor: {fileID: 3014878516828843915, guid: 08e5b7d09a737f447b2654663e445b4e, type: 3}
-    Outside: {fileID: 7036378881821477431, guid: 86aa97d6c776f724b9ec7fb627336557,
-      type: 3}
-  pieces: []
+    Corner:
+      Tile: {fileID: 3381460199996579860, guid: 1e3eb7ab41aa1184fba9640a131f3275,
+        type: 3}
+      modelOrientation: 3
+    Floor:
+      Tile: {fileID: 3014878516828843915, guid: 08e5b7d09a737f447b2654663e445b4e,
+        type: 3}
+      modelOrientation: 0
+    Outside:
+      Tile: {fileID: 7036378881821477431, guid: 86aa97d6c776f724b9ec7fb627336557,
+        type: 3}
+      modelOrientation: 0
+  pieces:
+  - Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
+    modelOrientation: 0

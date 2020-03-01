@@ -9,7 +9,7 @@ using System;
 public class LevelEditor : Editor
 {
     Level level;
-    Vector2Int selected = new Vector2Int(-1,-1);
+    Vector2Int selectedTile = new Vector2Int(-1,-1);
 
     static Type[] boardObjectTypes;
     static string[] boardObjectTypeNames;
@@ -30,6 +30,16 @@ public class LevelEditor : Editor
     {
         //if (Event.current.type != EventType.)
         //    return;
+
+        if (!initialized)
+            if (EditorStyles.miniButton != null)
+                Init();
+            else return;
+
+        level = (Level)target;
+
+        EditorGUILayout.BeginVertical();
+
         {
             SerializedProperty script = serializedObject.FindProperty("m_Script");
 
@@ -38,97 +48,52 @@ public class LevelEditor : Editor
             GUI.enabled = true;
         }
 
-        level = (Level)target;
+        {
+            SerializedProperty tileSet = serializedObject.FindProperty("tileSet");
+            TileSet old = tileSet.objectReferenceValue as TileSet;
+            EditorGUILayout.PropertyField(tileSet, new GUIContent("Tile Set"));
+            serializedObject.ApplyModifiedProperties();
+            if (tileSet.objectReferenceValue as TileSet != old)
+                ReloadBoard();
+        }
 
-        if (!initialized)
-            if (EditorStyles.miniButton != null)
-                Init();
-            else return;
-        
-        EditorGUILayout.BeginVertical();
-
-        EditorGUILayout.BeginHorizontal();
         {
             Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", new Vector2Int(level.board.Width, level.board.Height));
-            tmpSize.x = Mathf.Max(1, tmpSize.x);
-            tmpSize.y = Mathf.Max(1, tmpSize.y);
+            tmpSize.x = Mathf.Clamp(tmpSize.x, 1, 10);
+            tmpSize.y = Mathf.Clamp(tmpSize.y, 1, 10);
             ResizeBoard(tmpSize);
         }
-        EditorGUILayout.EndHorizontal();
+
+        if (GUILayout.Button("Refresh"))
+            ReloadBoard();
 
         DrawGridView();
 
         EditorGUILayout.EndVertical();
 
-        serializedObject.ApplyModifiedProperties();
+        if (serializedObject.ApplyModifiedProperties())
+        {
+            level.floor.tileSet = level.tileSet;
+        }
+    }
+
+    private void ReloadBoard()
+    {
+        level.floor.tileSet = level.tileSet;
+        level.board.tileSet = level.tileSet;
+        level.floor.Resize(level.size);
+        level.board.Resize(level.size);
+        level.board.ReloadTiles();
     }
 
     private void ResizeBoard(Vector2Int newSize)
     {
-        Board oldBoard = level.board;
-        Board newBoard = new Board(newSize.x, newSize.y);
+        if (level.size.Equals(newSize))
+            return;
 
-        for (int j = -1; j <= oldBoard.Height || j <= newBoard.Height; j++)
-        {
-            for (int i = -1; i <= oldBoard.Width || i <= newBoard.Width; i++)
-            {
-                Vector2Int pos = new Vector2Int(i, j);
+        level.floor.Resize(newSize);
+        level.board.Resize(newSize);
 
-                if (oldBoard.IsWithinBoard(pos) && newBoard.IsWithinBoard(pos)) //Common tile
-                {
-                    newBoard.SetBoardObject(pos, oldBoard.GetBoardObject(pos));
-                } else if (oldBoard.IsWithinBoard(pos) && !newBoard.IsWithinBoard(pos)) //Outside new boundary
-                {
-                    DestroyImmediate(oldBoard.GetBoardObject(pos), false);
-                } else if (newBoard.IsWithinWalls(pos))
-                {
-                    if (pos.x == -1)
-                    {
-                        if (pos.y < oldBoard.Height)
-                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(pos));
-                        else
-                        {
-                            //todo new wall
-                        }
-                    }
-                    else if (pos.y == -1)
-                    {
-                        if (pos.x < oldBoard.Width)
-                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(pos));
-                        else
-                        {
-                            //todo new wall
-                        }
-                    }
-                    else if (pos.x == newBoard.Width)
-                    {
-                        if (pos.y < oldBoard.Height)
-                        {
-                            Vector2Int oldPos = new Vector2Int(oldBoard.Width, pos.y);
-                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(oldPos));
-                        }
-                        else
-                        {
-                            //todo new wall
-                        }
-                    }
-                    else if (pos.y == newBoard.Height)
-                    {
-                        if (pos.x < oldBoard.Width)
-                        {
-                            Vector2Int oldPos = new Vector2Int(pos.x, oldBoard.Height);
-                            newBoard.SetWallObject(pos, oldBoard.GetWallObject(oldPos));
-                        }
-                        else
-                        {
-                            //todo new wall
-                        }
-                    }
-                }
-            }
-        }
-
-        level.board = newBoard;
     }
 
     private int findIndex<T> (T[] list, T value)
@@ -160,12 +125,12 @@ public class LevelEditor : Editor
                 if (level.board.IsWithinWalls(pos))
                 {
                     Color oldCol = GUI.backgroundColor;
-                    if (pos == selected)
+                    if (pos == selectedTile)
                         GUI.backgroundColor = Color.grey;
 
                     if (GUILayout.Button(FindIcon(level.board.GetLaserLabObject(pos)), gridObjectStyle))
                     {
-                        selected = pos;
+                        selectedTile = pos;
                     }
                     GUI.backgroundColor = oldCol;
                 }
@@ -175,7 +140,7 @@ public class LevelEditor : Editor
                     GUI.backgroundColor = new Color(1,.5f,.5f);
                     if (GUILayout.Button("X", gridObjectStyle))
                     {
-                        selected = pos;
+                        selectedTile = pos;
                     }
                     GUI.backgroundColor = oldCol;
                 }

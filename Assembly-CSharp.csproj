@@ -76,6 +76,7 @@
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectBlank.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Floor.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\LevelSet.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\TileSet.cs" />
