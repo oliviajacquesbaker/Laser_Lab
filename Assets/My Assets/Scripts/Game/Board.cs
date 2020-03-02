@@ -458,7 +458,10 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + type.ToString() + '"');
             return null;
+        }
 
         //instantiate model
         GameObject newWallObject = Instantiate(piece.Tile);
@@ -518,7 +521,10 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + type.ToString() + '"');
             return null;
+        }
 
         //instantiate model
         GameObject newBoardObject = Instantiate(piece.Tile);

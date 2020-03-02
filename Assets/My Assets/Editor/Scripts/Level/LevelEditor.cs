@@ -234,27 +234,31 @@ public class LevelEditor : Editor
     private void ReplaceWall(Vector2Int pos, Type type)
     {
         WallObject obj = level.board.GetWallObject(pos);
-        if (obj)
+        WallObject newObj = null;
+        if (type != null)
+            newObj = level.board.CreateWallAt(pos, type);
+        if (obj && (newObj != null || type == null))
         {
             DestroyImmediate(obj.gameObject);
         }
-        if (type == null)
+        if (type != null && newObj == null)
             return;
-        obj = level.board.CreateWallAt(pos, type);
-        level.board.SetWallObject(pos, obj);
+        level.board.SetWallObject(pos, newObj);
     }
 
     private void ReplaceTile(Vector2Int pos, Type type)
     {
         BoardObject obj = level.board.GetBoardObject(pos);
-        if (obj)
+        BoardObject newObj = null;
+        if (type != null)
+            newObj = level.board.CreateBoardObjectAt(pos, type);
+        if (obj && (newObj != null || type == null))
         {
             DestroyImmediate(obj.gameObject);
         }
-        if (type == null)
+        if (type != null && newObj == null)
             return;
-        obj = level.board.CreateBoardObjectAt(pos, type);
-        level.board.SetBoardObject(pos, obj);
+        level.board.SetBoardObject(pos, newObj);
     }
 
     private void DrawProperties(UnityEngine.Object obj)
