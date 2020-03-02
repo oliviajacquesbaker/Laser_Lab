@@ -19,6 +19,15 @@ public class Level : MonoBehaviour
 
     private void OnEnable()
     {
+#if UNITY_EDITOR
+        Init();
+#endif
+    }
+
+#if UNITY_EDITOR
+
+    public void Init()
+    {
         if (!floor)
         {
             GameObject floorObject = new GameObject();
@@ -36,8 +45,6 @@ public class Level : MonoBehaviour
             floorObject.name = "Board";
         }
     }
-
-#if UNITY_EDITOR
 
     public void Resize(Vector2Int newSize)
     {

@@ -26,6 +26,16 @@ public class LevelEditor : Editor
         
     }
 
+    private void SetSceneDirty()
+    {
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+    }
+
+    private void RecordUndo(string name)
+    {
+        Undo.RegisterFullObjectHierarchyUndo(level.gameObject, name);
+    }
+
     public override void OnInspectorGUI()
     {
         //if (Event.current.type != EventType.)
@@ -55,20 +65,28 @@ public class LevelEditor : Editor
             serializedObject.ApplyModifiedProperties();
             if (tileSet.objectReferenceValue as TileSet != old)
             {
+                RecordUndo("Change Level Tile Set");
                 level.SetTileset(tileSet.objectReferenceValue as TileSet);
                 ReloadBoard();
             }
         }
 
         {
-            Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", new Vector2Int(level.board.Width, level.board.Height));
+            Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", level.size);
             tmpSize.x = Mathf.Clamp(tmpSize.x, 1, 10);
             tmpSize.y = Mathf.Clamp(tmpSize.y, 1, 10);
-            ResizeBoard(tmpSize);
+            if (!level.size.Equals(tmpSize))
+            {
+                RecordUndo("Resize Level");
+                ResizeBoard(tmpSize);
+            }
         }
 
         if (GUILayout.Button("Refresh"))
+        {
+            RecordUndo("Refresh Level");
             ReloadBoard();
+        }
 
         DrawGridView();
 
@@ -84,14 +102,13 @@ public class LevelEditor : Editor
     {
         level.Resize(level.size);
         level.board.ReloadTiles();
+        SetSceneDirty();
     }
 
     private void ResizeBoard(Vector2Int newSize)
     {
-        if (level.size.Equals(newSize))
-            return;
-
         level.Resize(newSize);
+        SetSceneDirty();
     }
 
     private int findIndex<T> (T[] list, T value)
