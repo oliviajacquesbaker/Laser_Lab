@@ -249,7 +249,7 @@ public class Board : MonoBehaviour
                     BoardObject oldObj = Tiles[index];
                     if (oldObj != null)
                     {
-                        Tiles[index] = CreateBoardObjectAtFrom(pos, oldObj);
+                        Tiles[index] = CreateBoardObjectAtFrom(pos, Tiles[index]);
                         DestroyImmediate(oldObj.gameObject);
                     }
                 }
@@ -420,7 +420,7 @@ public class Board : MonoBehaviour
                     newTiles[newIndex] = Tiles[oldIndex];
                 }
                 //Remove extra objects
-                else if (i > newSize.x || j > newSize.y)
+                else if (i >= newSize.x || j >= newSize.y)
                 {
                     if (Tiles[oldIndex])
                         DestroyImmediate(Tiles[oldIndex].gameObject);
@@ -443,15 +443,18 @@ public class Board : MonoBehaviour
 
     public WallObjectBlank CreateWallAt(Vector2Int pos)
     {
-        return CreateWallAt<WallObjectBlank>(pos);
+        return (WallObjectBlank)CreateWallAt(pos, typeof(WallObjectBlank));
     }
 
-    public T CreateWallAt<T>(Vector2Int pos) where T : WallObject
+    public WallObject CreateWallAt(Vector2Int pos, Type type)
     {
         //find model
         TileSet.Piece piece;
+        if (!type.IsSubclassOf(typeof(WallObject)))
+            return null;
+
         if (tileSet != null)
-            piece = tileSet.FindPieceFromType(typeof(T));
+            piece = tileSet.FindPieceFromType(type);
         else return null;
 
         if (piece == null)
@@ -465,7 +468,7 @@ public class Board : MonoBehaviour
         newWallObject.transform.SetParent(transform);
 
         //configure wallobject
-        T wallObject = newWallObject.AddComponent(typeof(T)) as T;
+        WallObject wallObject = (WallObject)newWallObject.AddComponent(type);
 
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
@@ -504,12 +507,14 @@ public class Board : MonoBehaviour
         return wallObject;
     }
 
-    public T CreateBoardObjectAt<T>(Vector2Int pos) where T : BoardObject
+    public BoardObject CreateBoardObjectAt(Vector2Int pos, Type type)
     {
         //find model
+        if (!type.IsSubclassOf(typeof(BoardObject)))
+            return null;
         TileSet.Piece piece;
         if (tileSet != null)
-            piece = tileSet.FindPieceFromType(typeof(T));
+            piece = tileSet.FindPieceFromType(type);
         else return null;
 
         if (piece == null)
@@ -523,7 +528,7 @@ public class Board : MonoBehaviour
         newBoardObject.transform.SetParent(transform);
 
         //configure boardobject
-        T boardObject = newBoardObject.AddComponent(typeof(T)) as T;
+        BoardObject boardObject = newBoardObject.AddComponent(type) as BoardObject;
 
         //orient gameObject
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);
@@ -537,7 +542,7 @@ public class Board : MonoBehaviour
         //find model
         TileSet.Piece piece;
         if (tileSet != null)
-            piece = tileSet.FindPieceFromType(typeof(T));
+            piece = tileSet.FindPieceFromType(oldWallObject.GetType());
         else return null;
 
         if (piece == null)

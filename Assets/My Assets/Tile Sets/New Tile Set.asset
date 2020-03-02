@@ -29,3 +29,6 @@ MonoBehaviour:
   - objectType: WallObjectBlank
     Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0
+  - objectType: BoardObjectBlock
+    Tile: {fileID: 4861287633791788678, guid: 84a9c66f22837234982909f89b7d2c02, type: 3}
+    modelOrientation: 0
