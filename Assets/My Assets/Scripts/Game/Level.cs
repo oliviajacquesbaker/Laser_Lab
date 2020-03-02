@@ -9,9 +9,8 @@ public class Level : MonoBehaviour
     public Board board;
     public Floor floor;
     public BoardObject[] UnplacedObjects;
-    public Transform wallsParent, boardObjectParent;
 
-    public Vector2Int size { get { return board.size; } }
+    public Vector2Int size { get { return board.Size; } }
 
     public Level()
     {
@@ -36,19 +35,22 @@ public class Level : MonoBehaviour
             board.tileSet = tileSet;
             floorObject.name = "Board";
         }
-        if (!wallsParent)
-        {
-            GameObject walls = new GameObject();
-            walls.name = "Walls";
-            walls.transform.SetParent(transform);
-            wallsParent = walls.transform;
-        }
-        if (!boardObjectParent)
-        {
-            GameObject objects = new GameObject();
-            objects.name = "Objects";
-            objects.transform.SetParent(transform);
-            boardObjectParent = objects.transform;
-        }
     }
+
+#if UNITY_EDITOR
+
+    public void Resize(Vector2Int newSize)
+    {
+        board.Resize(newSize);
+        floor.Resize(newSize);
+    }
+
+    public void SetTileset(TileSet tileSet)
+    {
+        this.tileSet = tileSet;
+        board.tileSet = tileSet;
+        floor.tileSet = tileSet;
+    }
+
+#endif
 }

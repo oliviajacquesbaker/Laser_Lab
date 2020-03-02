@@ -26,5 +26,6 @@ MonoBehaviour:
         type: 3}
       modelOrientation: 0
   pieces:
-  - Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
+  - objectType: WallObjectBlank
+    Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0

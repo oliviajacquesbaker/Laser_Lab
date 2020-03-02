@@ -54,7 +54,10 @@ public class LevelEditor : Editor
             EditorGUILayout.PropertyField(tileSet, new GUIContent("Tile Set"));
             serializedObject.ApplyModifiedProperties();
             if (tileSet.objectReferenceValue as TileSet != old)
+            {
+                level.SetTileset(tileSet.objectReferenceValue as TileSet);
                 ReloadBoard();
+            }
         }
 
         {
@@ -79,10 +82,7 @@ public class LevelEditor : Editor
 
     private void ReloadBoard()
     {
-        level.floor.tileSet = level.tileSet;
-        level.board.tileSet = level.tileSet;
-        level.floor.Resize(level.size);
-        level.board.Resize(level.size);
+        level.Resize(level.size);
         level.board.ReloadTiles();
     }
 
@@ -91,9 +91,7 @@ public class LevelEditor : Editor
         if (level.size.Equals(newSize))
             return;
 
-        level.floor.Resize(newSize);
-        level.board.Resize(newSize);
-
+        level.Resize(newSize);
     }
 
     private int findIndex<T> (T[] list, T value)
