@@ -2,23 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public abstract class BoardObject : LaserLabObject
+[System.Serializable][RequireComponent(typeof(Renderer))]
+public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 {
-    public Direction Orientation;
-    public bool CanMove;
-    public bool CanRotate;
+    public Direction Orientation = Direction.UP;
+    public bool CanMove = true;
+    public bool CanRotate = true;
+    public bool Placed = false;
+    public bool RandomizeOrientation = true;
 
-    public BoardObject(Direction orientation, bool canMove, bool canRotate)
+    private new Renderer renderer;
+
+    public abstract Laser[] OnLaserHit(Laser laser);
+
+    private void Start()
     {
-        Orientation = orientation;
-        CanMove = canMove;
-        CanRotate = canRotate;
+        renderer = GetComponent<Renderer>();
+        Refresh();
     }
 
-    public BoardObject(Direction orientation) : this(orientation, true, true) { }
+    public void Refresh()
+    {
+        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
 
-    public BoardObject() : this(Direction.UP, true, true) { }
+        if (Application.isPlaying)
+        {
+            renderer.material.SetColor("_BaseColor", (CanMove || CanRotate) ? Color.white : Color.grey);
+            gameObject.SetActive(Placed);
+        }
+    }
+
+    public void Rotate()
+    {
+        Orientation = (Direction)(((int)Orientation + 1) % 4);
+        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+    }
+
+    public void RotateTo(Direction newOrientation)
+    {
+        Orientation = newOrientation;
+        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+    }
+
+    public void Move(Vector2Int pos)
+    {
+        transform.position = new Vector3(pos.x, 0, pos.y);
+    }
 
     //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3
     public static Direction Reflect(Direction dir, Direction orientation)

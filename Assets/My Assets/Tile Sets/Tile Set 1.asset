@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78843626aff39f7478c5ea021fb9b553, type: 3}
-  m_Name: New Tile Set
+  m_Name: Tile Set 1
   m_EditorClassIdentifier: 
   environment:
     Corner:
@@ -29,6 +29,6 @@ MonoBehaviour:
   - objectType: WallObjectBlank
     Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0
-  - objectType: BoardObjectOneSideMirror
-    Tile: {fileID: 4861287633791788678, guid: 84a9c66f22837234982909f89b7d2c02, type: 3}
+  - objectType: BoardObjectBlock
+    Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0

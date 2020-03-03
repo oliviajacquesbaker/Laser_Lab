@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WallObject : LaserLabObject
+public abstract class WallObject : LaserLabObject, ILaserTarget
 {
-    public WallObject()
-    {
+    public abstract Laser[] OnLaserHit(Laser laser);
 
-    }
 }

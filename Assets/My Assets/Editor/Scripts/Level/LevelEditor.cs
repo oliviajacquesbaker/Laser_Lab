@@ -261,7 +261,7 @@ public class LevelEditor : Editor
         level.board.SetBoardObject(pos, newObj);
     }
 
-    private void DrawProperties(UnityEngine.Object obj)
+    private void DrawProperties(LaserLabObject obj)
     {
         SerializedObject serialObj = new SerializedObject(obj);
         SerializedProperty prop = serialObj.GetIterator();
@@ -273,7 +273,11 @@ public class LevelEditor : Editor
         {
             EditorGUILayout.PropertyField(prop);
         }
-        serialObj.ApplyModifiedProperties();
+        if(serialObj.ApplyModifiedProperties())
+        {
+            if (obj is IRefreshable)
+                (obj as IRefreshable).Refresh();
+        }
     }
 
     private SerializedProperty GetItterator(UnityEngine.Object obj)

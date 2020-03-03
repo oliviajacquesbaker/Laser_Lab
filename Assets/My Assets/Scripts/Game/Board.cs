@@ -215,6 +215,22 @@ public class Board : MonoBehaviour
         }
     }
 
+    public Vector2Int FindObject(LaserLabObject obj)
+    {
+        for (int i = -1; i <= Width; i++)
+        {
+            for (int j = -1; j <= Height; j++)
+            {
+                Vector2Int pos = new Vector2Int(i, j);
+                if (obj == GetLaserLabObject(pos))
+                {
+                    return pos;
+                }
+            }
+        }
+        return new Vector2Int(-1, -1);
+    }
+
 #if UNITY_EDITOR
 
     public void ReloadTiles()
@@ -471,7 +487,7 @@ public class Board : MonoBehaviour
         newWallObject.transform.SetParent(transform);
 
         //configure wallobject
-        WallObject wallObject = (WallObject)newWallObject.AddComponent(type);
+        WallObject wallObject = newWallObject.GetComponent<WallObject>();
 
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
@@ -534,7 +550,7 @@ public class Board : MonoBehaviour
         newBoardObject.transform.SetParent(transform);
 
         //configure boardobject
-        BoardObject boardObject = newBoardObject.AddComponent(type) as BoardObject;
+        BoardObject boardObject = newBoardObject.GetComponent<BoardObject>();
 
         //orient gameObject
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);
@@ -599,7 +615,7 @@ public class Board : MonoBehaviour
     T CopyComponent<T>(T original, GameObject destination) where T : Component
     {
         Type type = original.GetType();
-        Component copy = destination.AddComponent(type);
+        Component copy = destination.GetComponent<T>();
         System.Reflection.FieldInfo[] fields = type.GetFields();
         foreach (System.Reflection.FieldInfo field in fields)
         {
