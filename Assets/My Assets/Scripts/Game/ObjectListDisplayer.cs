@@ -7,24 +7,22 @@ public class ObjectListDisplayer : MonoBehaviour
 {
     public IconSet iconSet;
     public GameObject ObjectButtonPrefab;
-    List<SelectorButton> buttons;
     public GameManager manager;
 
     private void Start()
     {
-        ReloadButtons();
     }
 
     public void ReloadButtons()
     {
-        while (transform.childCount > 0)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            Destroy(transform.GetChild(0).gameObject);
+            Destroy(transform.GetChild(i).gameObject);
         }
 
         for (int i = 0; i < manager.UnplacedObjects.Count; i++)
         {
-            GameObject button = Instantiate(ObjectButtonPrefab);
+            GameObject button = Instantiate(ObjectButtonPrefab, transform);
             SelectorButton selector = button.GetComponent<SelectorButton>();
 
             if (selector == null)
@@ -33,12 +31,10 @@ public class ObjectListDisplayer : MonoBehaviour
                 Destroy(button);
                 break;
             }
-            button.transform.SetParent(transform);
             button.name = "Selector button " + i;
             selector.icon.sprite = iconSet.FindIcon(manager.UnplacedObjects[i].GetType());
             selector.id = i;
             selector.displayer = this;
-            buttons.Add(selector);
         }
     }
 

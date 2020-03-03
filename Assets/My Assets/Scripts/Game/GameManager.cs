@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     Level level;
     LaserLabObject previousHover = null;
     public int selectedObjectIndex = -1;
-    [HideInInspector]
+    //[HideInInspector]
     public List<BoardObject> UnplacedObjects;
     public ObjectListDisplayer displayer;
 
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+        displayer.ReloadButtons();
     }
 
     void Update()
