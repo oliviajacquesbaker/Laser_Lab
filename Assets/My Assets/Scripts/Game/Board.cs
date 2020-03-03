@@ -295,7 +295,7 @@ public class Board : MonoBehaviour
             if (!found)
                 foreach (WallObject wo in Walls)
                 {
-                    if (wo.gameObject == obj)
+                    if (wo && wo.gameObject == obj)
                     {
                         found = true;
                         break;
@@ -489,6 +489,13 @@ public class Board : MonoBehaviour
         //configure wallobject
         WallObject wallObject = newWallObject.GetComponent<WallObject>();
 
+        if (!wallObject)
+        {
+            DestroyImmediate(newWallObject);
+            Debug.LogError("Wall object prefab does not contain a wall object script");
+            return null;
+        }
+
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
         newWallObject.transform.position = new Vector3(pos.x, 0, pos.y);
@@ -551,6 +558,13 @@ public class Board : MonoBehaviour
 
         //configure boardobject
         BoardObject boardObject = newBoardObject.GetComponent<BoardObject>();
+
+        if (!boardObject)
+        {
+            DestroyImmediate(newBoardObject);
+            Debug.LogError("Board object prefab does not contain a board object script");
+            return null;
+        }
 
         //orient gameObject
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);

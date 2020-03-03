@@ -18,6 +18,10 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     private void Start()
     {
         renderer = GetComponent<Renderer>();
+
+        if (RandomizeOrientation)
+            Orientation = (Direction)(Random.value * 4);
+
         Refresh();
     }
 
@@ -47,6 +51,18 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     public void Move(Vector2Int pos)
     {
         transform.position = new Vector3(pos.x, 0, pos.y);
+    }
+
+    public void Place()
+    {
+        Placed = true;
+        Refresh();
+    }
+
+    public void Pickup()
+    {
+        Placed = false;
+        Refresh();
     }
 
     //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3

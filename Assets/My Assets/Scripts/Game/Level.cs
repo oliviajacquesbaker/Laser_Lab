@@ -8,14 +8,8 @@ public class Level : MonoBehaviour
     public TileSet tileSet;
     public Board board;
     public Floor floor;
-    public BoardObject[] UnplacedObjects;
 
     public Vector2Int size { get { return board.Size; } }
-
-    public Level()
-    {
-        UnplacedObjects = new BoardObject[0];
-    }
 
     private void OnEnable()
     {

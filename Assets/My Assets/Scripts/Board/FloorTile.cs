@@ -4,13 +4,4 @@ using UnityEngine;
 
 public class FloorTile : LaserLabObject
 {
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

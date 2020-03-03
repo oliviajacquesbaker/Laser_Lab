@@ -30,5 +30,5 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectBlock
-    Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
+    Tile: {fileID: 5192146748251734285, guid: dd4567a492f5ece47843cb179c97c153, type: 3}
     modelOrientation: 0

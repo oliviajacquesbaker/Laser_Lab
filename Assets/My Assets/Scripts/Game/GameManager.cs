@@ -6,15 +6,51 @@ public class GameManager : MonoBehaviour
 {
     Level level;
     LaserLabObject previousHover = null;
+    int selectedObjectIndex = -1;
+    public List<BoardObject> UnplacedObjects;
 
     void Start()
     {
+        UnplacedObjects = new List<BoardObject>();
         level = FindObjectOfType<Level>();
+        for (int i = 0; i < level.board.Width; i++)
+        {
+            for (int j = 0; j < level.board.Height; j++)
+            {
+                Vector2Int pos = new Vector2Int(i, j);
+                BoardObject current = level.board.GetBoardObject(pos);
+                if (current)
+                {
+                    if (!current.Placed)
+                    {
+                        UnplacedObjects.Add(current);
+                        level.board.SetBoardObject(pos, null);
+                    }
+                }
+            }
+        }
     }
 
     void Update()
     {
         MouseEvents();
+    }
+
+    private void AddToUnplaced(BoardObject obj)
+    {
+        selectedObjectIndex = UnplacedObjects.Count;
+        UnplacedObjects.Add(obj);
+    }
+
+    private void Place(Vector2Int pos)
+    {
+        BoardObject obj = UnplacedObjects[selectedObjectIndex];
+        UnplacedObjects.RemoveAt(selectedObjectIndex);
+        selectedObjectIndex = -1;
+
+        obj.Move(pos);
+        obj.Place();
+        level.board.SetBoardObject(pos, obj);
     }
 
     private void MouseEvents()
@@ -36,14 +72,32 @@ public class GameManager : MonoBehaviour
 
                 if (target is BoardObject)
                 {
-                    BoardObject boardObject = (target as BoardObject);
+                    BoardObject boardObject = target as BoardObject;
+                    Vector2Int pos = boardObject.getPos();
                     if (Input.GetMouseButtonDown(0))
                     {
-                        boardObject.Rotate();
+                        if (boardObject.CanRotate)
+                            boardObject.Rotate();
+
+                        selectedObjectIndex = -1;
                     }
                     else if (Input.GetMouseButtonDown(1))
                     {
-                        Debug.LogWarning("Object removal not implemented");
+                        if (boardObject.CanMove)
+                            boardObject.Pickup();
+                        level.board.SetBoardObject(pos, null);
+                        AddToUnplaced(boardObject);
+                    }
+                } else if (target is FloorTile)
+                {
+                    FloorTile floor = target as FloorTile;
+                    Vector2Int pos = floor.getPos();
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (!level.board.GetBoardObject(pos) && selectedObjectIndex != -1)
+                        {
+                            Place(pos);
+                        }
                     }
                 }
             }
