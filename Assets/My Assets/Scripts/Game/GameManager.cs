@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     Level level;
     LaserLabObject previousHover = null;
-    int selectedObjectIndex = -1;
+    public int selectedObjectIndex = -1;
+    [HideInInspector]
     public List<BoardObject> UnplacedObjects;
+    public ObjectListDisplayer displayer;
 
     void Start()
     {
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         selectedObjectIndex = UnplacedObjects.Count;
         UnplacedObjects.Add(obj);
+        displayer.ReloadButtons();
     }
 
     private void Place(Vector2Int pos)
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
         obj.Move(pos);
         obj.Place();
         level.board.SetBoardObject(pos, obj);
+        displayer.ReloadButtons();
     }
 
     private void MouseEvents()
@@ -98,6 +102,9 @@ public class GameManager : MonoBehaviour
                         {
                             Place(pos);
                         }
+                    } else if (Input.GetMouseButtonDown(1))
+                    {
+                        selectedObjectIndex = -1;
                     }
                 }
             }

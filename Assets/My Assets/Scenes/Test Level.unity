@@ -3896,7 +3896,7 @@ MonoBehaviour:
   Orientation: 0
   CanMove: 1
   CanRotate: 1
-  Placed: 1
+  Placed: 0
   RandomizeOrientation: 1
 --- !u!1 &1402935458
 GameObject:
