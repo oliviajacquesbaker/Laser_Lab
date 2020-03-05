@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class WallObjectReceiver : WallObject, ILaserReceiver
 {
-    private float redReq;
-    private float greenReq;
-    private float blueReq;
+    public float redReq;
+    public float greenReq;
+    public float blueReq;
 
     private bool redMet = false;
     private bool greenMet = false;
     private bool blueMet = false;
+
+    private float redVal;
+    private float greenVal;
+    private float blueVal;
 
     public Requirement reqType;
 
     public WallObjectReceiver()
     {
         redReq = greenReq = blueReq = 1;
+        redVal = greenVal = blueVal = 0;
         reqType = Requirement.EQUAL;
     }
 
@@ -26,10 +31,15 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         greenReq = green;
         blueReq = blue;
         reqType = req;
+        redVal = greenVal = blueVal = 0;
     }
 
     public override Laser[] OnLaserHit(Laser laser)
     {
+        redVal += laser.red;
+        greenVal += laser.green;
+        blueVal += laser.blue;
+
         if(reqType == Requirement.EQUAL)
         {
             CheckEqual(laser);
@@ -60,20 +70,21 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public void ResetLaserCondition()
     {
+        redVal = greenVal = blueVal = 0;
         redMet = greenMet = blueMet = false;
     }
 
     public void CheckEqual(Laser laser)
     {
-        if (laser.red == redReq)
+        if (redVal == redReq)
         {
             redMet = true;
         }
-        if (laser.green == greenReq)
+        if (greenVal == greenReq)
         {
             greenMet = true;
         }
-        if (laser.blue == blueReq)
+        if (blueVal == blueReq)
         {
             blueMet = true;
         }
@@ -81,15 +92,15 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public void CheckUnder(Laser laser)
     {
-        if (laser.red <= redReq)
+        if (redVal <= redReq)
         {
             redMet = true;
         }
-        if (laser.green <= greenReq)
+        if (greenVal <= greenReq)
         {
             greenMet = true;
         }
-        if (laser.blue <= blueReq)
+        if (blueVal <= blueReq)
         {
             blueMet = true;
         }
@@ -97,15 +108,15 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public void CheckOver(Laser laser)
     {
-        if (laser.red >= redReq)
+        if (redVal >= redReq)
         {
             redMet = true;
         }
-        if (laser.green >= greenReq)
+        if (greenVal >= greenReq)
         {
             greenMet = true;
         }
-        if (laser.blue >= blueReq)
+        if (blueVal >= blueReq)
         {
             blueMet = true;
         }

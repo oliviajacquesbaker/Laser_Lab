@@ -7,12 +7,7 @@ public class BoardObjectTile : BoardObject
     public BoardObjectTile()
     {
         Orientation = 0;
-    }
-
-    
-    public BoardObjectTile(int rotation)
-    {
-        Orientation = (Direction)(rotation % 4);
+        CanRotate = false;
     }
 
 
