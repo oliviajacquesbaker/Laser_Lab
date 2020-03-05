@@ -591,6 +591,8 @@ public class Board : MonoBehaviour
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);
         newBoardObject.transform.rotation = Quaternion.Euler(0, (-90 * (int)piece.modelOrientation) + 90 * (int)boardObject.Orientation, 0);
 
+        boardObject.Refresh();
+
         return boardObject;
     }
 
@@ -627,6 +629,8 @@ public class Board : MonoBehaviour
         //orient gameObject
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);
         newBoardObject.transform.rotation = Quaternion.Euler(0, (-90 * (int)piece.modelOrientation) + 90 * (int)boardObject.Orientation, 0);
+
+        boardObject.Refresh();
 
         return boardObject;
     }
@@ -672,7 +676,8 @@ public class Board : MonoBehaviour
         System.Reflection.FieldInfo[] fields = type.GetFields();
         foreach (System.Reflection.FieldInfo field in fields)
         {
-            field.SetValue(copy, field.GetValue(original));
+            if(Attribute.GetCustomAttribute(field, typeof(PrefabDataAttribute)) == null)
+                field.SetValue(copy, field.GetValue(original));
         }
         return copy as T;
     }

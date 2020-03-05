@@ -5,6 +5,8 @@ using UnityEngine;
 [System.Serializable][RequireComponent(typeof(Renderer))]
 public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 {
+    [PrefabData]
+    public HoverIcon HoverIcon;
     public Direction Orientation = Direction.UP;
     public bool CanMove = true;
     public bool CanRotate = true;
@@ -18,6 +20,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     private void Start()
     {
         renderer = GetComponent<Renderer>();
+        HoverIcon.gameObject.SetActive(false);
 
         if (RandomizeOrientation)
             Orientation = (Direction)(Random.value * 4);
@@ -33,12 +36,17 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
         {
             gameObject.SetActive(Placed);
         }
+
+        HoverIcon.CanRotate = CanRotate;
+        HoverIcon.CanMove = CanMove;
+        HoverIcon.Refresh();
     }
 
     public void Rotate()
     {
         Orientation = (Direction)(((int)Orientation + 1) % 4);
         transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+        HoverIcon.Refresh();
     }
 
     public void RotateTo(Direction newOrientation)
@@ -62,6 +70,18 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     {
         Placed = false;
         Refresh();
+    }
+
+    public override void OnHoverEnter()
+    {
+        base.OnHoverEnter();
+        HoverIcon.gameObject.SetActive(true);
+    }
+
+    public override void OnHoverExit()
+    {
+        base.OnHoverExit();
+        HoverIcon.gameObject.SetActive(false);
     }
 
     //Returns the new direction a beam would take if reflected off a mirror at angle '\' when rotation = 0,2 or '/' when rotation = 1,3

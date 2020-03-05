@@ -271,7 +271,11 @@ public class LevelEditor : Editor
         GUI.enabled = true;
         while (prop.NextVisible(true))
         {
+            bool isPrefabData = System.Attribute.GetCustomAttribute(obj.GetType().GetField(prop.name), typeof(PrefabDataAttribute)) != null;
+            if (isPrefabData)
+                GUI.enabled = false;
             EditorGUILayout.PropertyField(prop);
+            GUI.enabled = true;
         }
         if(serialObj.ApplyModifiedProperties())
         {

@@ -99,9 +99,15 @@ public class GameManager : MonoBehaviour
                     else if (Input.GetMouseButtonDown(1))
                     {
                         if (boardObject.CanMove)
+                        {
                             boardObject.Pickup();
-                        level.board.SetBoardObject(pos, null);
-                        AddToUnplaced(boardObject);
+                            level.board.SetBoardObject(pos, null);
+                            AddToUnplaced(boardObject);
+                        }
+                        else
+                        {
+                            selectedObjectIndex = -1;
+                        }
                     }
                 } else if (target is FloorTile)
                 {
@@ -118,6 +124,14 @@ public class GameManager : MonoBehaviour
                             selectedObjectIndex = -1;
                         }
                     } else if (Input.GetMouseButtonDown(1))
+                    {
+                        selectedObjectIndex = -1;
+                    }
+                } else if (target is WallObject)
+                {
+                    WallObject wall = target as WallObject;
+                    Vector2Int pos = wall.getPos();
+                    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
                     {
                         selectedObjectIndex = -1;
                     }

@@ -36,6 +36,7 @@ public class ObjectListDisplayer : MonoBehaviour
             selector.id = i;
             selector.displayer = this;
             selector.SetOrientation(manager.UnplacedObjects[i].Orientation);
+            selector.SetMovability(manager.UnplacedObjects[i].CanMove, manager.UnplacedObjects[i].CanRotate);
         }
     }
 

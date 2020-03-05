@@ -72,14 +72,22 @@
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectPrism.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTile.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTwoWayMirror.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Board\FloorTile.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\LaserLabObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectBlank.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectLaser.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectReceiver.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Floor.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\GameManager.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\HoverIcon.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\IconSet.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\LevelSet.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\ObjectListDisplayer.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\SelectorButton.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\TileSet.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserEmitter.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserReceiver.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
@@ -89,8 +97,10 @@
     <Compile Include="Assets\My Assets\Scripts\Menu\Pause.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\Direction.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\IRefreshable.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\LevelSceneManager.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\PlatformSpecific.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\PrefabDataAttribute.cs" />
     <None Include="Assets\My Assets\Fonts\Tomorrow\OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
