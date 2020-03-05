@@ -11,59 +11,24 @@ public class BoardObjectOneSideMirror : BoardObject
     {
         Orientation = 0;
     }
-    /*
+    
     public BoardObjectOneSideMirror(int rotation)
     {
-        if(rotation>=0 && rotation <=3)
-            Orientation = rotation;
+        Orientation = (Direction)(rotation % 4);
     }
 
-    private Laser.Direction getNewDirection(Laser laser)
+    private Direction getNewDirection(Laser laser)
     {
-        Laser.Direction dir = laser.direction;
-        if (Orientation == 0)
-        {
-            if (dir == Laser.Direction.DOWN)
-                return Laser.Direction.RIGHT;
-            else if (dir == Laser.Direction.LEFT)
-                return Laser.Direction.UP;
-        }
-        else if (Orientation == 1)
-        {
-            if (dir == Laser.Direction.DOWN)
-                return Laser.Direction.LEFT;
-            else if (dir == Laser.Direction.RIGHT)
-                return Laser.Direction.UP;
-        }
-        else if (Orientation == 2)
-        {
-            if (dir == Laser.Direction.UP)
-                return Laser.Direction.LEFT;
-            else if (dir == Laser.Direction.RIGHT)
-                return Laser.Direction.DOWN;
-        }
-        else
-        {
-            if (dir == Laser.Direction.UP)
-                return Laser.Direction.RIGHT;
-            else if (dir == Laser.Direction.LEFT)
-                return Laser.Direction.DOWN;
-        }
-
-        return Laser.Direction.UP;
+        return Reflect(laser.direction);
     }
 
     public override Laser[] OnLaserHit(Laser laser)
     {
-        //assumes that the facing direction is the side with the mirror
+        int face = getFace(laser.direction, Orientation);
 
-        Vector3 laserOrigin = new Vector3(laser.origin.x, laser.origin.y);
-        Vector3 mirrorLaserDir = transform.position - laserOrigin;
-        float dotProduct = Vector3.Dot(mirrorLaserDir, transform.forward);
-
-        if (dotProduct > 0)
+        if (face == 0 || face == 1)
         {
-            Laser.Direction newDirection = getNewDirection(laser);
+            Direction newDirection = getNewDirection(laser);
             Laser newLaser = new Laser(newDirection, laser.red, laser.green, laser.blue);
             Laser[] returning = new Laser[1];
             returning[0] = newLaser;
@@ -75,11 +40,6 @@ public class BoardObjectOneSideMirror : BoardObject
         }
 
     }
-    */
-
-    public override Laser[] OnLaserHit(Laser laser)
-    {
-        return null;
-    }
+    
 }
 

@@ -8,51 +8,31 @@ public class BoardObjectPrism : BoardObject
     {
         Orientation = 0;
     }
-    /*
+    
     public BoardObjectPrism(int rotation)
     {
-        if (rotation >= 0 && rotation <= 3)
-            Orientation = rotation;
+        Orientation = (Direction)(rotation % 4);
     }
 
-    private Laser.Direction getNewDirection(Laser laser, int color)
+    private Direction getNewDirection(Laser laser, int color)
     {
-        Laser.Direction[] directions = new Laser.Direction[4];
-        int index = 0;
-        int original = 0;
-        foreach(string type in System.Enum.GetNames(typeof(Laser.Direction)))
+        if ((color == 0 && ((int)Orientation % 2 == 0)) || (color == 1 && ((int)Orientation % 2 == 1)))
         {
-            Laser.Direction dir = (Laser.Direction)System.Enum.Parse(typeof(Laser.Direction), type);
-            if (dir == laser.direction)
-                original = index;
-            directions[index] = dir;
-            index++;
-        }
-
-        if((color == 0 && (Orientation == 0 || Orientation == 2)) || (color == 1 && (Orientation == 1 || Orientation == 3)))
-        {
-            if (index == 0)
-                index = 3;
-            else
-                index--;
-            return directions[index];
+            Direction newdir = (Direction)(((int)laser.direction - 1) % 4);
+            return newdir;
         }
         else
         {
-            if (index == 3)
-                index = 0;
-            else
-                index++;
-            return directions[index];
+            Direction newdir = (Direction)(((int)laser.direction + 1) % 4);
+            return newdir;
         }
-
     }
 
     public override Laser[] OnLaserHit(Laser laser)
     {
 
-        Laser.Direction redDirection = getNewDirection(laser, 0);
-        Laser.Direction blueDirection = getNewDirection(laser, 1);
+        Direction redDirection = getNewDirection(laser, 0);
+        Direction blueDirection = getNewDirection(laser, 1);
         Laser red = new Laser(redDirection, laser.red, 0, 0);
         Laser green = new Laser(laser.direction, 0, laser.green, 0);
         Laser blue = new Laser(blueDirection, 0, 0, laser.blue);
@@ -64,10 +44,5 @@ public class BoardObjectPrism : BoardObject
         return returning;
 
     }
-    */
-
-    public override Laser[] OnLaserHit(Laser laser)
-    {
-        return null;
-    }
+    
 }

@@ -70,7 +70,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
         switch ((int)orientation % 2)
         {
             case 0:
-                switch ((int)dir / 2)
+                switch ((int)dir % 2)
                 {
                     case 0:
                         return dir + 3 % 4;
@@ -80,7 +80,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
                         return dir;
                 }
             case 1:
-                switch ((int)dir / 2)
+                switch ((int)dir % 2)
                 {
                     case 0:
                         return dir + 1 % 4;
