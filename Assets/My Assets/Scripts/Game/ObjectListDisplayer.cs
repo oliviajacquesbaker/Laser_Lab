@@ -35,6 +35,7 @@ public class ObjectListDisplayer : MonoBehaviour
             selector.icon.sprite = iconSet.FindIcon(manager.UnplacedObjects[i].GetType());
             selector.id = i;
             selector.displayer = this;
+            selector.SetOrientation(manager.UnplacedObjects[i].Orientation);
         }
     }
 

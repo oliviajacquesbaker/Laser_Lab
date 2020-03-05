@@ -16,7 +16,7 @@ MonoBehaviour:
     Corner:
       Tile: {fileID: 3381460199996579860, guid: 1e3eb7ab41aa1184fba9640a131f3275,
         type: 3}
-      modelOrientation: 3
+      modelOrientation: 0
     Floor:
       Tile: {fileID: 3014878516828843915, guid: 08e5b7d09a737f447b2654663e445b4e,
         type: 3}
@@ -29,6 +29,33 @@ MonoBehaviour:
   - objectType: WallObjectBlank
     Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0
+  - objectType: WallObjectLaser
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: WallObjectReceiver
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: BoardObjectOneSideMirror
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: BoardObjectTwoSideMirror
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: BoardObjectOneWayMirror
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: BoardObjectTwoWayMirror
+    Tile: {fileID: 0}
+    modelOrientation: 0
   - objectType: BoardObjectBlock
-    Tile: {fileID: 5192146748251734285, guid: dd4567a492f5ece47843cb179c97c153, type: 3}
+    Tile: {fileID: 3641432526562211745, guid: a059e326e69c3e04c9a7f0a8e0270619, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectTile
+    Tile: {fileID: 14320823589140244, guid: 837053c91c03bf547ad357df14cae5b1, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectPrism
+    Tile: {fileID: 0}
+    modelOrientation: 0
+  - objectType: BoardObjectDiffractionGrid
+    Tile: {fileID: 0}
     modelOrientation: 0

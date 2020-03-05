@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         selectedObjectIndex = UnplacedObjects.Count;
         UnplacedObjects.Add(obj);
         displayer.ReloadButtons();
+        CalculateLaserPaths();
     }
 
     private void Place(Vector2Int pos)
@@ -56,6 +57,12 @@ public class GameManager : MonoBehaviour
         obj.Place();
         level.board.SetBoardObject(pos, obj);
         displayer.ReloadButtons();
+        CalculateLaserPaths();
+    }
+
+    private void CalculateLaserPaths()
+    {
+
     }
 
     private void MouseEvents()
@@ -82,7 +89,10 @@ public class GameManager : MonoBehaviour
                     if (Input.GetMouseButtonDown(0))
                     {
                         if (boardObject.CanRotate)
+                        {
                             boardObject.Rotate();
+                            CalculateLaserPaths();
+                        }
 
                         selectedObjectIndex = -1;
                     }
@@ -116,6 +126,9 @@ public class GameManager : MonoBehaviour
                     previousHover.OnHoverExit();
                     previousHover = null;
                 }
+
+                if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                    selectedObjectIndex = -1;
             }
         }
         else
@@ -125,6 +138,9 @@ public class GameManager : MonoBehaviour
                 previousHover.OnHoverExit();
                 previousHover = null;
             }
+
+            if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                selectedObjectIndex = -1;
         }
     }
 }

@@ -28,12 +28,6 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     public void Refresh()
     {
         transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
-
-        if (Application.isPlaying)
-        {
-            renderer.material.SetColor("_BaseColor", (CanMove || CanRotate) ? Color.white : Color.grey);
-            gameObject.SetActive(Placed);
-        }
     }
 
     public void Rotate()

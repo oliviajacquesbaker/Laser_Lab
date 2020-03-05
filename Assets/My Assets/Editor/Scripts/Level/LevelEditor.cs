@@ -344,7 +344,7 @@ public class LevelEditor : Editor
 
         string[] iconPaths;
         {
-            string[] guids = AssetDatabase.FindAssets("Icon");
+            string[] guids = AssetDatabase.FindAssets(" Icon");
             iconPaths = new string[guids.Length];
             for (int i = 0; i < guids.Length; i++) {
                 iconPaths[i] = AssetDatabase.GUIDToAssetPath(guids[i]);
@@ -353,7 +353,7 @@ public class LevelEditor : Editor
 
         for (int i = 0; i < wallObjectTypes.Length; i++)
         {
-            wallObjectTypeNames[i] = wallObjectTypes[i].Name.Remove(0,10);
+            wallObjectTypeNames[i] = wallObjectTypes[i].Name;
             for (int j = 0; j < iconPaths.Length; j++)
             {
                 if (iconPaths[j].Contains(wallObjectTypeNames[i]))
@@ -361,10 +361,12 @@ public class LevelEditor : Editor
                     wallObjectIcons[i] = AssetDatabase.LoadAssetAtPath<Sprite>(iconPaths[j]).texture;
                 }
             }
+            wallObjectTypeNames[i] = wallObjectTypeNames[i].Remove(0, 10);
         }
+
         for (int i = 1; i < boardObjectTypes.Length; i++)
         {
-            boardObjectTypeNames[i] = boardObjectTypes[i].Name.Remove(0, 11);
+            boardObjectTypeNames[i] = boardObjectTypes[i].Name;
             for (int j = 0; j < iconPaths.Length; j++)
             {
                 if (iconPaths[j].Contains(boardObjectTypeNames[i]))
@@ -372,6 +374,7 @@ public class LevelEditor : Editor
                     boardObjectIcons[i] = AssetDatabase.LoadAssetAtPath<Texture>(iconPaths[j]);
                 }
             }
+            boardObjectTypeNames[i] = boardObjectTypeNames[i].Remove(0, 11);
         }
     }
 

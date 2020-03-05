@@ -496,6 +496,12 @@ public class Board : MonoBehaviour
             return null;
         }
 
+        if (piece.Tile == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + type.ToString() + '"');
+            return null;
+        }
+
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
         newWallObject.transform.position = new Vector3(pos.x, 0, pos.y);
@@ -513,7 +519,16 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + typeof(T).ToString() + '"');
             return null;
+        }
+
+        if (piece.Tile == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + typeof(T).ToString() + '"');
+            return null;
+        }
 
         //instantiate model
         GameObject newWallObject = Instantiate(piece.Tile);
@@ -544,6 +559,12 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + type.ToString() + '"');
+            return null;
+        }
+
+        if (piece.Tile == null)
         {
             Debug.LogError("Tileset does not contain type \"" + type.ToString() + '"');
             return null;
@@ -582,7 +603,16 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + typeof(T).ToString() + '"');
             return null;
+        }
+
+        if (piece.Tile == null)
+        {
+            Debug.LogError("Tileset does not contain type \"" + typeof(T).ToString() + '"');
+            return null;
+        }
 
         //instantiate model
         GameObject newBoardObject = Instantiate(piece.Tile);
@@ -610,7 +640,16 @@ public class Board : MonoBehaviour
         else return null;
 
         if (piece == null)
+        {
+            Debug.LogError("Tileset does not contain a corner object");
             return null;
+        }
+
+        if (piece.Tile == null)
+        {
+            Debug.LogError("Tileset does not contain a corner object");
+            return null;
+        }
 
         //instantiate model
         GameObject newWallObject = Instantiate(piece.Tile);

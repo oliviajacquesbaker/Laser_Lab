@@ -18,6 +18,22 @@ public class SelectorButton : MonoBehaviour
         button.onClick.AddListener(new UnityAction(onClick));
     }
 
+    private void Update()
+    {
+        if (id == displayer.manager.selectedObjectIndex)
+        {
+            button.interactable = false;
+        } else
+        {
+            button.interactable = true;
+        }
+    }
+
+    public void SetOrientation(Direction orientation)
+    {
+        icon.transform.rotation = Quaternion.Euler(0, 0, 90 * (int)orientation);
+    }
+
     private void onClick()
     {
         displayer.OnClickButton(id);
