@@ -113,6 +113,10 @@ public class GameManager : MonoBehaviour
                         {
                             Place(pos);
                         }
+                        else
+                        {
+                            selectedObjectIndex = -1;
+                        }
                     } else if (Input.GetMouseButtonDown(1))
                     {
                         selectedObjectIndex = -1;

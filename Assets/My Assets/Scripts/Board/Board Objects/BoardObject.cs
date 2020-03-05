@@ -28,6 +28,11 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     public void Refresh()
     {
         transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+
+        if (Application.isPlaying)
+        {
+            gameObject.SetActive(Placed);
+        }
     }
 
     public void Rotate()
