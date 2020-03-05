@@ -344,7 +344,7 @@ public class LevelEditor : Editor
 
         string[] iconPaths;
         {
-            string[] guids = AssetDatabase.FindAssets("EditorIcon");
+            string[] guids = AssetDatabase.FindAssets("Icon");
             iconPaths = new string[guids.Length];
             for (int i = 0; i < guids.Length; i++) {
                 iconPaths[i] = AssetDatabase.GUIDToAssetPath(guids[i]);
@@ -358,7 +358,7 @@ public class LevelEditor : Editor
             {
                 if (iconPaths[j].Contains(wallObjectTypeNames[i]))
                 {
-                    wallObjectIcons[i] = AssetDatabase.LoadAssetAtPath<Texture>(iconPaths[j]);
+                    wallObjectIcons[i] = AssetDatabase.LoadAssetAtPath<Sprite>(iconPaths[j]).texture;
                 }
             }
         }
