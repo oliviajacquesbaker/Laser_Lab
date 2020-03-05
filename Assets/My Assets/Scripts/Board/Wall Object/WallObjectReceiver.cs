@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WallObjectReceiver : WallObject, ILaserReceiver
 {
-    private float redReq;
-    private float greenReq;
-    private float blueReq;
+    public float redReq;
+    public float greenReq;
+    public float blueReq;
 
     private bool redMet = false;
     private bool greenMet = false;
