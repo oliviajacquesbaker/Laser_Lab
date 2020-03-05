@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
+    private static Pause m_current;
+    public static Pause Current { get { if (m_current) return m_current; else return null; } }
+
     private bool m_isPaused = false;
 
     public bool paused
@@ -20,6 +23,11 @@ public class Pause : MonoBehaviour
     }
 
     public GameObject pauseMenu;
+
+    private void Start()
+    {
+        m_current = this;
+    }
 
     private void Update()
     {

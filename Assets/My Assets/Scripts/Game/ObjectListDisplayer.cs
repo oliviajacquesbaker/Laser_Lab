@@ -42,6 +42,6 @@ public class ObjectListDisplayer : MonoBehaviour
 
     public void OnClickButton(int id)
     {
-        manager.selectedObjectIndex = id;
+        manager.SelectObject(id);
     }
 }

@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class LevelSet : ScriptableObject
 {
     public Level[] levels;
+    public int count { get { return levels.Length; } }
 
     [System.Serializable]
     public class Level
     {
         public string name;
         public Difficulty difficulty;
-        public Scene scene;
+        public int sceneNumber = 4;
     }
 
     public enum Difficulty

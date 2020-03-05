@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HoverIcon: {fileID: 3496472714067743382}
+  previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
   CanMove: 0
   CanRotate: 0

@@ -8,6 +8,8 @@ using UnityEditor;
 
 public class MenuFunctions : MonoBehaviour
 {
+    public LevelSet levelSet;
+
     public void Quit()
     {
         Application.Quit();
@@ -18,7 +20,24 @@ public class MenuFunctions : MonoBehaviour
 
     public void StartGame()
     {
-        LevelSceneManager.LoadLevel(null);
+        for (int i = 0; i < levelSet.count - 1; i++) {
+            if (PlayerPrefs.HasKey("level complete " + i))
+            {
+                if (PlayerPrefs.GetInt("level complete " + i) == 0)
+                {
+                    LevelSceneManager.LoadLevel(levelSet.levels[i]);
+                    return;
+                }
+            }
+            else
+            {
+                PlayerPrefs.SetInt("level complete " + i, 0);
+                LevelSceneManager.LoadLevel(levelSet.levels[i]);
+                return;
+            }
+        }
+
+        LevelSceneManager.LoadLevel(levelSet.levels[levelSet.count - 1]);
     }
 
     public void LoadMenu()

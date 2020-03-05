@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 
 public static class LevelSceneManager
 {
-    public static Level CurrentLevel { get; private set; }
+    public static LevelSet.Level CurrentLevel { get; private set; }
 
-    public static void LoadLevel(Level level)
+    public static void LoadLevel(LevelSet.Level level)
     {
         CurrentLevel = level;
-        SceneManager.LoadScene(3, LoadSceneMode.Single);
+        SceneManager.LoadScene(level.sceneNumber, LoadSceneMode.Single);
+        SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
 
     public static void LoadMenu()

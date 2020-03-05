@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable][RequireComponent(typeof(Renderer))]
+[System.Serializable]
+[RequireComponent(typeof(Renderer))]
+[RequireComponent(typeof(Collider))]
 public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 {
     [PrefabData]
     public HoverIcon HoverIcon;
+    [PrefabData]
+    public Material previewMaterial;
     public Direction Orientation = Direction.UP;
     public bool CanMove = true;
     public bool CanRotate = true;
@@ -14,18 +18,40 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     public bool RandomizeOrientation = true;
 
     private new Renderer renderer;
+    private new Collider collider;
+    private bool m_IsPreviewing;
+    private Material originalMaterial;
 
     public abstract Laser[] OnLaserHit(Laser laser);
 
     private void Start()
     {
         renderer = GetComponent<Renderer>();
+        collider = GetComponent<Collider>();
+        originalMaterial = renderer.material;
         HoverIcon.gameObject.SetActive(false);
 
         if (RandomizeOrientation)
             Orientation = (Direction)(Random.value * 4);
 
         Refresh();
+    }
+
+    public void SetPreview(bool enable)
+    {
+        if (m_IsPreviewing && !enable)
+        {
+            m_IsPreviewing = false;
+            collider.enabled = true;
+            renderer.material = originalMaterial;
+            gameObject.SetActive(false);
+        } else if (!m_IsPreviewing && enable)
+        {
+            m_IsPreviewing = true;
+            collider.enabled = false;
+            renderer.material = previewMaterial;
+            gameObject.SetActive(true);
+        }
     }
 
     public void Refresh()
@@ -62,6 +88,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 
     public void Place()
     {
+        SetPreview(false);
         Placed = true;
         Refresh();
     }

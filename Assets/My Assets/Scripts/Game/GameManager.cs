@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     //[HideInInspector]
     public List<BoardObject> UnplacedObjects;
     public ObjectListDisplayer displayer;
+    public BoardObject SelectedObject { get { return UnplacedObjects[selectedObjectIndex]; } }
 
     void Start()
     {
@@ -36,12 +37,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        MouseEvents();
+        if (Pause.Current && !Pause.Current.paused)
+            MouseEvents();
     }
 
     private void AddToUnplaced(BoardObject obj)
     {
-        selectedObjectIndex = UnplacedObjects.Count;
+        SelectObject(UnplacedObjects.Count);
         UnplacedObjects.Add(obj);
         displayer.ReloadButtons();
         CalculateLaserPaths();
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         BoardObject obj = UnplacedObjects[selectedObjectIndex];
         UnplacedObjects.RemoveAt(selectedObjectIndex);
-        selectedObjectIndex = -1;
+        SelectObject(-1);
 
         obj.Move(pos);
         obj.Place();
@@ -94,7 +96,7 @@ public class GameManager : MonoBehaviour
                             CalculateLaserPaths();
                         }
 
-                        selectedObjectIndex = -1;
+                        SelectObject(-1);
                     }
                     else if (Input.GetMouseButtonDown(1))
                     {
@@ -105,9 +107,12 @@ public class GameManager : MonoBehaviour
                             AddToUnplaced(boardObject);
                         }
                         else
-                        {
-                            selectedObjectIndex = -1;
-                        }
+                            SelectObject(-1);
+                    }
+
+                    if (selectedObjectIndex > -1)
+                    {
+                        SelectedObject.SetPreview(false);
                     }
                 } else if (target is FloorTile)
                 {
@@ -120,20 +125,31 @@ public class GameManager : MonoBehaviour
                             Place(pos);
                         }
                         else
-                        {
-                            selectedObjectIndex = -1;
-                        }
+                            SelectObject(-1);
                     } else if (Input.GetMouseButtonDown(1))
+                        SelectObject(-1);
+
+                    if (selectedObjectIndex > -1)
                     {
-                        selectedObjectIndex = -1;
+                        if (level.board.GetBoardObject(pos))
+                            SelectedObject.SetPreview(false);
+                        else
+                        {
+                            SelectedObject.SetPreview(true);
+                            SelectedObject.Move(pos);
+                        }
                     }
                 } else if (target is WallObject)
                 {
                     WallObject wall = target as WallObject;
                     Vector2Int pos = wall.getPos();
+
                     if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                        SelectObject(-1);
+
+                    if (selectedObjectIndex > -1)
                     {
-                        selectedObjectIndex = -1;
+                        SelectedObject.SetPreview(false);
                     }
                 }
             }
@@ -146,7 +162,12 @@ public class GameManager : MonoBehaviour
                 }
 
                 if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-                    selectedObjectIndex = -1;
+                    SelectObject(-1);
+
+                if (selectedObjectIndex > -1)
+                {
+                    SelectedObject.SetPreview(false);
+                }
             }
         }
         else
@@ -158,7 +179,17 @@ public class GameManager : MonoBehaviour
             }
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
-                selectedObjectIndex = -1;
+                SelectObject(-1);
         }
+    }
+
+    public void SelectObject(int index)
+    {
+        if (selectedObjectIndex < UnplacedObjects.Count && selectedObjectIndex > -1)
+        {
+            UnplacedObjects[selectedObjectIndex].SetPreview(false);
+        }
+
+        selectedObjectIndex = index;
     }
 }
