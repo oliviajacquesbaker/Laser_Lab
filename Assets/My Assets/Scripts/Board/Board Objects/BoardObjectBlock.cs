@@ -7,11 +7,7 @@ public class BoardObjectBlock : BoardObject
     public BoardObjectBlock()
     {
         Orientation = Direction.UP;
-    }
-
-    public BoardObjectBlock(Direction orientation)
-    {
-        Orientation = orientation;
+        CanRotate = false;
     }
 
    
