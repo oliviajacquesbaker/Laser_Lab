@@ -44,7 +44,7 @@ public class SelectorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void SetOrientation(Direction orientation)
     {
-        icon.transform.rotation = Quaternion.Euler(0, 0, 90 * (int)orientation);
+        icon.transform.rotation = Quaternion.Euler(0, 0, -90 * (int)orientation);
     }
 
     public void SetMovability(bool canMove, bool canRotate)
