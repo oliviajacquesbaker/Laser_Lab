@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     public List<BoardObject> UnplacedObjects;
     public ObjectListDisplayer displayer;
     public BoardObject SelectedObject { get { return UnplacedObjects[selectedObjectIndex]; } }
+    private List<VisualLaser> visualLasers;
 
     void Start()
     {
+        visualLasers = new List<VisualLaser>();
         UnplacedObjects = new List<BoardObject>();
         level = FindObjectOfType<Level>();
         for (int i = 0; i < level.board.Width; i++)
@@ -118,7 +120,20 @@ public class GameManager : MonoBehaviour
         if (success)
             Debug.Log("Win");
 
-        //TODO Calculate visual lasers
+        for (int i = 0; i < visualLasers.Count; i++)
+        {
+            Destroy(visualLasers[i].gameObject);
+        }
+
+        visualLasers = new List<VisualLaser>();
+
+        for (int i = 0; i < allLasers.Count; i++)
+        {
+            GameObject laserObject = Instantiate(visualLaserPrefab, transform);
+            VisualLaser visualLaser = laserObject.GetComponent<VisualLaser>();
+            visualLaser.SetProperties(allLasers[i]);
+            visualLasers.Add(visualLaser);
+        }
     }
 
     private void RecursiveLaserPath(ref List<Laser> lasers, Laser current, int index, int max)
@@ -138,6 +153,7 @@ public class GameManager : MonoBehaviour
             LaserLabObject nextObject = level.board.GetLaserLabObject(origin + (direction * distance));
             if (nextObject && nextObject is ILaserTarget)
             {
+                current.length = distance;
                 ILaserTarget nextTarget = nextObject as ILaserTarget;
                 Laser[] nextLasers = nextTarget.OnLaserHit(current);
 

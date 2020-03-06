@@ -6,18 +6,11 @@ using UnityEngine;
 public class VisualLaser : MonoBehaviour
 {
     private Laser laser;
-    private int length;
     private LineRenderer lineRenderer;
 
-    void Start()
-    {
-        lineRenderer = GetComponent<LineRenderer>();
-    }
-
-    public void SetProperties(Laser laser, int length)
+    public void SetProperties(Laser laser)
     {
         this.laser = laser;
-        this.length = length;
         ReloadRenderer();
     }
 
@@ -26,10 +19,13 @@ public class VisualLaser : MonoBehaviour
         Vector3 origin = new Vector3(laser.origin.x, 0.5f, laser.origin.y);
         Vector3 end = new Vector3(origin.x, 0.5f, origin.z);
 
-        end = end + laser.Get3DDirectionVector() * length;
+        end = end + laser.Get3DDirectionVector() * laser.length;
+
+        if (!lineRenderer)
+            lineRenderer = GetComponent<LineRenderer>();
 
         lineRenderer.SetPositions(new Vector3[] { origin, end });
-        Vector3 color = new Vector3(laser.red, laser.green, laser.blue);
+        Vector3 color = new Vector3(laser.red * 2, laser.green * 2, laser.blue * 2);
         lineRenderer.material.SetColor("_EmissiveColor", new Color(color.x, color.y, color.z));
 
     }

@@ -161,7 +161,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
      */
     public static int getFace(Direction dir, Direction orientation)
     {
-        return (((int)dir + 6) % 4) - (int)orientation;
+        return ((int)dir + 6 - (int)orientation) % 4;
     }
 
     public int getFace(Direction dir)

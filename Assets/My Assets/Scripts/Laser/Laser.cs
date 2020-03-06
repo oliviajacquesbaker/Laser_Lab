@@ -8,6 +8,7 @@ public class Laser
     public Vector2Int origin;
     public Direction direction;
     public float red, green, blue;
+    public int length;
 
     public Laser(Vector2Int origin, Direction direction, float red, float green, float blue)
     {
