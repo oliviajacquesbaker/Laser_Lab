@@ -237,13 +237,13 @@ public class Board : MonoBehaviour
 
         for (int i = 0; i < Walls.Length; i++)
         {
-            if (emitters is ILaserEmitter)
+            if (Walls[i] is ILaserEmitter)
                 emitters.Add(Walls[i] as ILaserEmitter);
         }
 
         for (int i = 0; i < Tiles.Length; i++)
         {
-            if (emitters is ILaserEmitter)
+            if (Tiles[i] is ILaserEmitter)
                 emitters.Add(Tiles[i] as ILaserEmitter);
         }
 
@@ -256,13 +256,13 @@ public class Board : MonoBehaviour
 
         for (int i = 0; i < Walls.Length; i++)
         {
-            if (emitters is ILaserReceiver)
+            if (Walls[i] is ILaserReceiver)
                 emitters.Add(Walls[i] as ILaserReceiver);
         }
 
         for (int i = 0; i < Tiles.Length; i++)
         {
-            if (emitters is ILaserReceiver)
+            if (Tiles[i] is ILaserReceiver)
                 emitters.Add(Tiles[i] as ILaserReceiver);
         }
 

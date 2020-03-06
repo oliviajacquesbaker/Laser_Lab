@@ -30,7 +30,7 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
     modelOrientation: 0
   - objectType: WallObjectLaser
-    Tile: {fileID: 0}
+    Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
   - objectType: WallObjectReceiver
     Tile: {fileID: 0}

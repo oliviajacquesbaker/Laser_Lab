@@ -127,9 +127,9 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
                 switch ((int)dir % 2)
                 {
                     case 0:
-                        return dir + 3 % 4;
+                        return (Direction)(((int)dir + 3) % 4);
                     case 1:
-                        return dir + 1 % 4;
+                        return (Direction)(((int)dir + 1) % 4);
                     default:
                         return dir;
                 }
@@ -137,9 +137,9 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
                 switch ((int)dir % 2)
                 {
                     case 0:
-                        return dir + 1 % 4;
+                        return (Direction)(((int)dir + 1) % 4);
                     case 1:
-                        return dir + 3 % 4;
+                        return (Direction)(((int)dir + 3) % 4);
                     default:
                         return dir;
                 }

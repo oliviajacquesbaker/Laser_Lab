@@ -85,6 +85,16 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < emitters.Length; i++)
         {
             Laser[] newLasers = emitters[i].OnLaserEmit();
+            if (emitters[i] is WallObject)
+            {
+                newLasers[0].direction = (emitters[i] as WallObject).GetDirection(level.board);
+            }
+
+            for (int j = 0; j < newLasers.Length; j++)
+            {
+                newLasers[j].origin = emitters[i].GetPosition();
+            }
+
             startingLasers.AddRange(newLasers);
         }
 
@@ -139,6 +149,8 @@ public class GameManager : MonoBehaviour
 
                 return;
             }
+
+            distance++;
         }
     }
 

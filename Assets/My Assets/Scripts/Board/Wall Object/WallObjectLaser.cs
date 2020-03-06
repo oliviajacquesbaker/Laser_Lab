@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WallObjectLaser : WallObject, ILaserEmitter
 {
-    private float redOut;
-    private float greenOut;
-    private float blueOut;
+    public float redOut;
+    public float greenOut;
+    public float blueOut;
 
     WallObjectLaser()
     {

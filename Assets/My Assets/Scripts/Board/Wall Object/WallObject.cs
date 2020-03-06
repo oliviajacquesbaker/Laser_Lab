@@ -10,4 +10,20 @@ public abstract class WallObject : LaserLabObject, ILaserTarget
     {
         return new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
     }
+
+    public Direction GetDirection(Board board)
+    {
+        Vector2Int pos = GetPosition();
+
+        if (pos.x == -1)
+            return Direction.RIGHT;
+        if (pos.y == -1)
+            return Direction.UP;
+        if (pos.x == board.Width)
+            return Direction.LEFT;
+        if (pos.y == board.Height)
+            return Direction.RIGHT;
+
+        return Direction.UP;
+    }
 }
