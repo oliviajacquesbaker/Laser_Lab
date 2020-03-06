@@ -36,10 +36,10 @@ MonoBehaviour:
     Tile: {fileID: 0}
     modelOrientation: 0
   - objectType: BoardObjectOneSideMirror
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: 91185bb6a396b6d418ab468cfddba835, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectTwoSideMirror
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: 7099088ff2292e644a020964d40dc922, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectOneWayMirror
     Tile: {fileID: 0}
