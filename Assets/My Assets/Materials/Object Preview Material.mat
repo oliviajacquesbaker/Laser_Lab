@@ -12,7 +12,7 @@ Material:
     type: 3}
   m_ShaderKeywords: _BLENDMODE_ALPHA _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3000
   stringTagMap:
@@ -112,9 +112,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_81E8DDDF: 0.75
+    - Vector1_81E8DDDF: 0.36
     - Vector1_BF0CCD8E: 2
-    - Vector1_FD2F530: 3
+    - Vector1_FD2F530: 2
     - _AORemapMax: 1
     - _AORemapMin: 0
     - _ATDistance: 1
@@ -237,8 +237,8 @@ Material:
     - _ZTestTransparent: 4
     - _ZWrite: 1
     m_Colors:
-    - Color_53821194: {r: 0.05188679, g: 1, b: 0.9351094, a: 0}
-    - Color_5C21395D: {r: 0.46698105, g: 1, b: 0.9683936, a: 0}
+    - Color_53821194: {r: 0.051886767, g: 1, b: 0.9351094, a: 0.6313726}
+    - Color_5C21395D: {r: 0.46698093, g: 1, b: 0.9683936, a: 0.09411765}
     - _BaseColor: {r: 0.28773582, g: 1, b: 1, a: 0.34901962}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 0.2877358, g: 1, b: 1, a: 0.34901962}

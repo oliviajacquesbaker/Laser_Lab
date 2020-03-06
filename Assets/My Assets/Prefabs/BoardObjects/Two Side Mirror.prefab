@@ -107,10 +107,10 @@ GameObject:
   - component: {fileID: 7720033824205274035}
   - component: {fileID: 6913828493665709476}
   - component: {fileID: 1541876566748909678}
-  - component: {fileID: 3641432526562211744}
   - component: {fileID: 1118710530838263196}
+  - component: {fileID: 1025097329418615228}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Two Side Mirror
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,7 +138,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3641432526562211745}
-  m_Mesh: {fileID: 1846653201744175015, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+  m_Mesh: {fileID: 2703434170382107234, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
 --- !u!23 &1541876566748909678
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -178,25 +178,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3641432526562211744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3641432526562211745}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eff73c1ad9669a4b963012b1e063904, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HoverIcon: {fileID: 3496472714067743382}
-  previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
-  Orientation: 0
-  CanMove: 0
-  CanRotate: 0
-  Placed: 1
-  RandomizeOrientation: 0
 --- !u!64 &1118710530838263196
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -210,4 +191,23 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1846653201744175015, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+  m_Mesh: {fileID: 2703434170382107234, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+--- !u!114 &1025097329418615228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3641432526562211745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b28f3aee4aa42419c0a9a8f92861fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoverIcon: {fileID: 3496472714067743382}
+  previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
+  Orientation: 0
+  CanMove: 1
+  CanRotate: 1
+  Placed: 0
+  RandomizeOrientation: 1

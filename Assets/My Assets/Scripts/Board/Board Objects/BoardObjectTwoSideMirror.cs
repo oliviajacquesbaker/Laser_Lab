@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoardObjectDoubleSideMirror : BoardObject
+public class BoardObjectTwoSideMirror : BoardObject
 {
-    public BoardObjectDoubleSideMirror()
+    public BoardObjectTwoSideMirror()
     {
         Orientation = 0;
     }
     
-    public BoardObjectDoubleSideMirror(int rotation)
+    public BoardObjectTwoSideMirror(int rotation)
     {
         Orientation = (Direction)(rotation % 4);
     }
