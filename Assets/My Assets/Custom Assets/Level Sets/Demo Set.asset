@@ -15,25 +15,19 @@ MonoBehaviour:
   levels:
   - name: 
     difficulty: 0
-    scene:
-      m_Handle: 4
+    sceneNumber: 4
   - name: 
     difficulty: 1
-    scene:
-      m_Handle: 0
+    sceneNumber: 0
   - name: 
     difficulty: 2
-    scene:
-      m_Handle: 0
+    sceneNumber: 0
   - name: 
     difficulty: 3
-    scene:
-      m_Handle: 0
+    sceneNumber: 0
   - name: 
     difficulty: 4
-    scene:
-      m_Handle: 0
+    sceneNumber: 0
   - name: 
     difficulty: 5
-    scene:
-      m_Handle: 0
+    sceneNumber: 0

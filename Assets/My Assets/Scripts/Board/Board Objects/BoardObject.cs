@@ -44,12 +44,14 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
             m_IsPreviewing = false;
             collider.enabled = true;
             renderer.material = originalMaterial;
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
             gameObject.SetActive(false);
         } else if (!m_IsPreviewing && enable)
         {
             m_IsPreviewing = true;
             collider.enabled = false;
             renderer.material = previewMaterial;
+            renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             gameObject.SetActive(true);
         }
     }
