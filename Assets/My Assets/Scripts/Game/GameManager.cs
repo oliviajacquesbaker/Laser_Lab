@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     Level level;
     LaserLabObject previousHover = null;
+    public GameObject visualLaserPrefab;
     public int selectedObjectIndex = -1;
-    //[HideInInspector]
     public List<BoardObject> UnplacedObjects;
     public ObjectListDisplayer displayer;
     public BoardObject SelectedObject { get { return UnplacedObjects[selectedObjectIndex]; } }
@@ -71,7 +71,75 @@ public class GameManager : MonoBehaviour
 
     private void CalculateLaserPaths()
     {
-        
+        ILaserEmitter[] emitters = level.board.FindEmitters();
+        ILaserReceiver[] receivers = level.board.FindReceivers();
+
+        //reset receiver status
+        for (int i = 0; i < receivers.Length; i++)
+        {
+            receivers[i].ResetLaserCondition();
+        }
+
+        //generate initial lasers from emitters
+        List<Laser> startingLasers = new List<Laser>();
+        for (int i = 0; i < emitters.Length; i++)
+        {
+            Laser[] newLasers = emitters[i].OnLaserEmit();
+            startingLasers.AddRange(newLasers);
+        }
+
+        //create a list to store all the lasers
+        List<Laser> allLasers = new List<Laser>();
+
+        //recursivly solve all laser paths
+        for (int i = 0; i < startingLasers.Count; i++)
+        {
+            RecursiveLaserPath(ref allLasers, startingLasers[i], 0, 128);
+        }
+
+        //check for a win
+        bool success = true;
+        for (int i = 0; i < receivers.Length && success; i++)
+        {
+            if (!receivers[i].IsLaserConditionSatisfied())
+                success = false;
+        }
+
+        if (success)
+            Debug.Log("Win");
+
+        //TODO Calculate visual lasers
+    }
+
+    private void RecursiveLaserPath(ref List<Laser> lasers, Laser current, int index, int max)
+    {
+        lasers.Add(current);
+
+        if (index >= max)
+            return;
+
+        Vector2Int origin = current.origin;
+
+        int distance = 1;
+        Vector2Int direction = current.GetDirectionVector();
+
+        while (true)
+        {
+            LaserLabObject nextObject = level.board.GetLaserLabObject(origin + (direction * distance));
+            if (nextObject && nextObject is ILaserTarget)
+            {
+                ILaserTarget nextTarget = nextObject as ILaserTarget;
+                Laser[] nextLasers = nextTarget.OnLaserHit(current);
+
+                for (int i = 0; i < nextLasers.Length; i++)
+                {
+                    nextLasers[i].origin = nextTarget.GetPosition();
+                    RecursiveLaserPath(ref lasers, nextLasers[i], index + 1, max);
+                }
+
+                return;
+            }
+        }
     }
 
     private void MouseEvents()

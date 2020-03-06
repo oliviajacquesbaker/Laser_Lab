@@ -1,5 +1,7 @@
-﻿public interface ILaserEmitter
+﻿using UnityEngine;
+
+public interface ILaserEmitter : ILaserTarget
 {
     //returns any resulting lasers
-    Laser[] OnLaserEmit(Laser laser);
+    Laser[] OnLaserEmit();
 }

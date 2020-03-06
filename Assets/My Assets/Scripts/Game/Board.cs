@@ -231,6 +231,44 @@ public class Board : MonoBehaviour
         return new Vector2Int(-1, -1);
     }
 
+    public ILaserEmitter[] FindEmitters()
+    {
+        List<ILaserEmitter> emitters = new List<ILaserEmitter>();
+
+        for (int i = 0; i < Walls.Length; i++)
+        {
+            if (emitters is ILaserEmitter)
+                emitters.Add(Walls[i] as ILaserEmitter);
+        }
+
+        for (int i = 0; i < Tiles.Length; i++)
+        {
+            if (emitters is ILaserEmitter)
+                emitters.Add(Tiles[i] as ILaserEmitter);
+        }
+
+        return emitters.ToArray();
+    }
+
+    public ILaserReceiver[] FindReceivers()
+    {
+        List<ILaserReceiver> emitters = new List<ILaserReceiver>();
+
+        for (int i = 0; i < Walls.Length; i++)
+        {
+            if (emitters is ILaserReceiver)
+                emitters.Add(Walls[i] as ILaserReceiver);
+        }
+
+        for (int i = 0; i < Tiles.Length; i++)
+        {
+            if (emitters is ILaserReceiver)
+                emitters.Add(Tiles[i] as ILaserReceiver);
+        }
+
+        return emitters.ToArray();
+    }
+
 #if UNITY_EDITOR
 
     public void ReloadTiles()

@@ -1544,6 +1544,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6829e69598dd1444bb5e051987796d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visualLaserPrefab: {fileID: 3987758083201918913, guid: 85b18affea2deff4d9763e89811996e5,
+    type: 3}
   selectedObjectIndex: -1
   UnplacedObjects: []
   displayer: {fileID: 834857884}
@@ -2529,6 +2531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c08797fc188b2724089ae88835788bf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelSet: {fileID: 0}
 --- !u!1 &2072047192
 GameObject:
   m_ObjectHideFlags: 0

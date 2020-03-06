@@ -25,7 +25,7 @@ public class WallObjectLaser : WallObject, ILaserEmitter
         return new Laser[0];
     }
 
-    public Laser[] OnLaserEmit(Laser laser)
+    public Laser[] OnLaserEmit()
     {
         Laser newLaser = new Laser(redOut, greenOut, blueOut);
         return new Laser[] { newLaser };

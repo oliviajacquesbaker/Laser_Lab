@@ -24,6 +24,11 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 
     public abstract Laser[] OnLaserHit(Laser laser);
 
+    public Vector2Int GetPosition()
+    {
+        return new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
+    }
+
     private void Start()
     {
         renderer = GetComponent<Renderer>();
