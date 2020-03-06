@@ -15,6 +15,8 @@ public class SelectorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public ObjectListDisplayer displayer;
     public Sprite Lock, Rotate, Move, MoveRotate;
 
+    private bool selected = false;
+
     void Start()
     {
         button = GetComponent<Button>();
@@ -25,10 +27,12 @@ public class SelectorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (id == displayer.manager.selectedObjectIndex)
         {
-            button.interactable = false;
+            selected = true;
+            button.image.color = Color.grey;
         } else
         {
-            button.interactable = true;
+            selected = false;
+            button.image.color = Color.white;
         }
     }
 
@@ -55,10 +59,11 @@ public class SelectorButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnClick()
     {
-        //if (button.interactable && displayer.manager.UnplacedObjects[id].CanRotate)
-        //{
-        //    displayer.manager.UnplacedObjects[id].Rotate();
-        //}
+        if (selected && displayer.manager.UnplacedObjects[id].CanRotate)
+        {
+            displayer.manager.UnplacedObjects[id].Rotate();
+            SetOrientation(displayer.manager.UnplacedObjects[id].Orientation);
+        }
         displayer.OnClickButton(id);
     }
 

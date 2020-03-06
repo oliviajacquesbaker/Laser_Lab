@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,12 +34,18 @@ public class GameManager : MonoBehaviour
             }
         }
         displayer.ReloadButtons();
+        CalculateLaserPaths();
     }
 
     void Update()
     {
         if (Pause.Current && !Pause.Current.paused)
-            MouseEvents();
+        {
+            if (!EventSystem.current.IsPointerOverGameObject())
+                MouseEvents();
+            else if (selectedObjectIndex < UnplacedObjects.Count && selectedObjectIndex > -1)
+                UnplacedObjects[selectedObjectIndex].SetPreview(false);
+        }
     }
 
     private void AddToUnplaced(BoardObject obj)
@@ -64,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     private void CalculateLaserPaths()
     {
-
+        
     }
 
     private void MouseEvents()
@@ -176,6 +183,11 @@ public class GameManager : MonoBehaviour
             {
                 previousHover.OnHoverExit();
                 previousHover = null;
+            }
+
+            if (selectedObjectIndex > -1)
+            {
+                SelectedObject.SetPreview(false);
             }
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
