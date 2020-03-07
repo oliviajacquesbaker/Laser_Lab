@@ -22,7 +22,7 @@ public abstract class WallObject : LaserLabObject, ILaserTarget
         if (pos.x == board.Width)
             return Direction.LEFT;
         if (pos.y == board.Height)
-            return Direction.RIGHT;
+            return Direction.DOWN;
 
         return Direction.UP;
     }

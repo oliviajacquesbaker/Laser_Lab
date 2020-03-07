@@ -96,6 +96,7 @@
     <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\MenuFunctions.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\Pause.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\CameraController.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\Direction.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\IRefreshable.cs" />
