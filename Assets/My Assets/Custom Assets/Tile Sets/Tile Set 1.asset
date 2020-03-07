@@ -42,10 +42,10 @@ MonoBehaviour:
     Tile: {fileID: 3641432526562211745, guid: 7099088ff2292e644a020964d40dc922, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectOneWayMirror
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: 60c472e90d35ec94e8c995a5850bbbd2, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectTwoWayMirror
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: 6c62b206903608646b8d672a73c03774, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectBlock
     Tile: {fileID: 3641432526562211745, guid: a059e326e69c3e04c9a7f0a8e0270619, type: 3}
@@ -54,8 +54,8 @@ MonoBehaviour:
     Tile: {fileID: 14320823589140244, guid: 837053c91c03bf547ad357df14cae5b1, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectPrism
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: 7901df34e9157ef4ba4585477c833257, type: 3}
     modelOrientation: 0
   - objectType: BoardObjectDiffractionGrid
-    Tile: {fileID: 0}
+    Tile: {fileID: 3641432526562211745, guid: dcd7aeafed4dec74282fdfa509ce104d, type: 3}
     modelOrientation: 0

@@ -28,6 +28,7 @@ public class LevelEditor : Editor
 
     private void SetSceneDirty()
     {
+        Debug.Log("set scene dirty");
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 
@@ -244,6 +245,7 @@ public class LevelEditor : Editor
         if (type != null && newObj == null)
             return;
         level.board.SetWallObject(pos, newObj);
+        SetSceneDirty();
     }
 
     private void ReplaceTile(Vector2Int pos, Type type)
@@ -259,6 +261,7 @@ public class LevelEditor : Editor
         if (type != null && newObj == null)
             return;
         level.board.SetBoardObject(pos, newObj);
+        SetSceneDirty();
     }
 
     private void DrawProperties(LaserLabObject obj)

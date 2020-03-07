@@ -18,7 +18,7 @@ public class BoardObjectPrism : BoardObject
     {
         if ((color == 0 && ((int)Orientation % 2 == 0)) || (color == 1 && ((int)Orientation % 2 == 1)))
         {
-            Direction newdir = (Direction)(((int)laser.direction - 1) % 4);
+            Direction newdir = (Direction)(((int)laser.direction + 3) % 4);
             return newdir;
         }
         else
