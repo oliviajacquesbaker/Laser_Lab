@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -9049933382154468612}
   - component: {fileID: -700836206633671253}
   m_Layer: 0
-  m_Name: Emitter
+  m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,7 +41,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5192146748251734285}
-  m_Mesh: {fileID: 8733429697405204941, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+  m_Mesh: {fileID: 938762473992563870, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
 --- !u!23 &3129633383972286901
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94,7 +94,7 @@ MeshCollider:
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 8733429697405204941, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+  m_Mesh: {fileID: 938762473992563870, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
 --- !u!114 &-700836206633671253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,3 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a0d3e7d7baaf24c9fe3bf75ae28a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redOut: 1
+  greenOut: 1
+  blueOut: 1
