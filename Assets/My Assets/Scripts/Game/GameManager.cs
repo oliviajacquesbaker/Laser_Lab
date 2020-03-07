@@ -196,6 +196,8 @@ public class GameManager : MonoBehaviour
             visualLaser.SetProperties(allLasers[i]);
             visualLasers.Add(visualLaser);
         }
+
+        level.board.OnLaserPathCalculated();
     }
 
     private void RecursiveLaserPath(ref List<Laser> lasers, Laser current, int index, int max)

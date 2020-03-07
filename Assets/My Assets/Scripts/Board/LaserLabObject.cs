@@ -11,4 +11,6 @@ public abstract class LaserLabObject : MonoBehaviour
     {
         return new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
     }
+
+    public virtual void OnLaserPathCalculated() { }
 }

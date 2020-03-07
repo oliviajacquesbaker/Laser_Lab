@@ -53,6 +53,21 @@ public class Board : MonoBehaviour
             Walls[ConvertPositionToWallCoord(pos)] = newObject;
     }
 
+    public void OnLaserPathCalculated()
+    {
+        for (int i = 0; i < Walls.Length; i++)
+        {
+            if (Walls[i])
+                Walls[i].OnLaserPathCalculated();
+        }
+
+        for (int i = 0; i < Tiles.Length; i++)
+        {
+            if (Tiles[i])
+                Tiles[i].OnLaserPathCalculated();
+        }
+    }
+
     public int ConvertPositionToWallCoord(Vector2Int pos)
     {
         return ConvertPositionToWallCoord(pos, Size);
