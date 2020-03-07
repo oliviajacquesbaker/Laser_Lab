@@ -998,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aafa1f36542d2ea409a2e5381fd80213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cropAmount: -1
+  cropAmount: -3
 --- !u!1 &509102577
 GameObject:
   m_ObjectHideFlags: 0
