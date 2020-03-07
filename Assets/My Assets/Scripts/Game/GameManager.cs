@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     Level level;
     LaserLabObject previousHover = null;
     public GameObject visualLaserPrefab;
+    public CameraController cameraController;
     public int selectedObjectIndex = -1;
     public List<BoardObject> UnplacedObjects;
     public ObjectListDisplayer displayer;
@@ -37,6 +38,16 @@ public class GameManager : MonoBehaviour
         }
         displayer.ReloadButtons();
         CalculateLaserPaths();
+        PositionCamera();
+    }
+
+    private void PositionCamera()
+    {
+        if (cameraController)
+        {
+            Vector3 center = new Vector3(level.size.x - 1, 1, level.size.y - 1);
+            cameraController.PositionCamera(center / 2, level.size);
+        }
     }
 
     void Update()

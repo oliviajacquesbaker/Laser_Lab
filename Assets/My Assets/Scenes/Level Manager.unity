@@ -809,6 +809,7 @@ GameObject:
   - component: {fileID: 484405207}
   - component: {fileID: 484405206}
   - component: {fileID: 484405209}
+  - component: {fileID: 484405210}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -985,6 +986,19 @@ MonoBehaviour:
       data1: 0
       data2: 0
   defaultFrameSettings: 0
+--- !u!114 &484405210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484405205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aafa1f36542d2ea409a2e5381fd80213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropAmount: -1
 --- !u!1 &509102577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,6 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualLaserPrefab: {fileID: 3987758083201918913, guid: 85b18affea2deff4d9763e89811996e5,
     type: 3}
+  cameraController: {fileID: 484405210}
   selectedObjectIndex: -1
   UnplacedObjects: []
   displayer: {fileID: 834857884}
