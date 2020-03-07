@@ -39,6 +39,57 @@ public class GameManager : MonoBehaviour
         displayer.ReloadButtons();
         CalculateLaserPaths();
         PositionCamera();
+        GenerateBackground();
+    }
+
+    private void GenerateBackground()
+    {
+        Vector2Int bl = Expand(GetWorldPoint(new Vector2(0, 0)), new Vector2Int(0, 0));
+        Vector2Int tr = Expand(GetWorldPoint(new Vector2(1, 1)), new Vector2Int(1, 1));
+
+        for (int i = bl.x; i <= tr.x; i++)
+        {
+            for (int j = bl.y; j <= tr.y; j++)
+            {
+                if (i >= -1 && i <= level.board.Width && j >= -1 && j <= level.board.Height)
+                    continue;
+
+                Vector2Int pos = new Vector2Int(i, j);
+                TileSet.EnvironmentPiece piece = level.tileSet.environment.Outside;
+                GameObject newObject = Instantiate(piece.Tile, transform);
+                newObject.transform.position = new Vector3(pos.x, 0, pos.y);
+                newObject.transform.rotation = Quaternion.Euler(0, -90 * (int)piece.modelOrientation, 0);
+                newObject.name = "Background Piece (" + i + ", " + j + ")";
+            }
+        }
+    }
+
+    private Vector2 GetWorldPoint(Vector2 viewportPos)
+    {
+        Ray ray = Camera.main.ViewportPointToRay(viewportPos);
+
+        float distance = ray.origin.y / -ray.direction.y;
+
+        Vector3 result = (ray.direction * distance) + ray.origin;
+
+        return new Vector2(result.x, result.z);
+    }
+
+    private Vector2Int Expand(Vector2 point, Vector2Int corner)
+    {
+        Vector2Int result = new Vector2Int();
+
+        if (corner.x <= 0)
+            result.x = Mathf.FloorToInt(point.x);
+        else
+            result.x = Mathf.CeilToInt(point.x);
+
+        if (corner.y <= 0)
+            result.y = Mathf.FloorToInt(point.y);
+        else
+            result.y = Mathf.CeilToInt(point.y);
+
+        return result;
     }
 
     private void PositionCamera()
