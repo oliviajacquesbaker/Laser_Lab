@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WallObjectLaser : WallObject, ILaserEmitter
 {
@@ -8,9 +9,11 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public float greenOut;
     public float blueOut;
 
+    public Text outText;
     WallObjectLaser()
     {
         redOut = greenOut = blueOut = 1;
+        outText.text = "Red: 1\nGreen:1\nBlue:1";
     }
 
     WallObjectLaser(float red, float green, float blue)
@@ -18,6 +21,7 @@ public class WallObjectLaser : WallObject, ILaserEmitter
         redOut = red;
         greenOut = green;
         blueOut = blue;
+        outText.text = "Red: " + red.ToString() + "\nGreen: " + green.ToString() + "\nBlue: " + blue.ToString();
     }
 
     public override Laser[] OnLaserHit(Laser laser)
@@ -29,5 +33,16 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     {
         Laser newLaser = new Laser(redOut, greenOut, blueOut);
         return new Laser[] { newLaser };
+    }
+    public override void OnHoverEnter()
+    {
+        base.OnHoverEnter();
+        outText.gameObject.SetActive(true);
+    }
+
+    public override void OnHoverExit()
+    {
+        base.OnHoverExit();
+        outText.gameObject.SetActive(false);
     }
 }
