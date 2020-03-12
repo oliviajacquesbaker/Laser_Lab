@@ -20,13 +20,14 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     public Requirement reqType;
     public Text reqText;
 
+    private Renderer renderer_;
+
 
     public WallObjectReceiver()
     {
         redReq = greenReq = blueReq = 1;
         redVal = greenVal = blueVal = 0;
         reqType = Requirement.EQUAL;
-        reqText.text = "Red: 1\nGreen:1\nBlue:1";
     }
 
     public WallObjectReceiver(int red, int green, int blue, Requirement req)
@@ -36,7 +37,12 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         blueReq = blue;
         reqType = req;
         redVal = greenVal = blueVal = 0;
-        reqText.text = "Red: " + red.ToString() + "\nGreen: " + green.ToString() + "\nBlue: " + blue.ToString();
+    }
+
+    void Start()
+    {
+        reqText.text = "Red: " + redReq.ToString() + "\nGreen: " + greenReq.ToString() + "\nBlue: " + blueReq.ToString();
+        renderer_ = GetComponent<Renderer>();
     }
 
     public override Laser[] OnLaserHit(Laser laser)
@@ -76,7 +82,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     {
         if (redMet == greenMet == blueMet == true)
         {
-            gameObject.GetComponent<Renderer>().materials[1].color = Color.green;
+            renderer_.materials[1].SetColor("_EmissionColor",Color.green);
             return true;
         }
         else
@@ -89,7 +95,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     {
         redVal = greenVal = blueVal = 0;
         redMet = greenMet = blueMet = false;
-        gameObject.GetComponent<Renderer>().materials[1].color = Color.red;
+        renderer_.materials[1].SetColor("_EmissionColor", Color.green);
 
     }
 

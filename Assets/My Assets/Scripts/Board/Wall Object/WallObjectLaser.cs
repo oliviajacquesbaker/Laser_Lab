@@ -21,9 +21,12 @@ public class WallObjectLaser : WallObject, ILaserEmitter
         redOut = red;
         greenOut = green;
         blueOut = blue;
-        outText.text = "Red: " + red.ToString() + "\nGreen: " + green.ToString() + "\nBlue: " + blue.ToString();
     }
 
+    void Start()
+    {
+        outText.text = "Red: " + redOut.ToString() + "\nGreen: " + greenOut.ToString() + "\nBlue: " + blueOut.ToString();
+    }
     public override Laser[] OnLaserHit(Laser laser)
     {
         return new Laser[0];
