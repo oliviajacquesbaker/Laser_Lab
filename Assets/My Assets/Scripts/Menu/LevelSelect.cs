@@ -1,18 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelSelect : MonoBehaviour
 {
     public MenuFunctions menuFunctions;
     public GameObject LevelSelectObjectPrefab;
 
-    public LevelSet.Level selectedLevel;
+    public LevelSet.Level selectedLevel = null;
 
     public LevelSelectObject[] list;
 
     void Start()
     {
+        selectedLevel = null;
         LevelSet set = menuFunctions.levelSet;
         int newLevelCount = 3;
 
@@ -20,6 +22,9 @@ public class LevelSelect : MonoBehaviour
 
         for (int i = 0; i < set.levels.Length; i++)
         {
+            if (set.levels[i].sceneNumber >= SceneManager.sceneCountInBuildSettings || set.levels[i].sceneNumber < 4)
+                continue;
+
             GameObject newObject = Instantiate(LevelSelectObjectPrefab, transform);
             LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
 
@@ -46,6 +51,8 @@ public class LevelSelect : MonoBehaviour
 
     public void LoadLevel()
     {
+        if (selectedLevel == null)
+            return;
         LevelSceneManager.LoadLevel(selectedLevel);
     }
 }
