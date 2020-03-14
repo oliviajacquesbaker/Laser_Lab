@@ -18,7 +18,10 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     private float blueVal;
 
     public Requirement reqType;
-    public Text reqText;
+    public Text reqTextR;
+    public Text reqTextG;
+    public Text reqTextB;
+
 
     private Renderer renderer_;
 
@@ -41,7 +44,9 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     void Start()
     {
-        reqText.text = "Red: " + redReq.ToString() + "\nGreen: " + greenReq.ToString() + "\nBlue: " + blueReq.ToString();
+        reqTextR.text = "Red: " + redReq.ToString();
+        reqTextG.text = "Green: " + greenReq.ToString();
+        reqTextB.text = "Blue: " + blueReq.ToString();
         renderer_ = GetComponent<Renderer>();
     }
 
@@ -69,13 +74,17 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     public override void OnHoverEnter()
     {
         base.OnHoverEnter();
-        reqText.gameObject.SetActive(true);
+        reqTextR.gameObject.SetActive(true);
+        reqTextG.gameObject.SetActive(true);
+        reqTextB.gameObject.SetActive(true);
     }
 
     public override void OnHoverExit()
     {
         base.OnHoverExit();
-        reqText.gameObject.SetActive(true);
+        reqTextR.gameObject.SetActive(false);
+        reqTextG.gameObject.SetActive(false);
+        reqTextB.gameObject.SetActive(false);
     }
 
     public bool IsLaserConditionSatisfied()
