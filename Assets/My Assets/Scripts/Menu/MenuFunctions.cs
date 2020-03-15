@@ -23,7 +23,7 @@ public class MenuFunctions : MonoBehaviour
         for (int i = 0; i < levelSet.count - 1; i++) {
             if (PlayerPrefs.HasKey("level complete " + i))
             {
-                if (PlayerPrefs.GetInt("level complete " + i) == 0)
+                if (PlayerPrefs.GetInt("level complete " + levelSet.levels[i].sceneNumber) == 0)
                 {
                     LevelSceneManager.LoadLevel(levelSet.levels[i]);
                     return;
@@ -31,7 +31,7 @@ public class MenuFunctions : MonoBehaviour
             }
             else
             {
-                PlayerPrefs.SetInt("level complete " + i, 0);
+                PlayerPrefs.SetInt("level complete " + levelSet.levels[i].sceneNumber, 0);
                 LevelSceneManager.LoadLevel(levelSet.levels[i]);
                 return;
             }

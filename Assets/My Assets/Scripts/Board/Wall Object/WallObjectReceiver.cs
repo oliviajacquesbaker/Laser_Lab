@@ -46,10 +46,14 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     void Start()
     {
-        reqTextR.text = "Red: " + redReq.ToString();
-        reqTextG.text = "Green: " + greenReq.ToString();
-        reqTextB.text = "Blue: " + blueReq.ToString();
+        reqTextR.text = "Red: " + redVal.ToString() + "/" + redReq.ToString();
+        reqTextG.text = "Green: " + greenVal.ToString() + "/" + greenReq.ToString();
+        reqTextB.text = "Blue: " + blueVal.ToString() + "/" + blueReq.ToString();
         renderer_ = GetComponent<Renderer>();
+
+        reqTextR.gameObject.SetActive(false);
+        reqTextG.gameObject.SetActive(false);
+        reqTextB.gameObject.SetActive(false);
     }
 
     public override Laser[] OnLaserHit(Laser laser)
