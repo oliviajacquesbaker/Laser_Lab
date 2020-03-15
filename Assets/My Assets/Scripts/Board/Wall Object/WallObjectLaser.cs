@@ -31,6 +31,10 @@ public class WallObjectLaser : WallObject, ILaserEmitter
         outTextR.text = "Red: " + redOut.ToString();
         outTextG.text = "Green: " + greenOut.ToString();
         outTextB.text = "Blue: " + blueOut.ToString();
+
+        outTextR.gameObject.SetActive(false);
+        outTextG.gameObject.SetActive(false);
+        outTextB.gameObject.SetActive(false);
     }
     public override Laser[] OnLaserHit(Laser laser)
     {
