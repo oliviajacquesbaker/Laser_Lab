@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WallObjectLaser : WallObject, ILaserEmitter
 {
@@ -9,18 +8,18 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public float greenOut;
     public float blueOut;
 
-    public Text outTextR;
-    public Text outTextG;
-    public Text outTextB;
-    WallObjectLaser()
+    [PrefabData]
+    public TextMesh outTextR;
+    [PrefabData]
+    public TextMesh outTextG;
+    [PrefabData]
+    public TextMesh outTextB;
+    public WallObjectLaser()
     {
         redOut = greenOut = blueOut = 1;
-        outTextR.text = "Red: 1";
-        outTextG.text = "Green: 1";
-        outTextB.text = "Blue: 1";
     }
 
-    WallObjectLaser(float red, float green, float blue)
+    public WallObjectLaser(float red, float green, float blue)
     {
         redOut = red;
         greenOut = green;

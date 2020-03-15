@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WallObjectReceiver : WallObject, ILaserReceiver
 {
@@ -18,9 +17,12 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     private float blueVal;
 
     public Requirement reqType;
-    public Text reqTextR;
-    public Text reqTextG;
-    public Text reqTextB;
+    [PrefabData]
+    public TextMesh reqTextR;
+    [PrefabData]
+    public TextMesh reqTextG;
+    [PrefabData]
+    public TextMesh reqTextB;
 
 
     private Renderer renderer_;
@@ -91,11 +93,12 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     {
         if (redMet == greenMet == blueMet == true)
         {
-            renderer_.materials[1].SetColor("_EmissionColor",Color.green);
+            renderer_.materials[1].SetColor("_EmissiveColor", Color.green);
             return true;
         }
         else
         {
+            renderer_.materials[1].SetColor("_EmissiveColor", Color.red);
             return false;
         }
     }
