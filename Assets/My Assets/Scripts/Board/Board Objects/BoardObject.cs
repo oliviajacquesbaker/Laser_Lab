@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 [RequireComponent(typeof(Renderer))]
 [RequireComponent(typeof(Collider))]
-public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
+public abstract class BoardObject : LaserLabPiece, ILaserTarget, IRefreshable
 {
     [PrefabData]
     public HoverIcon HoverIcon;
@@ -42,6 +42,11 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
         Refresh();
     }
 
+    public void SetTileSetPieceData(TileSet.Piece piece)
+    {
+        TileSetPiece = piece;
+    }
+
     public void SetPreview(bool enable)
     {
         if (m_IsPreviewing && !enable)
@@ -63,7 +68,7 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
 
     public void Refresh()
     {
-        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+        transform.rotation = Quaternion.Euler(0, ((int)Orientation - (int)TileSetPiece.modelOrientation) * 90, 0);
 
         if (Application.isPlaying)
         {
@@ -78,14 +83,14 @@ public abstract class BoardObject : LaserLabObject, ILaserTarget, IRefreshable
     public void Rotate()
     {
         Orientation = (Direction)(((int)Orientation + 1) % 4);
-        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+        transform.rotation = Quaternion.Euler(0, ((int)Orientation - (int)TileSetPiece.modelOrientation) * 90, 0);
         HoverIcon.Refresh();
     }
 
     public void RotateTo(Direction newOrientation)
     {
         Orientation = newOrientation;
-        transform.rotation = Quaternion.Euler(0, (int)Orientation * 90, 0);
+        transform.rotation = Quaternion.Euler(0, ((int)Orientation - (int)TileSetPiece.modelOrientation) * 90, 0);
     }
 
     public void Move(Vector2Int pos)

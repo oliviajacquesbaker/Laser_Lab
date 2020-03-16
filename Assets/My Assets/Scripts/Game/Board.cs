@@ -123,6 +123,11 @@ public class Board : MonoBehaviour
         return -1;
     }
 
+    public void LoadTilesetData(TileSet tileSet)
+    {
+        throw new NotImplementedException();
+    }
+
     public BoardObject GetBoardObject(int x, int y)
     {
         return GetBoardObject(new Vector2Int(x, y));
@@ -555,6 +560,8 @@ public class Board : MonoBehaviour
             return null;
         }
 
+        wallObject.TileSetPiece = piece;
+
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
         newWallObject.transform.position = new Vector3(pos.x, 0, pos.y);
@@ -592,6 +599,8 @@ public class Board : MonoBehaviour
 
         //copy wallObject
         T wallObject = CopyComponent(oldWallObject, newWallObject);
+
+        wallObject.TileSetPiece = piece;
 
         //orient gameObject
         Direction wallDirection = GetWallOrientation(pos);
@@ -632,6 +641,8 @@ public class Board : MonoBehaviour
 
         //configure boardobject
         BoardObject boardObject = newBoardObject.GetComponent<BoardObject>();
+
+        boardObject.TileSetPiece = piece;
 
         if (!boardObject)
         {
@@ -678,6 +689,8 @@ public class Board : MonoBehaviour
 
         //configure boardobject
         T boardObject = CopyComponent(oldWallObject, newBoardObject);
+
+        boardObject.TileSetPiece = piece;
 
         //orient gameObject
         newBoardObject.transform.position = new Vector3(pos.x, 0, pos.y);

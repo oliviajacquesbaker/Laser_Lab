@@ -11,6 +11,11 @@ public class Level : MonoBehaviour
 
     public Vector2Int size { get { return board.Size; } }
 
+    private void Start()
+    {
+
+    }
+
     private void OnEnable()
     {
 #if UNITY_EDITOR
