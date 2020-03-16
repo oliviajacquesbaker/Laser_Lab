@@ -25,19 +25,19 @@ public class MenuFunctions : MonoBehaviour
             {
                 if (PlayerPrefs.GetInt("level complete " + levelSet.levels[i].sceneNumber) == 0)
                 {
-                    LevelSceneManager.LoadLevel(levelSet.levels[i]);
+                    LevelSceneManager.LoadLevel(levelSet, i);
                     return;
                 }
             }
             else
             {
                 PlayerPrefs.SetInt("level complete " + levelSet.levels[i].sceneNumber, 0);
-                LevelSceneManager.LoadLevel(levelSet.levels[i]);
+                LevelSceneManager.LoadLevel(levelSet, i);
                 return;
             }
         }
 
-        LevelSceneManager.LoadLevel(levelSet.levels[levelSet.count - 1]);
+        LevelSceneManager.LoadLevel(levelSet, levelSet.count - 1);
     }
 
     public void LoadMenu()
@@ -48,5 +48,10 @@ public class MenuFunctions : MonoBehaviour
     public void LoadLevelSelect()
     {
         LevelSceneManager.LoadLevelSelect();
+    }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

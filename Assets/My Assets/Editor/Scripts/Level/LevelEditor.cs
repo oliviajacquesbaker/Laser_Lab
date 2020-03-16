@@ -28,7 +28,6 @@ public class LevelEditor : Editor
 
     private void SetSceneDirty()
     {
-        Debug.Log("set scene dirty");
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 

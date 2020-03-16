@@ -8,13 +8,13 @@ public class LevelSelect : MonoBehaviour
     public MenuFunctions menuFunctions;
     public GameObject LevelSelectObjectPrefab;
 
-    public LevelSet.Level selectedLevel = null;
+    public int SelectedLevelIndex = -1;
 
     public LevelSelectObject[] list;
 
     void Start()
     {
-        selectedLevel = null;
+        SelectedLevelIndex = -1;
         LevelSet set = menuFunctions.levelSet;
         int newLevelCount = 3;
 
@@ -34,15 +34,15 @@ public class LevelSelect : MonoBehaviour
                 PlayerPrefs.GetInt("level complete " + menuFunctions.levelSet.levels[i].sceneNumber) != 1)
                 newLevelCount--;
 
-            selectObject.SetLevel(set.levels[i], this, newLevelCount >= 0);
+            selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0);
         }
 
         list = tmpList.ToArray();
     }
 
-    public void SelectLevel(LevelSet.Level level)
+    public void SelectLevel(int index)
     {
-        selectedLevel = level;
+        SelectedLevelIndex = index;
         for (int i = 0; i < list.Length;i++)
         {
             list[i].Refresh();
@@ -51,8 +51,8 @@ public class LevelSelect : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (selectedLevel == null)
+        if (SelectedLevelIndex == -1)
             return;
-        LevelSceneManager.LoadLevel(selectedLevel);
+        LevelSceneManager.LoadLevel(menuFunctions.levelSet, SelectedLevelIndex);
     }
 }

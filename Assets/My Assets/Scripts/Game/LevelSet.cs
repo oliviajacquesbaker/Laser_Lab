@@ -19,6 +19,6 @@ public class LevelSet : ScriptableObject
 
     public enum Difficulty
     {
-        BEGINNER = 1, EASY, MEDIUM, HARD, EXPERT, MASTERMIND
+        TUTORIAL, BEGINNER, EASY, MEDIUM, HARD, EXPERT, MASTERMIND
     }
 }
