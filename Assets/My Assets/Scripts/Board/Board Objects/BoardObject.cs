@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 [RequireComponent(typeof(Renderer))]
 [RequireComponent(typeof(Collider))]
-public abstract class BoardObject : LaserLabPiece, ILaserTarget, IRefreshable
+public abstract class BoardObject : LaserLabPiece, IRefreshable
 {
     [PrefabData]
     public HoverIcon HoverIcon;
@@ -21,13 +21,6 @@ public abstract class BoardObject : LaserLabPiece, ILaserTarget, IRefreshable
     private new Collider collider;
     private bool m_IsPreviewing;
     private Material originalMaterial;
-
-    public abstract Laser[] OnLaserHit(Laser laser);
-
-    public Vector2Int GetPosition()
-    {
-        return new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
-    }
 
     private void Start()
     {

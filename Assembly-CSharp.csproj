@@ -89,6 +89,9 @@
     <Compile Include="Assets\My Assets\Scripts\Game\ObjectListDisplayer.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\SelectorButton.cs" />
     <Compile Include="Assets\My Assets\Scripts\Game\TileSet.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialBubble.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialMessage.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialMessageQueue.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserEmitter.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserReceiver.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
@@ -100,6 +103,8 @@
     <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\MenuFunctions.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\Pause.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\AnimatedImage.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Utility\AnimatedSprite.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\CameraController.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\Direction.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
