@@ -255,7 +255,7 @@ public class GameManager : MonoBehaviour
     {
         Pause.Current.pause(false);
         WinGUI.SetActive(true);
-        PlayerPrefs.SetInt("level complete " + LevelSceneManager.CurrentLevel.sceneNumber, 1);
+        PlayerPrefs.SetInt("level complete " + LevelSceneManager.CurrentLevelSet.ID + " " + LevelSceneManager.CurrentLevel.sceneNumber, 1);
     }
 
     public void LoadNextLevel()

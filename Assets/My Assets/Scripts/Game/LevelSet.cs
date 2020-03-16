@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName = "Game/Level Set")]
 public class LevelSet : ScriptableObject
 {
+    public int ID = 0;
     public Level[] levels;
     public int count { get { return levels.Length; } }
 
