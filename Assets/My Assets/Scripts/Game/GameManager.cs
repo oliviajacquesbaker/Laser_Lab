@@ -69,23 +69,23 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator tutorialCoroutine(TutorialMessageQueue queue)
     {
-        if (queue == null)
-            yield return null;
-
-        Pause.Current.pause(false);
-
-        tutorialBubble.gameObject.SetActive(true);
-
-        for (int i = 0; i < queue.messages.Length; i++)
+        if (queue != null)
         {
-            tutorialBubble.loadMessage(queue.messages[i]);
-            yield return new WaitUntil(() => closeTutorial);
-            closeTutorial = false;
+            Pause.Current.pause(false);
+
+            tutorialBubble.gameObject.SetActive(true);
+
+            for (int i = 0; i < queue.messages.Length; i++)
+            {
+                tutorialBubble.loadMessage(queue.messages[i]);
+                yield return new WaitUntil(() => closeTutorial);
+                closeTutorial = false;
+            }
+
+            tutorialBubble.gameObject.SetActive(false);
+
+            Pause.Current.resume();
         }
-
-        tutorialBubble.gameObject.SetActive(false);
-
-        Pause.Current.resume();
     }
 
     public void CloseTutorial()
@@ -265,7 +265,7 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator OnWinCoroutine()
     {
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1);
         if (HasWon)
             OnWin();
     }

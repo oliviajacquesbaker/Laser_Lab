@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9ba1cfd0a0222841868af7b09b37f87, type: 3}
-  m_Name: Demo Set
+  m_Name: Testing Set
   m_EditorClassIdentifier: 
+  ID: 0
   levels:
   - name: Testing Sandbox
     difficulty: 1
