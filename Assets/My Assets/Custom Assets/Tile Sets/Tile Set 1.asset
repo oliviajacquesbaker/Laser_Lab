@@ -43,7 +43,7 @@ MonoBehaviour:
     modelOrientation: 0
   - objectType: BoardObjectOneWayMirror
     Tile: {fileID: 3641432526562211745, guid: 60c472e90d35ec94e8c995a5850bbbd2, type: 3}
-    modelOrientation: 0
+    modelOrientation: 2
   - objectType: BoardObjectTwoWayMirror
     Tile: {fileID: 3641432526562211745, guid: 6c62b206903608646b8d672a73c03774, type: 3}
     modelOrientation: 0

@@ -192,7 +192,7 @@ public class GameManager : MonoBehaviour
 
         //check for a win
         bool success = true;
-        for (int i = 0; i < receivers.Length && success; i++)
+        for (int i = 0; i < receivers.Length; i++)
         {
             if (!receivers[i].IsLaserConditionSatisfied())
                 success = false;
