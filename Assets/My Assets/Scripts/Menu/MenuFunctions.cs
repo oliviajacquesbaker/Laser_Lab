@@ -49,4 +49,9 @@ public class MenuFunctions : MonoBehaviour
     {
         LevelSceneManager.LoadLevelSelect();
     }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
