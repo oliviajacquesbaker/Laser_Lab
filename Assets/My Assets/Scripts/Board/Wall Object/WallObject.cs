@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class WallObject : LaserLabPiece, ILaserTarget
+public abstract class WallObject : LaserLabPiece
 {
-    public abstract Laser[] OnLaserHit(Laser laser);
-
-    public Vector2Int GetPosition()
-    {
-        return new Vector2Int(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z));
-    }
-
     public Direction GetDirection(Board board)
     {
         Vector2Int pos = GetPosition();

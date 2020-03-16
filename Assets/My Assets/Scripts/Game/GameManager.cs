@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject WinGUI;
 
+    public TutorialBubble tutorialBubble;
+    private bool closeTutorial;
+
     private bool HasWon
     {
         get
@@ -38,7 +41,10 @@ public class GameManager : MonoBehaviour
     {
         visualLasers = new List<VisualLaser>();
         UnplacedObjects = new List<BoardObject>();
+
         level = FindObjectOfType<Level>();
+        StartCoroutine(tutorialCoroutine(FindObjectOfType<TutorialMessageQueue>()));
+
         for (int i = 0; i < level.board.Width; i++)
         {
             for (int j = 0; j < level.board.Height; j++)
@@ -59,6 +65,32 @@ public class GameManager : MonoBehaviour
         CalculateLaserPaths();
         PositionCamera();
         GenerateBackground();
+    }
+
+    private IEnumerator tutorialCoroutine(TutorialMessageQueue queue)
+    {
+        if (queue == null)
+            yield return null;
+
+        Pause.Current.pause(false);
+
+        tutorialBubble.gameObject.SetActive(true);
+
+        for (int i = 0; i < queue.messages.Length; i++)
+        {
+            tutorialBubble.loadMessage(queue.messages[i]);
+            yield return new WaitUntil(() => closeTutorial);
+            closeTutorial = false;
+        }
+
+        tutorialBubble.gameObject.SetActive(false);
+
+        Pause.Current.resume();
+    }
+
+    public void CloseTutorial()
+    {
+        closeTutorial = true;
     }
 
     private void GenerateBackground()

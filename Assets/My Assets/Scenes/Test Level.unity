@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10436948, g: 0.11595663, b: 0.141564, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,6 +322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &73669387
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &92588066
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +927,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b28f3aee4aa42419c0a9a8f92861fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 722511185}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -1035,6 +1047,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b28f3aee4aa42419c0a9a8f92861fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 232357836}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -1449,6 +1465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e447c15c75b84999aaf8ebc36e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1307038366}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -1856,6 +1876,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &337131187
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2467,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e447c15c75b84999aaf8ebc36e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 92588068}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -2560,6 +2588,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53458e45db3e6774092d053ac8d32fbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   redReq: 1
   greenReq: 0
   blueReq: 1
@@ -2879,6 +2911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f682eacb100c875498cc749aa87bf89c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 144585341}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -2996,6 +3032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a0d3e7d7baaf24c9fe3bf75ae28a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   redOut: 0
   greenOut: 0.5
   blueOut: 0
@@ -3109,6 +3149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &619622134
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b28f3aee4aa42419c0a9a8f92861fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1141870320}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 1
@@ -3901,6 +3949,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &760655452
 GameObject:
   m_ObjectHideFlags: 0
@@ -4010,6 +4062,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e0ecf94a0f51544b2fb82efb911ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1447444637}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -4124,6 +4180,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &777033413
 GameObject:
   m_ObjectHideFlags: 1
@@ -4357,6 +4417,59 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846460058}
   m_Mesh: {fileID: -629719859055844128, guid: c94e4b6aa7802d64080896ff73b91a9a, type: 3}
+--- !u!1 &871407055
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 871407057}
+  - component: {fileID: 871407056}
+  m_Layer: 0
+  m_Name: TutorialMessageQueue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &871407056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871407055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c0733b3c555deb47bb4c87376f37194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messages:
+  - Title: FIRSTLY
+    Message: This is some sample text
+    image: {fileID: 0}
+  - Title: SECONDLY
+    Message: Here, too, is more sample text.
+    image: {fileID: 0}
+  - Title: LASTLY
+    Message: One more line of sample text on this page.
+    image: {fileID: 11400000, guid: 973bc83ee5891c94abad38b45680e580, type: 2}
+--- !u!4 &871407057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 871407055}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 355.5149, y: 218.95009, z: -62.832527}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &916655045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4464,6 +4577,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &917692477
 GameObject:
   m_ObjectHideFlags: 0
@@ -4573,6 +4690,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffa1f6b0541a6804499b7c8c7cc618d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1294087992}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -4688,6 +4809,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e447c15c75b84999aaf8ebc36e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 489572926}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -4910,6 +5035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eff73c1ad9669a4b963012b1e063904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 2024542081}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -5026,6 +5155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a491d1675700b842a845bcd08f44ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 2102340921}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -5140,6 +5273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1074223967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,6 +5537,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1141870318
 GameObject:
   m_ObjectHideFlags: 0
@@ -5682,6 +5823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1198161909
 GameObject:
   m_ObjectHideFlags: 0
@@ -5791,6 +5936,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a491d1675700b842a845bcd08f44ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 192391844}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -6108,6 +6257,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1283341763
 GameObject:
   m_ObjectHideFlags: 0
@@ -6586,6 +6739,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1427517544
 GameObject:
   m_ObjectHideFlags: 0
@@ -7408,6 +7565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b28f3aee4aa42419c0a9a8f92861fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 161869924}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -7618,6 +7779,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1599141243
 GameObject:
   m_ObjectHideFlags: 0
@@ -7726,6 +7891,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b1e447c15c75b84999aaf8ebc36e2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1233194287}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -8029,6 +8198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a491d1675700b842a845bcd08f44ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 2050286139}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -8144,6 +8317,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eff73c1ad9669a4b963012b1e063904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1895690983}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -8354,6 +8531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a0d3e7d7baaf24c9fe3bf75ae28a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   redOut: 1
   greenOut: 0
   blueOut: 1
@@ -8672,6 +8853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a491d1675700b842a845bcd08f44ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1447799227}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -8789,6 +8974,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a0d3e7d7baaf24c9fe3bf75ae28a9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   redOut: 4
   greenOut: 4
   blueOut: 4
@@ -8903,6 +9092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eff73c1ad9669a4b963012b1e063904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1580003235}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -9018,6 +9211,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eff73c1ad9669a4b963012b1e063904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 2063197978}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
@@ -9346,6 +9543,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abe2f3712e764a644bd29d51d7e872e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
 --- !u!1 &1895690981
 GameObject:
   m_ObjectHideFlags: 0
@@ -9783,6 +9984,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c342798a52d9545bcce2ca6266e635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TileSetPiece:
+    objectType: 
+    Tile: {fileID: 0}
+    modelOrientation: 0
   HoverIcon: {fileID: 1754281285}
   previewMaterial: {fileID: 2100000, guid: 61c077ac3adb44c4ab6f7f980aa9a4a3, type: 2}
   Orientation: 0
