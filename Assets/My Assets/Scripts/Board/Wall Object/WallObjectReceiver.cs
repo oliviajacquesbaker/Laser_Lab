@@ -46,14 +46,34 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     void Start()
     {
-        reqTextR.text = "Red: " + redVal.ToString() + "/" + redReq.ToString();
-        reqTextG.text = "Green: " + greenVal.ToString() + "/" + greenReq.ToString();
-        reqTextB.text = "Blue: " + blueVal.ToString() + "/" + blueReq.ToString();
+        SetText();
         renderer_ = GetComponent<Renderer>();
 
         reqTextR.gameObject.SetActive(false);
         reqTextG.gameObject.SetActive(false);
         reqTextB.gameObject.SetActive(false);
+    }
+
+    void SetText()
+    {
+        if(reqType == Requirement.EQUAL)
+        {
+            reqTextR.text = "Red: " + redVal.ToString() + "=" + redReq.ToString();
+            reqTextG.text = "Green: " + greenVal.ToString() + "=" + greenReq.ToString();
+            reqTextB.text = "Blue: " + blueVal.ToString() + "=" + blueReq.ToString();
+        }
+        else if(reqType == Requirement.AT_LEAST)
+        {
+            reqTextR.text = "Red: " + redVal.ToString() + ">" + redReq.ToString();
+            reqTextG.text = "Green: " + greenVal.ToString() + ">" + greenReq.ToString();
+            reqTextB.text = "Blue: " + blueVal.ToString() + ">" + blueReq.ToString();
+        }
+        else if(reqType == Requirement.AT_MOST)
+        {
+            reqTextR.text = "Red: " + redVal.ToString() + "<" + redReq.ToString();
+            reqTextG.text = "Green: " + greenVal.ToString() + "<" + greenReq.ToString();
+            reqTextB.text = "Blue: " + blueVal.ToString() + "<" + blueReq.ToString();
+        }
     }
 
     public override Laser[] OnLaserHit(Laser laser)
@@ -62,7 +82,9 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         greenVal += laser.green;
         blueVal += laser.blue;
 
-        if(reqType == Requirement.EQUAL)
+        SetText();
+
+        if (reqType == Requirement.EQUAL)
         {
             CheckEqual(laser);
         }
@@ -95,6 +117,8 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public bool IsLaserConditionSatisfied()
     {
+        
+
         if (redMet == greenMet == blueMet == true)
         {
             renderer_.materials[1].SetColor("_EmissiveColor", Color.green);
@@ -112,6 +136,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         redVal = greenVal = blueVal = 0;
         redMet = greenMet = blueMet = false;
         renderer_.materials[1].SetColor("_EmissionColor", Color.green);
+        SetText();
 
     }
 
