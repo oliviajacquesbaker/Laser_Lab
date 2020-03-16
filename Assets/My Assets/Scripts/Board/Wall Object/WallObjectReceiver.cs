@@ -119,7 +119,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     {
         
 
-        if (redMet == greenMet == blueMet == true)
+        if (redMet == true && greenMet == true && blueMet == true)
         {
             renderer_.materials[1].SetColor("_EmissiveColor", Color.green);
             return true;

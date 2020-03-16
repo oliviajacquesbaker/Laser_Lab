@@ -7,6 +7,8 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public float redOut;
     public float greenOut;
     public float blueOut;
+    private Renderer renderer_;
+
 
     [PrefabData]
     public TextMesh outTextR;
@@ -28,6 +30,8 @@ public class WallObjectLaser : WallObject, ILaserEmitter
 
     void Start()
     {
+        renderer_ = GetComponent<Renderer>();
+
         outTextR.text = "Red: " + redOut.ToString();
         outTextG.text = "Green: " + greenOut.ToString();
         outTextB.text = "Blue: " + blueOut.ToString();
@@ -44,6 +48,8 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public Laser[] OnLaserEmit()
     {
         Laser newLaser = new Laser(redOut, greenOut, blueOut);
+        Color lightColor = new Color(redOut, greenOut, blueOut, 1);
+        renderer_.materials[2].SetColor("_EmissiveColor", lightColor);
         return new Laser[] { newLaser };
     }
     public override void OnHoverEnter()
