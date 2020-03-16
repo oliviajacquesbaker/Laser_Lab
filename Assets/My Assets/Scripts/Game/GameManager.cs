@@ -15,6 +15,25 @@ public class GameManager : MonoBehaviour
     public BoardObject SelectedObject { get { return UnplacedObjects[selectedObjectIndex]; } }
     private List<VisualLaser> visualLasers;
 
+    public GameObject WinGUI;
+
+    private bool HasWon
+    {
+        get
+        {
+            ILaserReceiver[] receivers = level.board.FindReceivers();
+
+            bool success = true;
+            for (int i = 0; i < receivers.Length && success; i++)
+            {
+                if (!receivers[i].IsLaserConditionSatisfied())
+                    success = false;
+            }
+
+            return success;
+        }
+    }
+
     void Start()
     {
         visualLasers = new List<VisualLaser>();
@@ -179,9 +198,6 @@ public class GameManager : MonoBehaviour
                 success = false;
         }
 
-        if (success)
-            Debug.Log("Win");
-
         for (int i = 0; i < visualLasers.Count; i++)
         {
             Destroy(visualLasers[i].gameObject);
@@ -198,6 +214,28 @@ public class GameManager : MonoBehaviour
         }
 
         level.board.OnLaserPathCalculated();
+
+        if (success)
+            StartCoroutine(OnWinCoroutine());
+    }
+
+    private void OnWin()
+    {
+        Pause.Current.pause(false);
+        WinGUI.SetActive(true);
+        PlayerPrefs.SetInt("level complete " + LevelSceneManager.CurrentLevel.sceneNumber, 1);
+    }
+
+    public void LoadNextLevel()
+    {
+        LevelSceneManager.LoadLevel(LevelSceneManager.CurrentLevelSet, LevelSceneManager.CurrentLevelIndex + 1);
+    }
+
+    private IEnumerator OnWinCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(2);
+        if (HasWon)
+            OnWin();
     }
 
     private void RecursiveLaserPath(ref List<Laser> lasers, Laser current, int index, int max)

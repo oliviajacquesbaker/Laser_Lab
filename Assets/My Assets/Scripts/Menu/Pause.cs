@@ -7,20 +7,7 @@ public class Pause : MonoBehaviour
     private static Pause m_current;
     public static Pause Current { get { if (m_current) return m_current; else return null; } }
 
-    private bool m_isPaused = false;
-
-    public bool paused
-    {
-        get
-        {
-            return m_isPaused;
-        }
-        set
-        {
-            m_isPaused = value;
-            pauseMenu.SetActive(value);
-        }
-    }
+    public bool paused { get; private set; } = false;
 
     public GameObject pauseMenu;
 
@@ -39,16 +26,35 @@ public class Pause : MonoBehaviour
 
     public void pause()
     {
+        pause(true);
+    }
+
+    public void pause(bool showMenu)
+    {
         paused = true;
+        pauseMenu.SetActive(showMenu);
     }
 
     public void resume()
     {
         paused = false;
+
+        if (pauseMenu.activeSelf)
+            pauseMenu.SetActive(false);
     }
 
     public void toggle()
     {
+        toggle(true);
+    }
+
+    public void toggle(bool showMenu)
+    {
         paused = !paused;
+        if (showMenu && paused)
+            pauseMenu.SetActive(true);
+
+        else if (pauseMenu.activeSelf && !paused)
+            pauseMenu.SetActive(false);
     }
 }

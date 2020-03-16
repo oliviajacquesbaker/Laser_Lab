@@ -11,11 +11,13 @@ public class LevelSelectObject : MonoBehaviour
     private LevelSelect selector;
     public Button button;
     private LevelSet.Level level;
+    private int levelIndex;
 
     bool available = false;
 
-    public void SetLevel(LevelSet.Level level, LevelSelect selector, bool available)
+    public void SetLevel(LevelSet.Level level, int levelIndex, LevelSelect selector, bool available)
     {
+        this.levelIndex = levelIndex;
         this.available = available;
         this.level = level;
         LevelName.text = level.name;
@@ -35,14 +37,14 @@ public class LevelSelectObject : MonoBehaviour
 
     public void OnClick()
     {
-        selector.SelectLevel(level);
+        selector.SelectLevel(levelIndex);
     }
 
     public void Refresh()
     {
         if (!available)
             return;
-        if (selector.selectedLevel == level)
+        if (selector.SelectedLevelIndex == levelIndex)
         {
             button.interactable = false;
         }
