@@ -135,7 +135,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     {
         redVal = greenVal = blueVal = 0;
         redMet = greenMet = blueMet = false;
-        renderer_.materials[1].SetColor("_EmissionColor", Color.green);
+        renderer_.materials[1].SetColor("_EmissionColor", Color.red);
         SetText();
 
     }
