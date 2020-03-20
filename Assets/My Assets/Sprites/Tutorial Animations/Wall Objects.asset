@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe35d1e1c77c96944b4d04ad2c604112, type: 3}
+  m_Name: Wall Objects
+  m_EditorClassIdentifier: 
+  framerate: 2
+  frames:
+  - {fileID: 21300000, guid: 000f24fd2bc724346b2ff1eeebc609c8, type: 3}
+  - {fileID: 21300000, guid: 000f24fd2bc724346b2ff1eeebc609c8, type: 3}
+  - {fileID: 21300000, guid: 04d0de25d562ff34588c25d36cb17d59, type: 3}
+  - {fileID: 21300000, guid: 04d0de25d562ff34588c25d36cb17d59, type: 3}

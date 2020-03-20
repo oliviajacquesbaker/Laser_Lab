@@ -140,18 +140,30 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     }
 
+    public double abs(double val)
+    {
+        if (val < 0)
+        {
+            return val * -1;
+        }
+        else
+        {
+            return val;
+        }
+    }
 
     public void CheckEqual(Laser laser)
     {
-        if (redVal == redReq)
+        double check = 0.0001;
+        if (abs(redVal-redReq) < check)
         {
             redMet = true;
         }
-        if (greenVal == greenReq)
+        if (abs(greenVal - greenReq) < check)
         {
             greenMet = true;
         }
-        if (blueVal == blueReq)
+        if (abs(blueVal - blueReq) < check)
         {
             blueMet = true;
         }
