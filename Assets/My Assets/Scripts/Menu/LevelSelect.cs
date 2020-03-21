@@ -22,15 +22,15 @@ public class LevelSelect : MonoBehaviour
 
         for (int i = 0; i < set.levels.Length; i++)
         {
-            if (set.levels[i].sceneNumber >= SceneManager.sceneCountInBuildSettings || set.levels[i].sceneNumber < 4)
+            if (set.getSceneNumber(i) >= SceneManager.sceneCountInBuildSettings || set.getSceneNumber(i) < 4)
                 continue;
 
             GameObject newObject = Instantiate(LevelSelectObjectPrefab, transform);
             LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
 
             tmpList.Add(selectObject);
-            if (!PlayerPrefs.HasKey("level complete " + menuFunctions.levelSet.ID + " " + menuFunctions.levelSet.levels[i].sceneNumber) ||
-                PlayerPrefs.GetInt("level complete " + menuFunctions.levelSet.ID + " " + menuFunctions.levelSet.levels[i].sceneNumber) != 1)
+            if (!PlayerPrefs.HasKey("level complete " + set.ID + " " + set.getSceneNumber(i)) ||
+                PlayerPrefs.GetInt("level complete " + set.ID + " " + set.getSceneNumber(i)) != 1)
                 newLevelCount--;
 
             selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0);

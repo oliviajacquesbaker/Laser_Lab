@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public static class LevelSceneManager
 {
-    public static LevelSet.Level CurrentLevel { get { return CurrentLevelSet.levels[CurrentLevelIndex]; } }
+    public static int CurrentSceneNumber { get { return CurrentLevelSet.getSceneNumber(CurrentLevelIndex); } }
     public static int CurrentLevelIndex { get; private set; } = -1;
     public static LevelSet CurrentLevelSet { get; private set; }
 
@@ -20,14 +20,14 @@ public static class LevelSceneManager
             LoadLevel(set, index - 1);
             return;
         }
-        else if (CurrentLevel.sceneNumber >= SceneManager.sceneCountInBuildSettings || CurrentLevel.sceneNumber < 4)
+        else if (CurrentSceneNumber >= SceneManager.sceneCountInBuildSettings || CurrentSceneNumber < 4)
         {
             Debug.LogWarning("Loading previous level due to invalid scene number.");
             LoadLevel(set, index - 1);
             return;
         }
 
-        SceneManager.LoadScene(CurrentLevel.sceneNumber, LoadSceneMode.Single);
+        SceneManager.LoadScene(CurrentSceneNumber, LoadSceneMode.Single);
         SceneManager.LoadScene(3, LoadSceneMode.Additive);
     }
 

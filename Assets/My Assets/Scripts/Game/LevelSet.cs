@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class LevelSet : ScriptableObject
 {
     public int ID = 0;
+    public int SceneOffset = 4;
     public Level[] levels;
     public int count { get { return levels.Length; } }
 
@@ -15,11 +17,15 @@ public class LevelSet : ScriptableObject
     {
         public string name;
         public Difficulty difficulty;
-        public int sceneNumber = 4;
     }
 
     public enum Difficulty
     {
         TUTORIAL, BEGINNER, EASY, MEDIUM, HARD, EXPERT, MASTERMIND
+    }
+
+    internal int getSceneNumber(int i)
+    {
+        return i + SceneOffset;
     }
 }

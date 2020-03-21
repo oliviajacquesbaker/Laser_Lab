@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/1WM/Level Manager.unity
     guid: 1676dd177db959f4cbc004418240603a
-  - enabled: 1
+  - enabled: 0
     path: Assets/My Assets/Scenes/Test Level.unity
     guid: 5d4619e75845fbc4292a9f6236617a7f
   - enabled: 1
@@ -38,6 +38,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/1SM/1SM_2_1.unity
     guid: 7a0824fa115e65c4bb6daf252368aced
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/C&P/C&P_0_1.unity
+    guid: d871e1f0b1de83c4b87b7fce5338e321
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/C&P/C&P_0_2.unity
+    guid: d76351a24982f91499a29cb21558709b
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_1.unity
+    guid: 78a7e3ef547dda040ac506ace7b4c3d6
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_2_.unity
+    guid: ac2cefcc7dff3364090e3bc4891b9d31
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_3.unity
+    guid: a85ee7bc210948b40b06198ba69366eb
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/2SM/2SM_0_1.unity
     guid: 37ea92035f832c74793f8fded2a74d8e
@@ -62,21 +77,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/2SM/2SM_3_1.unity
     guid: 07ae6b2339deb6d48a343cad256eb703
-  - enabled: 1
-    path: Assets/My Assets/Scenes/Levels/C&P/C&P_0_1.unity
-    guid: d871e1f0b1de83c4b87b7fce5338e321
-  - enabled: 1
-    path: Assets/My Assets/Scenes/Levels/C&P/C&P_0_2.unity
-    guid: d76351a24982f91499a29cb21558709b
-  - enabled: 1
-    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_1.unity
-    guid: 78a7e3ef547dda040ac506ace7b4c3d6
-  - enabled: 1
-    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_2_.unity
-    guid: ac2cefcc7dff3364090e3bc4891b9d31
-  - enabled: 1
-    path: Assets/My Assets/Scenes/Levels/C&P/C&P_1_3.unity
-    guid: a85ee7bc210948b40b06198ba69366eb
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/1WM/1WM_0_1.unity
     guid: 63d0a311984fad649a426729d637ffe5

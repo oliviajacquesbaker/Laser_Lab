@@ -21,9 +21,9 @@ public class MenuFunctions : MonoBehaviour
     public void StartGame()
     {
         for (int i = 0; i < levelSet.count - 1; i++) {
-            if (PlayerPrefs.HasKey("level complete " + levelSet.ID + " " + levelSet.levels[i].sceneNumber))
+            if (PlayerPrefs.HasKey("level complete " + levelSet.ID + " " + levelSet.getSceneNumber(i)))
             {
-                if (PlayerPrefs.GetInt("level complete " + levelSet.ID + " " + levelSet.levels[i].sceneNumber) == 0)
+                if (PlayerPrefs.GetInt("level complete " + levelSet.ID + " " + levelSet.getSceneNumber(i)) == 0)
                 {
                     LevelSceneManager.LoadLevel(levelSet, i);
                     return;
@@ -31,7 +31,7 @@ public class MenuFunctions : MonoBehaviour
             }
             else
             {
-                PlayerPrefs.SetInt("level complete " + levelSet.ID + " " + levelSet.levels[i].sceneNumber, 0);
+                PlayerPrefs.SetInt("level complete " + levelSet.ID + " " + levelSet.getSceneNumber(i), 0);
                 LevelSceneManager.LoadLevel(levelSet, i);
                 return;
             }
