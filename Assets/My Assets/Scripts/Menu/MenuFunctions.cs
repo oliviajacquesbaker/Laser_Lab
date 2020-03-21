@@ -18,6 +18,13 @@ public class MenuFunctions : MonoBehaviour
 #endif
     }
 
+    public bool HasBeetFirstLevel()
+    {
+        return
+            PlayerPrefs.HasKey("level complete " + levelSet.ID + " " + levelSet.getSceneNumber(0)) &&
+            PlayerPrefs.GetInt("level complete " + levelSet.ID + " " + levelSet.getSceneNumber(0)) == 1;
+    }
+
     public void StartGame()
     {
         for (int i = 0; i < levelSet.count - 1; i++) {

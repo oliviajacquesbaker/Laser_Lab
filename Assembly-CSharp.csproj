@@ -63,6 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\My Assets\Scripts\Audio\MusicPlayer.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Audio\StartClipOnLoad.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObject.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectBlock.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectDiffractionGrid.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
     <Compile Include="Assets\My Assets\Scripts\Laser\VisualLaser.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Menu\BeginButton.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\DifficultyShower.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\LevelSelect.cs" />
     <Compile Include="Assets\My Assets\Scripts\Menu\LevelSelectObject.cs" />
