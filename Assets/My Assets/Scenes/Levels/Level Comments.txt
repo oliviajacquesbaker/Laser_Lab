@@ -14,3 +14,17 @@ C&P_1_3 You can avoid the pre-placed mirrors for the most part by directing the 
 1WM_3_1 can be completed without one of the one sided mirrors
 (good use of blocks and tiles in 1WM_3_2)
 1WM_3_3 can be completed without one of the one sided mirrors
+
+===Second review section===
+(I like 1WM_4_1 because the obvious solutions to me required more mirrors)
+(I'm liking the difficulty of these levels. Your designation of the difficulty levels is great)
+1WM_4_3 can be completed without one of the one sided mirrors. The solution seemed to easy, so adding tiles might help.
+1WM_5_1 feels a little to strait forward for me. Maybe move stuff around a little and add a 2 sided mirror somewhere.
+(P_1_3 is a really good use of unmoveable objects. love it!)
+P_2_2 can be completed without one of the two way mirrors. Also, the use of the greater than mode on the receiver seems to be pointless and just confused me.
+P_2_3 can be completed without the two way mirror
+P_3_1 can be completed without one of the one way mirrors (I would remove the mirrors from this and the previous one and swap them)
+(P_3_2 was pretty interesting to think about the power levels)
+(I like the use of the locked mirror in P_3_3 because the level makes you use it)
+P_4_1 is good, though I found an interesting solution if you remove one prism and and add one more one way mirror. (Finally finished that level after like 10 minutes with what you gave me, and I found a solution that doesn't use two of the one sided mirrors (surprised myself). I still don't know what your solution is lol)
+P_4_2 is possible without 1 one sided mirror and 1 one way mirror
