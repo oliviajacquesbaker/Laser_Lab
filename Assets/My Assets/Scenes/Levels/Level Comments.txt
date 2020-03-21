@@ -1,0 +1,16 @@
+1sm_1_1 two of the mirrors are not required
+1SM_2_1 you can cut off the laser from the beginning directly towards the receiver
+2SM_1_2 same issue as 1SM_2_1
+2SM_1_3 the two sided mirror is not required
+(Good use of two sided mirror in 2SM_2_1)
+(I really like 2SM_2_2)
+2SM_2_3 it is possible to avoid using the two sided mirror
+2SM_3_1 can be completed without using 1 two sided mirror and 2 one sided mirrors
+C&P_1_3 You can avoid the pre-placed mirrors for the most part by directing the laser upwards before the first mirror
+(I like the use of receiver ranges in 1WM_1_3)
+(Amazing use of one way mirrors in 1WM_2_1)
+1WM_2_2 can be completed without one of the one sided mirrors
+1WM_2_3 can be completed without one of the one sided mirrors. I would recommend removing one as it is a pretty interesting solution without one, though I haven't see the original solution.
+1WM_3_1 can be completed without one of the one sided mirrors
+(good use of blocks and tiles in 1WM_3_2)
+1WM_3_3 can be completed without one of the one sided mirrors

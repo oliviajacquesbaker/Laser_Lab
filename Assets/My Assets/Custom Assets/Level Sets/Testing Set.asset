@@ -17,18 +17,3 @@ MonoBehaviour:
   - name: Testing Sandbox
     difficulty: 1
     sceneNumber: 4
-  - name: 
-    difficulty: 2
-    sceneNumber: 5
-  - name: 
-    difficulty: 3
-    sceneNumber: 5
-  - name: 
-    difficulty: 4
-    sceneNumber: 5
-  - name: 
-    difficulty: 5
-    sceneNumber: 5
-  - name: 
-    difficulty: 6
-    sceneNumber: 5

@@ -113,6 +113,7 @@
     <Compile Include="Assets\My Assets\Scripts\Utility\LockRotation.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\PlatformSpecific.cs" />
     <Compile Include="Assets\My Assets\Scripts\Utility\PrefabDataAttribute.cs" />
+    <None Include="Assets\My Assets\Scenes\Levels\Level Comments.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

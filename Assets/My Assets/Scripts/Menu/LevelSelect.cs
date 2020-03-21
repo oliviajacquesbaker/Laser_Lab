@@ -16,7 +16,7 @@ public class LevelSelect : MonoBehaviour
     {
         SelectedLevelIndex = -1;
         LevelSet set = menuFunctions.levelSet;
-        int newLevelCount = 3;
+        int newLevelCount = 1;
 
         List<LevelSelectObject> tmpList = new List<LevelSelectObject>();
 
@@ -29,9 +29,8 @@ public class LevelSelect : MonoBehaviour
             LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
 
             tmpList.Add(selectObject);
-
-            if (!PlayerPrefs.HasKey("level complete " + menuFunctions.levelSet.levels[i].sceneNumber) ||
-                PlayerPrefs.GetInt("level complete " + menuFunctions.levelSet.levels[i].sceneNumber) != 1)
+            if (!PlayerPrefs.HasKey("level complete " + menuFunctions.levelSet.ID + " " + menuFunctions.levelSet.levels[i].sceneNumber) ||
+                PlayerPrefs.GetInt("level complete " + menuFunctions.levelSet.ID + " " + menuFunctions.levelSet.levels[i].sceneNumber) != 1)
                 newLevelCount--;
 
             selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0);
