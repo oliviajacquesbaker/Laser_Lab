@@ -29,11 +29,16 @@ public class LevelSelect : MonoBehaviour
             LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
 
             tmpList.Add(selectObject);
+            bool complete = true;
+
             if (!PlayerPrefs.HasKey("level complete " + set.ID + " " + set.getSceneNumber(i)) ||
                 PlayerPrefs.GetInt("level complete " + set.ID + " " + set.getSceneNumber(i)) != 1)
+            {
+                complete = false;
                 newLevelCount--;
+            }
 
-            selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0);
+            selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0, complete);
         }
 
         list = tmpList.ToArray();

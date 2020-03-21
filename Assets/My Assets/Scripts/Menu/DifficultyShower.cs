@@ -18,4 +18,5 @@ public class DifficultyShower : MonoBehaviour
         }
         Label.text = difficulty.ToString();
     }
+
 }
