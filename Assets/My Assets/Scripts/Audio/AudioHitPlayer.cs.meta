@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 109e054da0323b1498c1ab0c919de0af
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - audioHitPrefab: {fileID: 2025203648894457644, guid: 97721901bccbbb14a90f62483681e6d4,
+      type: 3}
+  - audioGroup: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
