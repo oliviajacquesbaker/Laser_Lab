@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Pause : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class Pause : MonoBehaviour
     public bool paused { get; private set; } = false;
 
     public GameObject pauseMenu;
+
+    public AudioHitPlayer player;
+    public AudioClip pauseSound;
+    public AudioClip resumeSound;
+    public AudioMixer mixer;
+    public AudioMixerSnapshot normalMixerSnapshot;
+    public AudioMixerSnapshot pausedMixerSnapshot;
 
     private void Awake()
     {
@@ -33,6 +41,8 @@ public class Pause : MonoBehaviour
     {
         paused = true;
         pauseMenu.SetActive(showMenu);
+
+        setAudioMode(paused);
     }
 
     public void resume()
@@ -41,6 +51,8 @@ public class Pause : MonoBehaviour
 
         if (pauseMenu.activeSelf)
             pauseMenu.SetActive(false);
+
+        setAudioMode(paused);
     }
 
     public void toggle()
@@ -56,5 +68,28 @@ public class Pause : MonoBehaviour
 
         else if (pauseMenu.activeSelf && !paused)
             pauseMenu.SetActive(false);
+
+        setAudioMode(paused);
+    }
+
+    private void setAudioMode(bool paused)
+    {
+        if (paused)
+        {
+            player.PlayClip(pauseSound);
+            mixer.TransitionToSnapshots(new AudioMixerSnapshot[] { pausedMixerSnapshot }, new float[] { 1 }, .1f);
+        } else
+        {
+            player.PlayClip(resumeSound);
+            mixer.TransitionToSnapshots(new AudioMixerSnapshot[] { normalMixerSnapshot }, new float[] { 1 }, 1f);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (paused)
+        {
+            mixer.TransitionToSnapshots(new AudioMixerSnapshot[] { normalMixerSnapshot }, new float[] { 1 }, 1f);
+        }
     }
 }

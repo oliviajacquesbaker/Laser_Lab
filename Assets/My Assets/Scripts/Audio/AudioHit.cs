@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
 [RequireComponent(typeof(AudioSource))]
 public class AudioHit : MonoBehaviour
 {
@@ -18,8 +20,9 @@ public class AudioHit : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void PlayClip(AudioClip clip)
+    public void PlayClip(AudioClip clip, AudioMixerGroup audioGroup = null)
     {
+        source.outputAudioMixerGroup = audioGroup;
         source.PlayOneShot(clip);
         hasStarted = true;
     }
