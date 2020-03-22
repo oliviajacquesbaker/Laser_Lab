@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour
     public TutorialBubble tutorialBubble;
     private bool closeTutorial;
 
+    public GameObject audioHitPrefab;
+    public AudioClip placeSound;
+    public AudioClip rotateSound;
+    public AudioClip pickupSound;
+
     private bool HasWon
     {
         get
@@ -35,6 +40,13 @@ public class GameManager : MonoBehaviour
 
             return success;
         }
+    }
+
+    private void playClip(AudioClip clip)
+    {
+        GameObject audioHitPrefab = Instantiate(this.audioHitPrefab);
+        AudioHit hitPlayer = audioHitPrefab.GetComponent<AudioHit>();
+        hitPlayer.PlayClip(clip);
     }
 
     void Start()
@@ -331,6 +343,7 @@ public class GameManager : MonoBehaviour
                         {
                             boardObject.Rotate();
                             CalculateLaserPaths();
+                            playClip(rotateSound);
                         }
 
                         SelectObject(-1);
@@ -342,6 +355,7 @@ public class GameManager : MonoBehaviour
                             boardObject.Pickup();
                             level.board.SetBoardObject(pos, null);
                             AddToUnplaced(boardObject);
+                            playClip(pickupSound);
                         }
                         else
                             SelectObject(-1);
@@ -360,6 +374,7 @@ public class GameManager : MonoBehaviour
                         if (!level.board.GetBoardObject(pos) && selectedObjectIndex != -1)
                         {
                             Place(pos);
+                            playClip(placeSound);
                         }
                         else
                             SelectObject(-1);
