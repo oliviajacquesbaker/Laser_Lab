@@ -12,10 +12,11 @@ public class LevelSelectObject : MonoBehaviour
     public Button button;
     private LevelSet.Level level;
     private int levelIndex;
+    public Image CheckMark;
 
     bool available = false;
 
-    public void SetLevel(LevelSet.Level level, int levelIndex, LevelSelect selector, bool available)
+    public void SetLevel(LevelSet.Level level, int levelIndex, LevelSelect selector, bool available, bool complete)
     {
         this.levelIndex = levelIndex;
         this.available = available;
@@ -33,6 +34,8 @@ public class LevelSelectObject : MonoBehaviour
             block.disabledColor = selectedColor;
             button.colors = block;
         }
+
+        CheckMark.gameObject.SetActive(complete);
     }
 
     public void OnClick()
