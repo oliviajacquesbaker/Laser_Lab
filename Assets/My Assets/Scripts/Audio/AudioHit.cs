@@ -22,6 +22,7 @@ public class AudioHit : MonoBehaviour
 
     public void PlayClip(AudioClip clip, AudioMixerGroup audioGroup = null)
     {
+        DontDestroyOnLoad(gameObject);
         source.outputAudioMixerGroup = audioGroup;
         source.PlayOneShot(clip);
         hasStarted = true;

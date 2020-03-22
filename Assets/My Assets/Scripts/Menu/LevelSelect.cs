@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
     public MenuFunctions menuFunctions;
     public GameObject LevelSelectObjectPrefab;
+
+    public Button PlayButton;
 
     public int SelectedLevelIndex = -1;
 
@@ -42,6 +45,7 @@ public class LevelSelect : MonoBehaviour
         }
 
         list = tmpList.ToArray();
+        PlayButton.interactable = SelectedLevelIndex >= 0;
     }
 
     public void SelectLevel(int index)
@@ -51,6 +55,7 @@ public class LevelSelect : MonoBehaviour
         {
             list[i].Refresh();
         }
+        PlayButton.interactable = SelectedLevelIndex >= 0;
     }
 
     public void LoadLevel()

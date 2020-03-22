@@ -20,7 +20,7 @@ public class AudioHitPlayer : MonoBehaviour
 
     public void PlayClip(AudioClip clip)
     {
-        GameObject audioHitPrefab = Instantiate(this.audioHitPrefab, transform);
+        GameObject audioHitPrefab = Instantiate(this.audioHitPrefab);
         AudioHit hitPlayer = audioHitPrefab.GetComponent<AudioHit>();
         hitPlayer.PlayClip(clip, audioGroup);
     }

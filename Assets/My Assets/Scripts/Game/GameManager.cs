@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     public AudioClip placeSound;
     public AudioClip rotateSound;
     public AudioClip pickupSound;
+    public AudioClip dropSound;
+
+    public ButtonSoundPlayer buttonSoundPlayer;
 
     private bool HasWon
     {
@@ -85,6 +88,8 @@ public class GameManager : MonoBehaviour
                 tutorialBubble.loadMessage(queue.messages[i]);
                 yield return new WaitUntil(() => closeTutorial);
                 closeTutorial = false;
+                if (i < queue.messages.Length - 1)
+                    buttonSoundPlayer.PlayButtonSound();
             }
 
             tutorialBubble.gameObject.SetActive(false);
@@ -337,6 +342,9 @@ public class GameManager : MonoBehaviour
                             boardObject.Rotate();
                             CalculateLaserPaths();
                             audioPlayer.PlayClip(rotateSound);
+                        } else
+                        {
+                            audioPlayer.PlayClip(dropSound);
                         }
 
                         SelectObject(-1);
@@ -351,7 +359,10 @@ public class GameManager : MonoBehaviour
                             audioPlayer.PlayClip(pickupSound);
                         }
                         else
+                        {
                             SelectObject(-1);
+                            audioPlayer.PlayClip(dropSound);
+                        }
                     }
 
                     if (selectedObjectIndex > -1)
@@ -371,8 +382,12 @@ public class GameManager : MonoBehaviour
                         }
                         else
                             SelectObject(-1);
-                    } else if (Input.GetMouseButtonDown(1))
+                    }
+                    else if (Input.GetMouseButtonDown(1))
+                    {
+                        audioPlayer.PlayClip(dropSound);
                         SelectObject(-1);
+                    }
 
                     if (selectedObjectIndex > -1)
                     {
@@ -390,7 +405,10 @@ public class GameManager : MonoBehaviour
                     Vector2Int pos = wall.getPos();
 
                     if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                    {
+                        audioPlayer.PlayClip(dropSound);
                         SelectObject(-1);
+                    }
 
                     if (selectedObjectIndex > -1)
                     {
@@ -407,7 +425,10 @@ public class GameManager : MonoBehaviour
                 }
 
                 if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                {
                     SelectObject(-1);
+                    audioPlayer.PlayClip(dropSound);
+                }
 
                 if (selectedObjectIndex > -1)
                 {

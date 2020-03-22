@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\My Assets\Scripts\Audio\AudioHit.cs" />
     <Compile Include="Assets\My Assets\Scripts\Audio\AudioHitPlayer.cs" />
+    <Compile Include="Assets\My Assets\Scripts\Audio\ButtonSoundPlayer.cs" />
     <Compile Include="Assets\My Assets\Scripts\Audio\MusicPlayer.cs" />
     <Compile Include="Assets\My Assets\Scripts\Audio\StartClipOnLoad.cs" />
     <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObject.cs" />
