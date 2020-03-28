@@ -15,179 +15,179 @@ MonoBehaviour:
   ID: 1
   SceneOffset: 4
   levels:
-  - name: 
+  - name: 1SM 0 1
     difficulty: 0
-  - name: 
+  - name: 1SM 0 2
     difficulty: 0
-  - name: 
+  - name: 1SM 0 3
     difficulty: 0
-  - name: 
+  - name: 1SM 1 1
     difficulty: 1
-  - name: 
+  - name: 1SM 1 2
     difficulty: 1
-  - name: 
+  - name: 1SM 2 1
     difficulty: 2
-  - name: 
+  - name: C&P 0 1
     difficulty: 0
-  - name: 
+  - name: C&P 0 2
     difficulty: 0
-  - name: 
+  - name: C&P 1 1
     difficulty: 1
-  - name: 
+  - name: C&P 1 2
     difficulty: 1
-  - name: 
+  - name: C&P 1 3
     difficulty: 1
-  - name: 
+  - name: 2SM 0 1
     difficulty: 0
-  - name: 
+  - name: 2SM 1 1
     difficulty: 1
-  - name: 
+  - name: 2SM 1 2
     difficulty: 1
-  - name: 
+  - name: 2SM 1 3
     difficulty: 1
-  - name: 
+  - name: 2SM 2 1
     difficulty: 2
-  - name: 
+  - name: 2SM 2 2
     difficulty: 2
-  - name: 
+  - name: 2SM 2 3
     difficulty: 2
-  - name: 
+  - name: 2SM 3 1
     difficulty: 3
-  - name: 
+  - name: 1WM 0 1
     difficulty: 0
-  - name: 
+  - name: 1WM 1 1
     difficulty: 1
-  - name: 
+  - name: 1WM 1 2
     difficulty: 1
-  - name: 
+  - name: 1WM 1 3
     difficulty: 1
-  - name: 
+  - name: 1WM 2 1
     difficulty: 2
-  - name: 
+  - name: 1WM 2 2
     difficulty: 2
-  - name: 
+  - name: 1WM 2 3
     difficulty: 2
-  - name: 
+  - name: 1WM 3 1
     difficulty: 3
-  - name: 
+  - name: 1WM 3 2
     difficulty: 3
-  - name: 
+  - name: 1WM 3 3
     difficulty: 3
-  - name: 
+  - name: 1WM 4 1
     difficulty: 4
-  - name: 
+  - name: 1WM 4 2
     difficulty: 4
-  - name: 
+  - name: 1WM 4 3
     difficulty: 4
-  - name: 
+  - name: 1WM 5 1
     difficulty: 5
-  - name: 
+  - name: P 0 1
     difficulty: 0
-  - name: 
+  - name: P 1 1
     difficulty: 1
-  - name: 
+  - name: P 1 2
     difficulty: 1
-  - name: 
+  - name: P 1 3
     difficulty: 1
-  - name: 
+  - name: P 2 1
     difficulty: 2
-  - name: 
+  - name: P 2 2
     difficulty: 2
-  - name: 
+  - name: P 2 3
     difficulty: 2
-  - name: 
+  - name: P 3 1
     difficulty: 3
-  - name: 
+  - name: P 3 2
     difficulty: 3
-  - name: 
+  - name: P 3 3
     difficulty: 3
-  - name: 
+  - name: P 4 1
     difficulty: 4
-  - name: 
+  - name: P 4 2
     difficulty: 4
-  - name: 
+  - name: P 4 3
     difficulty: 4
-  - name: 
+  - name: P 5 1
     difficulty: 5
-  - name: 
+  - name: P 5 2
     difficulty: 5
-  - name: 
+  - name: P 5 3
     difficulty: 5
-  - name: 
+  - name: P 6 1
     difficulty: 6
-  - name: 
+  - name: 2WM 0 1
     difficulty: 0
-  - name: 
+  - name: 2WM 1 1
     difficulty: 1
-  - name: 
+  - name: 2WM 1 2
     difficulty: 1
-  - name: 
+  - name: 2WM 1 3
     difficulty: 1
-  - name: 
+  - name: 2WM 2 1
     difficulty: 2
-  - name: 
+  - name: 2WM 2 2
     difficulty: 2
-  - name: 
+  - name: 2WM 2 3
     difficulty: 2
-  - name: 
+  - name: 2WM 3 1
     difficulty: 3
-  - name: 
+  - name: 2WM 3 2
     difficulty: 3
-  - name: 
+  - name: 2WM 3 3
     difficulty: 3
-  - name: 
+  - name: 2WM 4 1
     difficulty: 4
-  - name: 
+  - name: 2WM 4 2
     difficulty: 4
-  - name: 
+  - name: 2WM 4 3
     difficulty: 4
-  - name: 
+  - name: 2WM 5 1
     difficulty: 5
-  - name: 
+  - name: 2WM 5 2
     difficulty: 5
-  - name: 
+  - name: 2WM 5 3
     difficulty: 5
-  - name: 
+  - name: 2WM 6 1
     difficulty: 6
-  - name: 
+  - name: 2WM 6 2
     difficulty: 6
-  - name: 
+  - name: 2WM 6 3
     difficulty: 6
-  - name: 
+  - name: DG 0 1
     difficulty: 0
-  - name: 
+  - name: DG 1 1
     difficulty: 1
-  - name: 
+  - name: DG 1 2
     difficulty: 1
-  - name: 
+  - name: DG 1 3
     difficulty: 1
-  - name: 
+  - name: DG 2 1
     difficulty: 2
-  - name: 
+  - name: DG 2 2
     difficulty: 2
-  - name: 
+  - name: DG 2 3
     difficulty: 2
-  - name: 
+  - name: DG 3 1
     difficulty: 3
-  - name: 
+  - name: DG 3 2
     difficulty: 3
-  - name: 
+  - name: DG 3 3
     difficulty: 3
-  - name: 
+  - name: DG 4 1
     difficulty: 4
-  - name: 
+  - name: DG 4 2
     difficulty: 4
-  - name: 
+  - name: DG 4 3
     difficulty: 4
-  - name: 
+  - name: DG 5 1
     difficulty: 5
-  - name: 
+  - name: DG 5 2
     difficulty: 5
-  - name: 
+  - name: DG 5 3
     difficulty: 5
-  - name: 
+  - name: DG 6 1
     difficulty: 6
-  - name: 
+  - name: DG 6 2
     difficulty: 6
-  - name: 
+  - name: DG 6 3
     difficulty: 6
