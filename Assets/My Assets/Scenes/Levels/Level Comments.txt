@@ -28,3 +28,11 @@ P_3_1 can be completed without one of the one way mirrors (I would remove the mi
 (I like the use of the locked mirror in P_3_3 because the level makes you use it)
 P_4_1 is good, though I found an interesting solution if you remove one prism and and add one more one way mirror. (Finally finished that level after like 10 minutes with what you gave me, and I found a solution that doesn't use two of the one sided mirrors (surprised myself). I still don't know what your solution is lol)
 P_4_2 is possible without 1 one sided mirror and 1 one way mirror
+
+===Section 3===
+2SM_1_1 does not require the two sided mirror
+2SM_2_2 has two solutions, which is fine, but you can add colors to force one. I messaged you in discord about this.
+2SM_2_3 does not require the player to re-use the two sided mirror. Adding two tiles in the middle should fix that.
+1WM_1_3 the upper side of the two sidded mirror can be ignored. Add a tile in front of the receiver.
+1WM_3_1 there are two solutions: use purple and green or use red, green, and blue. You can leave both if you want.
+1WM_4_1 does not require one of the one sided mirrors
