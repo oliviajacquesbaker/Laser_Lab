@@ -36,3 +36,10 @@ P_4_2 is possible without 1 one sided mirror and 1 one way mirror
 1WM_1_3 the upper side of the two sidded mirror can be ignored. Add a tile in front of the receiver.
 1WM_3_1 there are two solutions: use purple and green or use red, green, and blue. You can leave both if you want.
 1WM_4_1 does not require one of the one sided mirrors
+
+===Section 4===
+1WM_4_2 Not all pieces are used to the fullest. No change necessary. I messaged you in discord about this one.
+(I like 1WM_4_3. Looks like that's one you updated. Really good!)
+P_0_1 I think the prism spawns at a random rotation. Can you change it to spawn at the wrong rotation for the tutorial?
+P_4_1 is still possible without two of the one sided mirrors. You may not have gotten to fixing it. Maybe we talked about it before, but I don't remember.
+P_4_3 is possible with only using the white laser and about half of the pieces. Might need a fair bit of work.

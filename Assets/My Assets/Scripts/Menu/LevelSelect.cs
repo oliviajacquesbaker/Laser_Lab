@@ -11,15 +11,21 @@ public class LevelSelect : MonoBehaviour
 
     public Button PlayButton;
 
+    public ScrollRect scrollRect;
+
+    [HideInInspector]
     public int SelectedLevelIndex = -1;
 
+    [HideInInspector]
     public LevelSelectObject[] list;
 
     void Start()
     {
         SelectedLevelIndex = -1;
         LevelSet set = menuFunctions.levelSet;
-        int newLevelCount = 1;
+        int newLevelCount = 3;
+
+        int firstIndex = -1;
 
         List<LevelSelectObject> tmpList = new List<LevelSelectObject>();
 
@@ -39,6 +45,11 @@ public class LevelSelect : MonoBehaviour
             {
                 complete = false;
                 newLevelCount--;
+
+                if (firstIndex == -1)
+                {
+                    firstIndex = i;
+                }
             }
 
             selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0, complete);
@@ -46,6 +57,8 @@ public class LevelSelect : MonoBehaviour
 
         list = tmpList.ToArray();
         PlayButton.interactable = SelectedLevelIndex >= 0;
+
+        scrollRect.verticalNormalizedPosition = Mathf.Clamp(1-(firstIndex * 1f / (set.levels.Length - 2)), 0, 1);
     }
 
     public void SelectLevel(int index)
