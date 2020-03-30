@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelSelect : MonoBehaviour
 {
+    public int MaxAvailableLevelsInSection = 3;
     public MenuFunctions menuFunctions;
     public GameObject LevelSelectObjectPrefab;
 
@@ -23,7 +24,7 @@ public class LevelSelect : MonoBehaviour
     {
         SelectedLevelIndex = -1;
         LevelSet set = menuFunctions.levelSet;
-        int newLevelCount = 3;
+        int newLevelCount = 0;
 
         int firstIndex = -1;
 
@@ -39,12 +40,12 @@ public class LevelSelect : MonoBehaviour
 
             tmpList.Add(selectObject);
             bool complete = true;
+            LevelSet.Difficulty difficulty = set.levels[i].difficulty;
 
             if (!PlayerPrefs.HasKey("level complete " + set.ID + " " + set.getSceneNumber(i)) ||
                 PlayerPrefs.GetInt("level complete " + set.ID + " " + set.getSceneNumber(i)) != 1)
             {
                 complete = false;
-                newLevelCount--;
 
                 if (firstIndex == -1)
                 {
@@ -52,11 +53,32 @@ public class LevelSelect : MonoBehaviour
                 }
             }
 
-            selectObject.SetLevel(set.levels[i], i, this, newLevelCount >= 0, complete);
+            if (difficulty == LevelSet.Difficulty.TUTORIAL)
+            {
+                newLevelCount = MaxAvailableLevelsInSection;
+                if (!complete)
+                    newLevelCount = 1;
+            }
+
+            bool levelAvailable = newLevelCount >= 1;
+
+            selectObject.SetLevel(set.levels[i], i, this, levelAvailable, complete);
+            if (!complete)
+            {
+                newLevelCount--;
+                newLevelCount = Mathf.Clamp(newLevelCount, 0, MaxAvailableLevelsInSection);
+            }
         }
+
+        if (firstIndex == -1)
+            firstIndex = set.levels.Length - 1;
+
+        SelectedLevelIndex = firstIndex;
 
         list = tmpList.ToArray();
         PlayButton.interactable = SelectedLevelIndex >= 0;
+
+        list[SelectedLevelIndex].Refresh();
 
         scrollRect.verticalNormalizedPosition = Mathf.Clamp(1-(firstIndex * 1f / (set.levels.Length - 2)), 0, 1);
     }
