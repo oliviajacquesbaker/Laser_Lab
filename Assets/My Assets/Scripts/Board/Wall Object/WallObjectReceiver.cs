@@ -86,15 +86,15 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
         if (reqType == Requirement.EQUAL)
         {
-            CheckEqual(laser);
+            CheckEqual();
         }
         else if (reqType == Requirement.AT_MOST)
         {
-            CheckUnder(laser);
+            CheckUnder();
         }
         else if (reqType == Requirement.AT_LEAST)
         {
-            CheckOver(laser);
+            CheckOver();
         }
         return new Laser[0];
     }
@@ -117,7 +117,18 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public bool IsLaserConditionSatisfied()
     {
-        
+        if (reqType == Requirement.EQUAL)
+        {
+            CheckEqual();
+        }
+        else if (reqType == Requirement.AT_MOST)
+        {
+            CheckUnder();
+        }
+        else if (reqType == Requirement.AT_LEAST)
+        {
+            CheckOver();
+        }
 
         if (redMet == true && greenMet == true && blueMet == true)
         {
@@ -152,53 +163,26 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         }
     }
 
-    public void CheckEqual(Laser laser)
+    public void CheckEqual()
     {
         double check = 0.0001;
-        if (abs(redVal-redReq) < check)
-        {
-            redMet = true;
-        }
-        if (abs(greenVal - greenReq) < check)
-        {
-            greenMet = true;
-        }
-        if (abs(blueVal - blueReq) < check)
-        {
-            blueMet = true;
-        }
+        redMet = (abs(redVal - redReq) < check);
+        greenMet = (abs(greenVal - greenReq) < check);
+        blueMet = (abs(blueVal - blueReq) < check);
     }
 
-    public void CheckUnder(Laser laser)
+    public void CheckUnder()
     {
-        if (redVal <= redReq)
-        {
-            redMet = true;
-        }
-        if (greenVal <= greenReq)
-        {
-            greenMet = true;
-        }
-        if (blueVal <= blueReq)
-        {
-            blueMet = true;
-        }
+        redMet = (redVal <= redReq);
+        greenMet = (greenVal <= greenReq);
+        blueMet = (blueVal <= blueReq);
     }
 
-    public void CheckOver(Laser laser)
+    public void CheckOver()
     {
-        if (redVal >= redReq)
-        {
-            redMet = true;
-        }
-        if (greenVal >= greenReq)
-        {
-            greenMet = true;
-        }
-        if (blueVal >= blueReq)
-        {
-            blueMet = true;
-        }
+        redMet = (redVal >= redReq);
+        greenMet = (greenVal >= greenReq);
+        blueMet = (blueVal >= blueReq);
     }
 
 
