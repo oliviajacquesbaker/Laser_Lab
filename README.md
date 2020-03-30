@@ -35,4 +35,4 @@ Depending on the level, pieces can be restricted by only allowing certain forms 
 
 ## Acknowledgments
 
-* Project inspired by the boardgame Khet. 
+* Project inspired by the boardgame Laser Maze from MindWare.
