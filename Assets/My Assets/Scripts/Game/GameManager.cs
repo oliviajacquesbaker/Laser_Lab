@@ -287,6 +287,9 @@ public class GameManager : MonoBehaviour
         if (index >= max)
             return;
 
+        if (current.red + current.green + current.blue < .01f)
+            return;
+
         Vector2Int origin = current.origin;
 
         int distance = 1;

@@ -43,3 +43,16 @@ P_4_2 is possible without 1 one sided mirror and 1 one way mirror
 P_0_1 I think the prism spawns at a random rotation. Can you change it to spawn at the wrong rotation for the tutorial?
 P_4_1 is still possible without two of the one sided mirrors. You may not have gotten to fixing it. Maybe we talked about it before, but I don't remember.
 P_4_3 is possible with only using the white laser and about half of the pieces. Might need a fair bit of work.
+
+===Section 5===
+2WM_1_1 can be completed without two of the one sided mirrors
+2WM_1_3 can be completed without two of the one sided mirrors
+2WM_2_1 can be completed without one of the one way mirrors, though it is slightly more difficult
+2WM_3_2 can be completed without one of the one sided mirrors
+(2WM levels after this were either tested or too difficult for me to finish quickly)
+(DG_1_2 is pretty cool)
+DG_2_2 can be completed without one of the one sided mirrors
+(I like the double use of the diffraction grid in DG_2_3, DG_3_1, and DG_3_2 (I'm gonna stop adding levels to this comment now lol))
+DG_4_1 can be completed without three of the one sided mirrors. Probably needs tiles
+(DG levels after this were either tested or too difficult for me to finish quickly)
+Try to find a least common denominator for all levels.
