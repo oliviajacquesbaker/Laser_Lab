@@ -639,9 +639,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 1
-  blueOut: 1
+  redOut: 4
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 972023800}
   outTextG: {fileID: 823631103}
   outTextB: {fileID: 1108237250}
@@ -1714,9 +1714,9 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.5
+  redReq: 2
   greenReq: 0
-  blueReq: 1.625
+  blueReq: 6.5
   reqType: 0
   reqTextR: {fileID: 144829618}
   reqTextG: {fileID: 1755011619}
@@ -2741,9 +2741,9 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.75
-  greenReq: 0.875
-  blueReq: 0.75
+  redReq: 3
+  greenReq: 3.5
+  blueReq: 3
   reqType: 0
   reqTextR: {fileID: 1097803945}
   reqTextG: {fileID: 1893357854}
@@ -6198,9 +6198,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 1
-  blueOut: 1
+  redOut: 4
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 983832289}
   outTextG: {fileID: 456385681}
   outTextB: {fileID: 1763978694}
@@ -7582,9 +7582,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 1
-  blueOut: 1
+  redOut: 4
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 111333327}
   outTextG: {fileID: 1204542598}
   outTextB: {fileID: 2026565859}
@@ -7933,9 +7933,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 1
-  blueOut: 1
+  redOut: 4
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 1736183683}
   outTextG: {fileID: 607178967}
   outTextB: {fileID: 2046768568}

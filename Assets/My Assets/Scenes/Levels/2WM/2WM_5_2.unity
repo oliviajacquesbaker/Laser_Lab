@@ -1456,8 +1456,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
   redOut: 0
-  greenOut: 0.8
-  blueOut: 0.8
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 1454155699}
   outTextG: {fileID: 1749481778}
   outTextB: {fileID: 1331429656}
@@ -2437,9 +2437,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.4
+  redOut: 2
   greenOut: 0
-  blueOut: 0.8
+  blueOut: 4
   outTextR: {fileID: 1063230486}
   outTextG: {fileID: 607550780}
   outTextB: {fileID: 1203786079}
@@ -3435,8 +3435,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
   redReq: 0
-  greenReq: 1.7
-  blueReq: 0.4
+  greenReq: 8.5
+  blueReq: 2
   reqType: 0
   reqTextR: {fileID: 1011479030}
   reqTextG: {fileID: 1997598278}
@@ -3971,9 +3971,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.4
-  greenOut: 0.4
-  blueOut: 0.4
+  redOut: 2
+  greenOut: 2
+  blueOut: 2
   outTextR: {fileID: 1388831374}
   outTextG: {fileID: 370317840}
   outTextB: {fileID: 1223047975}
@@ -4820,7 +4820,7 @@ MonoBehaviour:
     modelOrientation: 0
   redReq: 0
   greenReq: 0
-  blueReq: 0.6
+  blueReq: 3
   reqType: 0
   reqTextR: {fileID: 1099344032}
   reqTextG: {fileID: 514385323}
@@ -8191,8 +8191,8 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.5
-  greenOut: 0.5
+  redOut: 2.5
+  greenOut: 2.5
   blueOut: 0
   outTextR: {fileID: 570570374}
   outTextG: {fileID: 810310115}
@@ -9839,7 +9839,7 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.9
+  redReq: 4.5
   greenReq: 0
   blueReq: 0
   reqType: 0

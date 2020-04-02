@@ -3097,8 +3097,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
   redOut: 0
-  greenOut: 1
-  blueOut: 0.5
+  greenOut: 10
+  blueOut: 5
   outTextR: {fileID: 1755584662}
   outTextG: {fileID: 202240633}
   outTextB: {fileID: 144150933}
@@ -5072,9 +5072,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.8
-  greenOut: 0.4
-  blueOut: 1
+  redOut: 8
+  greenOut: 4
+  blueOut: 10
   outTextR: {fileID: 1000199289}
   outTextG: {fileID: 1224893988}
   outTextB: {fileID: 1880869086}
@@ -6031,9 +6031,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 0.5
-  blueOut: 0.4
+  redOut: 10
+  greenOut: 5
+  blueOut: 4
   outTextR: {fileID: 416381670}
   outTextG: {fileID: 502723577}
   outTextB: {fileID: 323449847}
@@ -6230,9 +6230,9 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 1
-  greenReq: 2.65
-  blueReq: 0.5
+  redReq: 10
+  greenReq: 26.5
+  blueReq: 15
   reqType: 0
   reqTextR: {fileID: 1332968342}
   reqTextG: {fileID: 1960921820}
@@ -6352,8 +6352,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
   redReq: 0
-  greenReq: 0.25
-  blueReq: 1
+  greenReq: 2.5
+  blueReq: 10
   reqType: 0
   reqTextR: {fileID: 1096428951}
   reqTextG: {fileID: 2085145020}
@@ -7128,9 +7128,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
-  greenOut: 1
-  blueOut: 1
+  redOut: 10
+  greenOut: 10
+  blueOut: 10
   outTextR: {fileID: 2342316}
   outTextG: {fileID: 2129715189}
   outTextB: {fileID: 541900760}
@@ -9496,9 +9496,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.5
-  greenOut: 0.4
-  blueOut: 0.8
+  redOut: 5
+  greenOut: 4
+  blueOut: 8
   outTextR: {fileID: 1191766129}
   outTextG: {fileID: 103498946}
   outTextB: {fileID: 815444318}

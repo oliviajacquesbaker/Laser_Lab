@@ -8,10 +8,6 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     public float greenReq;
     public float blueReq;
 
-    private bool redMet = false;
-    private bool greenMet = false;
-    private bool blueMet = false;
-
     private float redVal;
     private float greenVal;
     private float blueVal;
@@ -83,19 +79,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         blueVal += laser.blue;
 
         SetText();
-
-        if (reqType == Requirement.EQUAL)
-        {
-            CheckEqual();
-        }
-        else if (reqType == Requirement.AT_MOST)
-        {
-            CheckUnder();
-        }
-        else if (reqType == Requirement.AT_LEAST)
-        {
-            CheckOver();
-        }
+        
         return new Laser[0];
     }
 
@@ -117,20 +101,21 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public bool IsLaserConditionSatisfied()
     {
+        bool check = false;
         if (reqType == Requirement.EQUAL)
         {
-            CheckEqual();
+            check = CheckEqual();
         }
         else if (reqType == Requirement.AT_MOST)
         {
-            CheckUnder();
+            check = CheckUnder();
         }
         else if (reqType == Requirement.AT_LEAST)
         {
-            CheckOver();
+            check = CheckOver();
         }
 
-        if (redMet == true && greenMet == true && blueMet == true)
+        if (check)
         {
             renderer_.materials[1].SetColor("_EmissiveColor", Color.green);
             return true;
@@ -145,7 +130,6 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     public void ResetLaserCondition()
     {
         redVal = greenVal = blueVal = 0;
-        redMet = greenMet = blueMet = false;
         renderer_.materials[1].SetColor("_EmissionColor", Color.red);
         SetText();
 
@@ -163,26 +147,29 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         }
     }
 
-    public void CheckEqual()
+    public bool CheckEqual()
     {
         double check = 0.0001;
-        redMet = (abs(redVal - redReq) < check);
-        greenMet = (abs(greenVal - greenReq) < check);
-        blueMet = (abs(blueVal - blueReq) < check);
+        bool redMet = (abs(redVal - redReq) < check);
+        bool greenMet = (abs(greenVal - greenReq) < check);
+        bool blueMet = (abs(blueVal - blueReq) < check);
+        return (redMet == true && greenMet == true && blueMet == true);
     }
 
-    public void CheckUnder()
+    public bool CheckUnder()
     {
-        redMet = (redVal <= redReq);
-        greenMet = (greenVal <= greenReq);
-        blueMet = (blueVal <= blueReq);
+        bool redMet = (redVal <= redReq);
+        bool greenMet = (greenVal <= greenReq);
+        bool blueMet = (blueVal <= blueReq);
+        return (redMet == true && greenMet == true && blueMet == true);
     }
 
-    public void CheckOver()
+    public bool CheckOver()
     {
-        redMet = (redVal >= redReq);
-        greenMet = (greenVal >= greenReq);
-        blueMet = (blueVal >= blueReq);
+        bool redMet = (redVal >= redReq);
+        bool greenMet = (greenVal >= greenReq);
+        bool blueMet = (blueVal >= blueReq);
+        return (redMet == true && greenMet == true && blueMet == true);
     }
 
 

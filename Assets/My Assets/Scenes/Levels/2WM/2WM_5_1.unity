@@ -4817,7 +4817,7 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
   redReq: 0
-  greenReq: 1.6
+  greenReq: 16
   blueReq: 0
   reqType: 0
   reqTextR: {fileID: 1479538567}
@@ -5798,9 +5798,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.4
-  greenOut: 0.4
-  blueOut: 0.4
+  redOut: 4
+  greenOut: 4
+  blueOut: 4
   outTextR: {fileID: 2085651537}
   outTextG: {fileID: 2121347842}
   outTextB: {fileID: 361406555}
@@ -8323,7 +8323,7 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.8
+  redReq: 8
   greenReq: 0
   blueReq: 0
   reqType: 0
@@ -8445,8 +8445,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
   redReq: 0
-  greenReq: 0.25
-  blueReq: 0.25
+  greenReq: 2.5
+  blueReq: 2.5
   reqType: 0
   reqTextR: {fileID: 1500561061}
   reqTextG: {fileID: 542676888}
@@ -8645,8 +8645,8 @@ MonoBehaviour:
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
   redOut: 0
-  greenOut: 0.5
-  blueOut: 0.5
+  greenOut: 5
+  blueOut: 5
   outTextR: {fileID: 744728375}
   outTextG: {fileID: 1573605958}
   outTextB: {fileID: 1799269871}
@@ -9644,9 +9644,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1
+  redOut: 10
   greenOut: 0
-  blueOut: 1
+  blueOut: 10
   outTextR: {fileID: 377045265}
   outTextG: {fileID: 1587812061}
   outTextB: {fileID: 627661434}
@@ -10117,9 +10117,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 1.2
-  greenOut: 1.2
-  blueOut: 1.2
+  redOut: 12
+  greenOut: 12
+  blueOut: 12
   outTextR: {fileID: 544313437}
   outTextG: {fileID: 840238188}
   outTextB: {fileID: 339268137}

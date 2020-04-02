@@ -56,3 +56,20 @@ DG_2_2 can be completed without one of the one sided mirrors
 DG_4_1 can be completed without three of the one sided mirrors. Probably needs tiles
 (DG levels after this were either tested or too difficult for me to finish quickly)
 Try to find a least common denominator for all levels.
+
+
+high power levels:
+2WM_5_1 - 16
+2WM_5_3 - 12
+2WM_6_1 - 26.5 ????
+2WM_6_2 - 10
+2WM_6_3 - 10
+DG_4_2 - 10
+DG_5_1 - 9
+
+
+broken levels:
+2WM_5_3 - 11.95313=12
+DG_3_2 - 0.9960938=1
+DG_6_1 - 1.96875=2
+((those aren't all of them, just wanted to note a few so we had some test/sample cases))
