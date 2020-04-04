@@ -13,8 +13,21 @@ public class Options : MonoBehaviour
     [SerializeField]
     Text resetButtonText;
 
+    [SerializeField]
+    Text resolutionButtonText;
+
+    [SerializeField]
+    Text fullScreenButtonText;
+
     bool resetConfirm = false;
     bool resetDone = false;
+
+    private void Start()
+    {
+        resolutionButtonText.text = "RES: " + Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+        fullScreenButtonText.text = "FULL SCREEN: " + (Screen.fullScreen ? "ON" : "OFF");
+        resetButtonText.text = "RESET PROGRESS";
+    }
 
     public void showOptions()
     {
@@ -47,5 +60,30 @@ public class Options : MonoBehaviour
                 resetButtonText.text = "RESET COMPLETE";
             }
         }
+    }
+
+    public void clickResolution()
+    {
+        int currentIndex = -1;
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+            if (Screen.resolutions[i].Equals(Screen.currentResolution))
+            {
+                currentIndex = i;
+                break;
+            }
+        }
+        currentIndex++;
+
+        Resolution newRes = Screen.resolutions[currentIndex];
+
+        Screen.SetResolution(newRes.width, newRes.height, Screen.fullScreen);
+        resolutionButtonText.text = "Res: " + Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+    }
+
+    public void clickFullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        fullScreenButtonText.text = "FULL SCREEN: " + (Screen.fullScreen ? "ON" : "OFF");
     }
 }
