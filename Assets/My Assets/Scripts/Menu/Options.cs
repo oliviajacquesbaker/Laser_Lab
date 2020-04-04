@@ -22,9 +22,20 @@ public class Options : MonoBehaviour
     bool resetConfirm = false;
     bool resetDone = false;
 
+    int resolutionIndex;
+
     private void Start()
     {
-        resolutionButtonText.text = "RES: " + Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+        for (int i = 0; i < Screen.resolutions.Length; i++)
+        {
+            if (Screen.resolutions[i].Equals(Screen.currentResolution))
+            {
+                resolutionIndex = i;
+                break;
+            }
+        }
+
+        resolutionButtonText.text = "RES: " + Screen.currentResolution.width + "x" + Screen.currentResolution.height + "@" + Screen.currentResolution.refreshRate;
         fullScreenButtonText.text = "FULL SCREEN: " + (Screen.fullScreen ? "ON" : "OFF");
         resetButtonText.text = "RESET PROGRESS";
     }
@@ -64,26 +75,23 @@ public class Options : MonoBehaviour
 
     public void clickResolution()
     {
-        int currentIndex = -1;
-        for (int i = 0; i < Screen.resolutions.Length; i++)
-        {
-            if (Screen.resolutions[i].Equals(Screen.currentResolution))
-            {
-                currentIndex = i;
-                break;
-            }
-        }
-        currentIndex++;
+        if (Screen.resolutions.Length < 1)
+            return;
 
-        Resolution newRes = Screen.resolutions[currentIndex];
+        resolutionIndex++;
 
-        Screen.SetResolution(newRes.width, newRes.height, Screen.fullScreen);
-        resolutionButtonText.text = "Res: " + Screen.currentResolution.width + " x " + Screen.currentResolution.height;
+        resolutionIndex %= Screen.resolutions.Length;
+
+        Resolution newRes = Screen.resolutions[resolutionIndex];
+
+        Screen.SetResolution(newRes.width, newRes.height, Screen.fullScreen, newRes.refreshRate);
+        resolutionButtonText.text = "RES: " + newRes.width + "x" + newRes.height + "@" + newRes.refreshRate;
     }
 
     public void clickFullScreen()
     {
-        Screen.fullScreen = !Screen.fullScreen;
-        fullScreenButtonText.text = "FULL SCREEN: " + (Screen.fullScreen ? "ON" : "OFF");
+        bool newFullScreen = !Screen.fullScreen;
+        Screen.fullScreen = newFullScreen;
+        fullScreenButtonText.text = "FULL SCREEN: " + (newFullScreen ? "ON" : "OFF");
     }
 }
