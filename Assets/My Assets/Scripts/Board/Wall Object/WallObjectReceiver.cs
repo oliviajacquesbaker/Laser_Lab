@@ -52,23 +52,26 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     void SetText()
     {
-        if(reqType == Requirement.EQUAL)
+        float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
+        float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
+        float tempb = (float)(0.5 * (int)System.Math.Round(blueVal / 0.5));
+        if (reqType == Requirement.EQUAL)
         {
-            reqTextR.text = "Red: " + redVal.ToString() + "=" + redReq.ToString();
-            reqTextG.text = "Green: " + greenVal.ToString() + "=" + greenReq.ToString();
-            reqTextB.text = "Blue: " + blueVal.ToString() + "=" + blueReq.ToString();
+            reqTextR.text = "Red: " + tempr.ToString() + "=" + redReq.ToString();
+            reqTextG.text = "Green: " + tempg.ToString() + "=" + greenReq.ToString();
+            reqTextB.text = "Blue: " + tempb.ToString() + "=" + blueReq.ToString();
         }
         else if(reqType == Requirement.AT_LEAST)
         {
-            reqTextR.text = "Red: " + redVal.ToString() + ">" + redReq.ToString();
-            reqTextG.text = "Green: " + greenVal.ToString() + ">" + greenReq.ToString();
-            reqTextB.text = "Blue: " + blueVal.ToString() + ">" + blueReq.ToString();
+            reqTextR.text = "Red: " + tempr.ToString() + ">" + redReq.ToString();
+            reqTextG.text = "Green: " + tempg.ToString() + ">" + greenReq.ToString();
+            reqTextB.text = "Blue: " + tempb.ToString() + ">" + blueReq.ToString();
         }
         else if(reqType == Requirement.AT_MOST)
         {
-            reqTextR.text = "Red: " + redVal.ToString() + "<" + redReq.ToString();
-            reqTextG.text = "Green: " + greenVal.ToString() + "<" + greenReq.ToString();
-            reqTextB.text = "Blue: " + blueVal.ToString() + "<" + blueReq.ToString();
+            reqTextR.text = "Red: " + tempr.ToString() + "<" + redReq.ToString();
+            reqTextG.text = "Green: " + tempg.ToString() + "<" + greenReq.ToString();
+            reqTextB.text = "Blue: " + tempb.ToString() + "<" + blueReq.ToString();
         }
     }
 
@@ -149,26 +152,35 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
     public bool CheckEqual()
     {
+        float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
+        float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
+        float tempb = (float)(0.5 * (int)System.Math.Round(blueVal/ 0.5));
         double check = 0.0001;
-        bool redMet = (abs(redVal - redReq) < check);
-        bool greenMet = (abs(greenVal - greenReq) < check);
-        bool blueMet = (abs(blueVal - blueReq) < check);
+        bool redMet = (abs(tempr - redReq) < check);
+        bool greenMet = (abs(tempg - greenReq) < check);
+        bool blueMet = (abs(tempb - blueReq) < check);
         return (redMet == true && greenMet == true && blueMet == true);
     }
 
     public bool CheckUnder()
     {
-        bool redMet = (redVal <= redReq);
-        bool greenMet = (greenVal <= greenReq);
-        bool blueMet = (blueVal <= blueReq);
+        float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
+        float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
+        float tempb = (float)(0.5 * (int)System.Math.Round(blueVal / 0.5));
+        bool redMet = (tempr <= redReq);
+        bool greenMet = (tempg <= greenReq);
+        bool blueMet = (tempb <= blueReq);
         return (redMet == true && greenMet == true && blueMet == true);
     }
 
     public bool CheckOver()
     {
-        bool redMet = (redVal >= redReq);
-        bool greenMet = (greenVal >= greenReq);
-        bool blueMet = (blueVal >= blueReq);
+        float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
+        float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
+        float tempb = (float)(0.5 * (int)System.Math.Round(blueVal / 0.5));
+        bool redMet = (tempr >= redReq);
+        bool greenMet = (tempg >= greenReq);
+        bool blueMet = (tempb >= blueReq);
         return (redMet == true && greenMet == true && blueMet == true);
     }
 
