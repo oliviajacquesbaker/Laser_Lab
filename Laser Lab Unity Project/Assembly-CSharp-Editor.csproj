@@ -9,10 +9,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{55F3B1E5-DBB9-74BF-9F0A-87DD334BB675}</ProjectGuid>
+    <ProjectGuid>{BD834734-314E-8959-E05E-DB31C64E9BE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_3_1;UNITY_2019_3;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_3_1;UNITY_2019_3;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.3.1f1</UnityVersion>
   </PropertyGroup>
@@ -63,123 +63,39 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\My Assets\Scripts\Audio\AudioHit.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Audio\AudioHitPlayer.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Audio\ButtonSoundPlayer.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Audio\MusicPlayer.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Audio\StartClipOnLoad.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectBlock.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectDiffractionGrid.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectOneSideMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectOneWayMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectPrism.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTile.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTwoSideMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Board Objects\BoardObjectTwoWayMirror.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\FloorTile.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\LaserLabObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\LaserLabPiece.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectBlank.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectLaser.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Board\Wall Object\WallObjectReceiver.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Board.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Floor.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\GameManager.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\HoverIcon.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\IconSet.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Level.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\LevelSet.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\ObjectListDisplayer.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\SelectorButton.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\TileSet.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialBubble.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialMessage.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Game\Tutorial\TutorialMessageQueue.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Laser\ILaserEmitter.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Laser\ILaserReceiver.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Laser\ILaserTarget.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Laser\Laser.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Laser\VisualLaser.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\BeginButton.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\DifficultyShower.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\LevelSelect.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\LevelSelectObject.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\LoadMenu.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\MenuFunctions.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\Options.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Menu\Pause.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\AnimatedImage.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\AnimatedSprite.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\CameraController.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\Direction.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\DontDestroyOnLoad.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\IRefreshable.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\LevelSceneManager.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\LockRotation.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\PlatformSpecific.cs" />
-    <Compile Include="Assets\My Assets\Scripts\Utility\PrefabDataAttribute.cs" />
-    <None Include="Assets\My Assets\Scenes\Levels\Level Comments.txt" />
+    <Compile Include="Assets\My Assets\Editor\Scripts\Level\LevelEditor.cs" />
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TestRunner">
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Runtime">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.VisualEffectGraph.Runtime.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualEffectGraph.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.VisualEffectGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.HighDefinition.Editor">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.HighDefinition.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -357,6 +273,33 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.OSXStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/LinuxStandaloneSupport/UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/16.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>E:/_Data/Personal/Game Design/Unity Projects/Laser Lab/Laser Lab Unity Project/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -712,6 +655,12 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{C27E40A1-A776-AF55-19A5-A7336007F341}</Project>
+      <Name>Assembly-CSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
