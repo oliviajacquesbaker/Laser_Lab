@@ -639,10 +639,10 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 1
-  greenReq: 1
+  redReq: 0
+  greenReq: 0.5
   blueReq: 1
-  reqType: 1
+  reqType: 2
   reqTextR: {fileID: 43678813}
   reqTextG: {fileID: 721450162}
   reqTextB: {fileID: 767619459}
@@ -4945,9 +4945,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0
-  greenOut: 0.5
-  blueOut: 0.5
+  redOut: 3
+  greenOut: 2
+  blueOut: 1
   outTextR: {fileID: 701014000}
   outTextG: {fileID: 1525722286}
   outTextB: {fileID: 1165439764}
