@@ -167,9 +167,9 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
         float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
         float tempb = (float)(0.5 * (int)System.Math.Round(blueVal / 0.5));
-        bool redMet = (tempr <= redReq);
-        bool greenMet = (tempg <= greenReq);
-        bool blueMet = (tempb <= blueReq);
+        bool redMet = (tempr < redReq);
+        bool greenMet = (tempg < greenReq);
+        bool blueMet = (tempb < blueReq);
         return (redMet == true && greenMet == true && blueMet == true);
     }
 
@@ -178,9 +178,21 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         float tempr = (float)(0.5 * (int)System.Math.Round(redVal / 0.5));
         float tempg = (float)(0.5 * (int)System.Math.Round(greenVal / 0.5));
         float tempb = (float)(0.5 * (int)System.Math.Round(blueVal / 0.5));
-        bool redMet = (tempr >= redReq);
-        bool greenMet = (tempg >= greenReq);
-        bool blueMet = (tempb >= blueReq);
+        bool redMet = (tempr > redReq);
+        bool greenMet = (tempg > greenReq);
+        bool blueMet = (tempb > blueReq);
+        if (tempr == 0 && redReq == 0)
+        {
+            redMet = true;
+        }
+        if(tempg == 0 && greenReq == 0)
+        {
+            greenMet = true;
+        }
+        if(tempb == 0 && blueReq == 0)
+        {
+            blueMet = true;
+        }
         return (redMet == true && greenMet == true && blueMet == true);
     }
 
