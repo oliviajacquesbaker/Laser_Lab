@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     public ButtonSoundPlayer buttonSoundPlayer;
 
+    private bool waiting = false;
+
     private bool HasWon
     {
         get
@@ -257,7 +259,7 @@ public class GameManager : MonoBehaviour
 
         level.board.OnLaserPathCalculated();
 
-        if (success)
+        if (success && !waiting)
             StartCoroutine(OnWinCoroutine());
     }
 
@@ -275,7 +277,9 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator OnWinCoroutine()
     {
+        waiting = true;
         yield return new WaitForSecondsRealtime(1);
+        waiting = false;
         if (HasWon)
             OnWin();
     }
