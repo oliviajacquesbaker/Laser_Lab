@@ -15,179 +15,179 @@ MonoBehaviour:
   ID: 1
   SceneOffset: 4
   levels:
-  - name: 1SM 0 1
+  - name: INTRODUCTION 1
     difficulty: 0
-  - name: 1SM 0 2
+  - name: INTRODUCTION 2
     difficulty: 0
-  - name: 1SM 0 3
+  - name: INTRODUCTION 3
     difficulty: 0
-  - name: 1SM 1 1
+  - name: BASIC MIRRORS 1
     difficulty: 1
-  - name: 1SM 1 2
+  - name: BASIC MIRRORS 2
     difficulty: 1
-  - name: 1SM 2 1
+  - name: BASIC MIRRORS 3
     difficulty: 2
-  - name: C&P 0 1
+  - name: COLORS AND POWER
     difficulty: 0
-  - name: C&P 0 2
+  - name: RECEIVER MODES
     difficulty: 0
-  - name: C&P 1 1
+  - name: COLOR AND POWER 1
     difficulty: 1
-  - name: C&P 1 2
+  - name: COLOR AND POWER 2
     difficulty: 1
-  - name: C&P 1 3
+  - name: COLOR AND POWER 3
     difficulty: 1
-  - name: 2SM 0 1
+  - name: TWO SIDED MIRRORS
     difficulty: 0
-  - name: 2SM 1 1
+  - name: TWO SIDED MIRRORS 1
     difficulty: 1
-  - name: 2SM 1 2
+  - name: TWO SIDED MIRRORS 2
     difficulty: 1
-  - name: 2SM 1 3
+  - name: TWO SIDED MIRRORS 3
     difficulty: 1
-  - name: 2SM 2 1
+  - name: TWO SIDED MIRRORS 4
     difficulty: 2
-  - name: 2SM 2 2
+  - name: TWO SIDED MIRRORS 5
     difficulty: 2
-  - name: 2SM 2 3
+  - name: TWO SIDED MIRRORS 6
     difficulty: 2
-  - name: 2SM 3 1
+  - name: TWO SIDED MIRRORS 7
     difficulty: 3
-  - name: 1WM 0 1
+  - name: ONE WAY MIRRORS
     difficulty: 0
-  - name: 1WM 1 1
+  - name: ONE WAY MIRRORS 1
     difficulty: 1
-  - name: 1WM 1 2
+  - name: ONE WAY MIRRORS 2
     difficulty: 1
-  - name: 1WM 1 3
+  - name: ONE WAY MIRRORS 3
     difficulty: 1
-  - name: 1WM 2 1
+  - name: ONE WAY MIRRORS 4
     difficulty: 2
-  - name: 1WM 2 2
+  - name: ONE WAY MIRRORS 5
     difficulty: 2
-  - name: 1WM 2 3
+  - name: ONE WAY MIRRORS 6
     difficulty: 2
-  - name: 1WM 3 1
+  - name: ONE WAY MIRRORS 7
     difficulty: 3
-  - name: 1WM 3 2
+  - name: ONE WAY MIRRORS 8
     difficulty: 3
-  - name: 1WM 3 3
+  - name: ONE WAY MIRRORS 9
     difficulty: 3
-  - name: 1WM 4 1
+  - name: ONE WAY MIRRORS 10
     difficulty: 4
-  - name: 1WM 4 2
+  - name: ONE WAY MIRRORS 11
     difficulty: 4
-  - name: 1WM 4 3
+  - name: ONE WAY MIRRORS 12
     difficulty: 4
-  - name: 1WM 5 1
+  - name: ONE WAY MIRRORS 13
     difficulty: 5
-  - name: P 0 1
+  - name: PRISMS
     difficulty: 0
-  - name: P 1 1
+  - name: PRISMS 1
     difficulty: 1
-  - name: P 1 2
+  - name: PRISMS 2
     difficulty: 1
-  - name: P 1 3
+  - name: PRISMS 3
     difficulty: 1
-  - name: P 2 1
+  - name: PRISMS 4
     difficulty: 2
-  - name: P 2 2
+  - name: PRISMS 5
     difficulty: 2
-  - name: P 2 3
+  - name: PRISMS 6
     difficulty: 2
-  - name: P 3 1
+  - name: PRISMS 7
     difficulty: 3
-  - name: P 3 2
+  - name: PRISMS 8
     difficulty: 3
-  - name: P 3 3
+  - name: PRISMS 9
     difficulty: 3
-  - name: P 4 1
+  - name: PRISMS 10
     difficulty: 4
-  - name: P 4 2
+  - name: PRISMS 11
     difficulty: 4
-  - name: P 4 3
+  - name: PRISMS 12
     difficulty: 4
-  - name: P 5 1
+  - name: PRISMS 13
     difficulty: 5
-  - name: P 5 2
+  - name: PRISMS 14
     difficulty: 5
-  - name: P 5 3
+  - name: PRISMS 15
     difficulty: 5
-  - name: P 6 1
+  - name: PRISMS 16
     difficulty: 6
-  - name: 2WM 0 1
+  - name: TWO WAY MIRRORS
     difficulty: 0
-  - name: 2WM 1 1
+  - name: TWO WAY MIRRORS 1
     difficulty: 1
-  - name: 2WM 1 2
+  - name: TWO WAY MIRRORS 2
     difficulty: 1
-  - name: 2WM 1 3
+  - name: TWO WAY MIRRORS 3
     difficulty: 1
-  - name: 2WM 2 1
+  - name: TWO WAY MIRRORS 4
     difficulty: 2
-  - name: 2WM 2 2
+  - name: TWO WAY MIRRORS 5
     difficulty: 2
-  - name: 2WM 2 3
+  - name: 'TWO WAY MIRRORS '
     difficulty: 2
-  - name: 2WM 3 1
+  - name: TWO WAY MIRRORS 7
     difficulty: 3
-  - name: 2WM 3 2
+  - name: TWO WAY MIRRORS 8
     difficulty: 3
-  - name: 2WM 3 3
+  - name: TWO WAY MIRRORS 9
     difficulty: 3
-  - name: 2WM 4 1
+  - name: TWO WAY MIRRORS 10
     difficulty: 4
-  - name: 2WM 4 2
+  - name: TWO WAY MIRRORS 11
     difficulty: 4
-  - name: 2WM 4 3
+  - name: TWO WAY MIRRORS 12
     difficulty: 4
-  - name: 2WM 5 1
+  - name: TWO WAY MIRRORS 13
     difficulty: 5
-  - name: 2WM 5 2
+  - name: TWO WAY MIRRORS 14
     difficulty: 5
-  - name: 2WM 5 3
+  - name: TWO WAY MIRRORS 15
     difficulty: 5
-  - name: 2WM 6 1
+  - name: TWO WAY MIRRORS 16
     difficulty: 6
-  - name: 2WM 6 2
+  - name: TWO WAY MIRRORS 17
     difficulty: 6
-  - name: 2WM 6 3
+  - name: TWO WAY MIRRORS 18
     difficulty: 6
-  - name: DG 0 1
+  - name: DIFFRACTION GRIDS
     difficulty: 0
-  - name: DG 1 1
+  - name: DIFFRACTION GRIDS 1
     difficulty: 1
-  - name: DG 1 2
+  - name: DIFFRACTION GRIDS 2
     difficulty: 1
-  - name: DG 1 3
+  - name: DIFFRACTION GRIDS 3
     difficulty: 1
-  - name: DG 2 1
+  - name: DIFFRACTION GRIDS 4
     difficulty: 2
-  - name: DG 2 2
+  - name: DIFFRACTION GRIDS 5
     difficulty: 2
-  - name: DG 2 3
+  - name: DIFFRACTION GRIDS 6
     difficulty: 2
-  - name: DG 3 1
+  - name: DIFFRACTION GRIDS 7
     difficulty: 3
-  - name: DG 3 2
+  - name: DIFFRACTION GRIDS 8
     difficulty: 3
-  - name: DG 3 3
+  - name: DIFFRACTION GRIDS 9
     difficulty: 3
-  - name: DG 4 1
+  - name: DIFFRACTION GRIDS 10
     difficulty: 4
-  - name: DG 4 2
+  - name: DIFFRACTION GRIDS 11
     difficulty: 4
-  - name: DG 4 3
+  - name: DIFFRACTION GRIDS 12
     difficulty: 4
-  - name: DG 5 1
+  - name: DIFFRACTION GRIDS 13
     difficulty: 5
-  - name: DG 5 2
+  - name: DIFFRACTION GRIDS 14
     difficulty: 5
-  - name: DG 5 3
+  - name: DIFFRACTION GRIDS 15
     difficulty: 5
-  - name: DG 6 1
+  - name: DIFFRACTION GRIDS 16
     difficulty: 6
-  - name: DG 6 2
+  - name: DIFFRACTION GRIDS 17
     difficulty: 6
-  - name: DG 6 3
+  - name: DIFFRACTION GRIDS 18
     difficulty: 6
