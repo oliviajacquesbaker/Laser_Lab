@@ -20,6 +20,9 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     [PrefabData]
     public TextMesh reqTextB;
 
+    [PrefabData]
+    public GameObject GUI_Objects;
+
 
     private Renderer renderer_;
 
@@ -45,9 +48,7 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
         SetText();
         renderer_ = GetComponent<Renderer>();
 
-        reqTextR.gameObject.SetActive(false);
-        reqTextG.gameObject.SetActive(false);
-        reqTextB.gameObject.SetActive(false);
+        GUI_Objects.SetActive(false);
     }
 
     void SetText()
@@ -89,17 +90,14 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
     public override void OnHoverEnter()
     {
         base.OnHoverEnter();
-        reqTextR.gameObject.SetActive(true);
-        reqTextG.gameObject.SetActive(true);
-        reqTextB.gameObject.SetActive(true);
+        GUI_Objects.SetActive(true);
     }
 
     public override void OnHoverExit()
     {
         base.OnHoverExit();
-        reqTextR.gameObject.SetActive(false);
-        reqTextG.gameObject.SetActive(false);
-        reqTextB.gameObject.SetActive(false);
+        GUI_Objects.SetActive(false);
+
     }
 
     public bool IsLaserConditionSatisfied()

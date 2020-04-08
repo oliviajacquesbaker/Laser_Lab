@@ -16,6 +16,10 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public TextMesh outTextG;
     [PrefabData]
     public TextMesh outTextB;
+
+    [PrefabData]
+    public GameObject GUI_Objects;
+
     public WallObjectLaser()
     {
         redOut = greenOut = blueOut = 1;
@@ -36,9 +40,8 @@ public class WallObjectLaser : WallObject, ILaserEmitter
         outTextG.text = "Green: " + greenOut.ToString();
         outTextB.text = "Blue: " + blueOut.ToString();
 
-        outTextR.gameObject.SetActive(false);
-        outTextG.gameObject.SetActive(false);
-        outTextB.gameObject.SetActive(false);
+        GUI_Objects.SetActive(false);
+
     }
     public override Laser[] OnLaserHit(Laser laser)
     {
@@ -55,16 +58,14 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     public override void OnHoverEnter()
     {
         base.OnHoverEnter();
-        outTextR.gameObject.SetActive(true);
-        outTextG.gameObject.SetActive(true);
-        outTextB.gameObject.SetActive(true);
+        GUI_Objects.SetActive(true);
+
     }
 
     public override void OnHoverExit()
     {
         base.OnHoverExit();
-        outTextR.gameObject.SetActive(false);
-        outTextG.gameObject.SetActive(false);
-        outTextB.gameObject.SetActive(false);
+        GUI_Objects.SetActive(false);
+
     }
 }
