@@ -2532,6 +2532,12 @@ MonoBehaviour:
     Message: Not all board spaces will be available. Spaces with tiles on them are
       off limits, so try to find somewhere without a tile on it to place your mirrors.
     image: {fileID: 11400000, guid: 5e15bf55287ab5a4a99b83642c027ba7, type: 2}
+  - Title: LEVEL SELECT
+    Message: If you get stuck on a level, or want to replay a level you have already
+      completed, go to the level select from the pause menu in game (esc) or the
+      main menu. You can play the game starting at any tutorial and continuing from
+      there.
+    image: {fileID: 11400000, guid: 5e15bf55287ab5a4a99b83642c027ba7, type: 2}
 --- !u!4 &494041872
 Transform:
   m_ObjectHideFlags: 0

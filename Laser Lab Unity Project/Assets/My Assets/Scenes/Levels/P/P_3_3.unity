@@ -2879,9 +2879,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.25
-  greenOut: 1
-  blueOut: 1
+  redOut: 0.5
+  greenOut: 2
+  blueOut: 2
   outTextR: {fileID: 691530277}
   outTextG: {fileID: 707597551}
   outTextB: {fileID: 669665125}
@@ -4321,9 +4321,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.25
-  greenOut: 1
-  blueOut: 1
+  redOut: 0.5
+  greenOut: 2
+  blueOut: 2
   outTextR: {fileID: 1794963333}
   outTextG: {fileID: 1034356988}
   outTextB: {fileID: 200922828}
@@ -4360,6 +4360,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1485866099}
   floor: {fileID: 1867715700}
+  sandboxLevel: 0
 --- !u!4 &1215678653
 Transform:
   m_ObjectHideFlags: 0
@@ -4571,7 +4572,7 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 1
+  redReq: 2
   greenReq: 0
   blueReq: 0
   reqType: 0
@@ -8373,9 +8374,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.5
-  greenOut: 1
-  blueOut: 1
+  redOut: 1
+  greenOut: 2
+  blueOut: 2
   outTextR: {fileID: 1254810158}
   outTextG: {fileID: 1683969869}
   outTextB: {fileID: 595950700}
