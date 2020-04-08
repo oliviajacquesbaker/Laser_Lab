@@ -2771,11 +2771,16 @@ MonoBehaviour:
       as small indie game developers.
     image: {fileID: 11400000, guid: 89707023cc1c24c40a72f6d4bfbddc40, type: 2}
   - Title: CREDITS
-    Message: 'Max Allen (Mantis): Lead programmer, 3D artist, Game designer, UI Design
+    Message: 'Max Allen (Mantis):
+
+      Lead programmer, 3D artist, Game designer,
+      UI Design
 
 
-      Olivia
-      Jacques-Baker (piptastic): Programmer, 2D artist, Level designer'
+      Olivia Jacques-Baker (piptastic):
+
+      Programmer, 2D artist,
+      Level designer'
     image: {fileID: 11400000, guid: 89707023cc1c24c40a72f6d4bfbddc40, type: 2}
 --- !u!4 &434747146
 Transform:
