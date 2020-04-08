@@ -342,9 +342,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.25
-  greenOut: 0.25
-  blueOut: 0.25
+  redOut: 0.5
+  greenOut: 0.5
+  blueOut: 0.5
   outTextR: {fileID: 696784079}
   outTextG: {fileID: 390091039}
   outTextB: {fileID: 1572416434}
@@ -2058,9 +2058,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.5
+  redOut: 1
   greenOut: 0
-  blueOut: 0.5
+  blueOut: 1
   outTextR: {fileID: 172674373}
   outTextG: {fileID: 748576955}
   outTextB: {fileID: 2138539181}
@@ -4024,8 +4024,8 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.25
-  greenOut: 0.25
+  redOut: 0.5
+  greenOut: 0.5
   blueOut: 0
   outTextR: {fileID: 183534571}
   outTextG: {fileID: 1564615065}
@@ -5336,7 +5336,7 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.75
+  redReq: 1.5
   greenReq: 0
   blueReq: 0
   reqType: 0
@@ -5771,9 +5771,9 @@ MonoBehaviour:
     objectType: WallObjectLaser
     Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
     modelOrientation: 0
-  redOut: 0.5
-  greenOut: 0.5
-  blueOut: 0.25
+  redOut: 1
+  greenOut: 1
+  blueOut: 0.5
   outTextR: {fileID: 981470881}
   outTextG: {fileID: 1721260856}
   outTextB: {fileID: 498144878}
@@ -6412,9 +6412,9 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.5
-  greenReq: 0.25
-  blueReq: 1
+  redReq: 1
+  greenReq: 0.5
+  blueReq: 2
   reqType: 0
   reqTextR: {fileID: 2140469149}
   reqTextG: {fileID: 65326881}
@@ -8866,8 +8866,8 @@ MonoBehaviour:
     objectType: WallObjectReceiver
     Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
     modelOrientation: 0
-  redReq: 0.25
-  greenReq: 0.75
+  redReq: 0.5
+  greenReq: 1.5
   blueReq: 0
   reqType: 0
   reqTextR: {fileID: 1796791263}

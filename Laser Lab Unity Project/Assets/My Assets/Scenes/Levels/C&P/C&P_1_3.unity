@@ -4947,7 +4947,7 @@ MonoBehaviour:
     modelOrientation: 0
   redOut: 3
   greenOut: 2
-  blueOut: 1
+  blueOut: 2
   outTextR: {fileID: 701014000}
   outTextG: {fileID: 1525722286}
   outTextB: {fileID: 1165439764}
