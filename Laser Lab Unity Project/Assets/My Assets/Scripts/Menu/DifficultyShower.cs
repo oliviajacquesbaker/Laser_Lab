@@ -14,6 +14,8 @@ public class DifficultyShower : MonoBehaviour
         int difficultyNumber = (int)difficulty;
         for (int i = 0; i < difficultyNumber; i++)
         {
+            if (difficulty >= LevelSet.Difficulty.SANDBOX)
+                break;
             Instantiate(StarObject, StarParent);
         }
         Label.text = difficulty.ToString();

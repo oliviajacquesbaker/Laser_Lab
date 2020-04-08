@@ -3447,6 +3447,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1114625841}
   floor: {fileID: 1596150010}
+  sandboxLevel: 0
 --- !u!4 &1327509268
 Transform:
   m_ObjectHideFlags: 0
@@ -3493,7 +3494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Moving Objects
+  - Title: MOVING OBJECTS
     Message: To move an object that has already been placed, right click it to pick
       it back up. Left clicking a placed object will rotate it.
     image: {fileID: 11400000, guid: 611efc33c9baf4747ba8789f89aac0da, type: 2}

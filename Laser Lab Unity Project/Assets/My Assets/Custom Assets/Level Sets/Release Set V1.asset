@@ -127,7 +127,7 @@ MonoBehaviour:
     difficulty: 2
   - name: TWO WAY MIRRORS 5
     difficulty: 2
-  - name: 'TWO WAY MIRRORS '
+  - name: TWO WAY MIRRORS 6
     difficulty: 2
   - name: TWO WAY MIRRORS 7
     difficulty: 3
@@ -191,3 +191,7 @@ MonoBehaviour:
     difficulty: 6
   - name: DIFFRACTION GRIDS 18
     difficulty: 6
+  - name: CREDITS
+    difficulty: 8
+  - name: SANDBOX
+    difficulty: 7

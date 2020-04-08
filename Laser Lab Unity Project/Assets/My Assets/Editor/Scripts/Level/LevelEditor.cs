@@ -72,13 +72,22 @@ public class LevelEditor : Editor
         }
 
         {
-            Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Width", level.size);
+            Vector2Int tmpSize = EditorGUILayout.Vector2IntField("Size", level.size);
             tmpSize.x = Mathf.Clamp(tmpSize.x, 1, 10);
             tmpSize.y = Mathf.Clamp(tmpSize.y, 1, 10);
             if (!level.size.Equals(tmpSize))
             {
                 RecordUndo("Resize Level");
                 ResizeBoard(tmpSize);
+            }
+        }
+
+        {
+            bool sandbox = EditorGUILayout.Toggle("Sandbox Level", level.sandboxLevel);
+            if (sandbox != level.sandboxLevel)
+            {
+                RecordUndo("Toggle Sandbox Mode");
+                level.sandboxLevel = sandbox;
             }
         }
 

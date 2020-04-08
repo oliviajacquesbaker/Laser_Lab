@@ -2519,16 +2519,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Welcome!
+  - Title: WELCOME!
     Message: To complete levels, direct the laser to the receiver by placing mirrors
       onto the board
     image: {fileID: 11400000, guid: 89707023cc1c24c40a72f6d4bfbddc40, type: 2}
-  - Title: Placing Objects
+  - Title: PLACING OBJECTS
     Message: To place an object, left click its symbol in the "placeable objects"
       bar on the right of your screen, and then left click again when you have it
       hovering over the space you'd like to put it on.
     image: {fileID: 11400000, guid: 0d5c412d98a0f2544806e9d1d2b6e57b, type: 2}
-  - Title: Limitations
+  - Title: LIMITATIONS
     Message: Not all board spaces will be available. Spaces with tiles on them are
       off limits, so try to find somewhere without a tile on it to place your mirrors.
     image: {fileID: 11400000, guid: 5e15bf55287ab5a4a99b83642c027ba7, type: 2}
@@ -4020,6 +4020,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1695755905}
   floor: {fileID: 2048918520}
+  sandboxLevel: 0
 --- !u!4 &820013124
 Transform:
   m_ObjectHideFlags: 0

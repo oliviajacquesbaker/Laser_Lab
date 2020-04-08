@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Laser Colors
+  - Title: LASER COLORS
     Message: 'Lasers are made of three colors: red, green, and blue. Some lasers
       need different amounts of each color. Check how much of each color a receiver
       needs, or how much of each color a laser is emitting, by hovering your mouse
@@ -4629,6 +4629,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 2022683499}
   floor: {fileID: 594444245}
+  sandboxLevel: 0
 --- !u!4 &1440018107
 Transform:
   m_ObjectHideFlags: 0

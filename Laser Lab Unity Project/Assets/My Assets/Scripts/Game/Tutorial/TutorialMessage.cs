@@ -6,6 +6,7 @@ using UnityEngine;
 public struct TutorialMessage
 {
     public string Title;
+    [TextArea(3, 10)]
     public string Message;
     public AnimatedSprite image;
 }

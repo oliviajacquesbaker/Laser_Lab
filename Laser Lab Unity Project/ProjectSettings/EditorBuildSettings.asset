@@ -284,4 +284,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/My Assets/Scenes/Levels/DG/DG_6_3.unity
     guid: 54f75980e93ded0499a6689a3575e30c
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/Credits.unity
+    guid: af4ae961b70a7624f9b193547e85eba2
+  - enabled: 1
+    path: Assets/My Assets/Scenes/Levels/Sandbox.unity
+    guid: 9fbcd657090eb824dabc1b4d587a1af2
   m_configObjects: {}

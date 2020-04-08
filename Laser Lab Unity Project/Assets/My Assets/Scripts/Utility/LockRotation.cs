@@ -6,10 +6,12 @@ public class LockRotation : MonoBehaviour
 {
     private static Quaternion startPos;
 
-    private void Start()
+    private void Awake()
     {
         if (startPos == null)
             startPos = Quaternion.Euler(0, 0, 0);
+
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
     private void Update()

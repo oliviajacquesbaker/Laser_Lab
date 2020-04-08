@@ -903,7 +903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: One Way Mirrors
+  - Title: ONE WAY MIRRORS
     Message: 'One way mirrors allow you to "combine" lasers. One side of the object
       is reflective, and acts as a normal mirror. The other side allows lasers to
       pass straight through it. '
@@ -4765,6 +4765,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 304474930}
   floor: {fileID: 497704928}
+  sandboxLevel: 0
 --- !u!4 &1761289687
 Transform:
   m_ObjectHideFlags: 0

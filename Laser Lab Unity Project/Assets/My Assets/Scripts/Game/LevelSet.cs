@@ -21,7 +21,7 @@ public class LevelSet : ScriptableObject
 
     public enum Difficulty
     {
-        TUTORIAL, BEGINNER, EASY, MEDIUM, HARD, EXPERT, MASTERMIND
+        TUTORIAL, BEGINNER, EASY, MEDIUM, HARD, EXPERT, MASTERMIND, SANDBOX, CREDITS
     }
 
     internal int getSceneNumber(int i)

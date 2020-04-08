@@ -5654,7 +5654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Receiver Modes
+  - Title: RECEIVER MODES
     Message: Sometimes a receiver will not need an exact amount of power. Instead,
       it will need less than or more than a specified amount. Check the mode of a
       receiver by hovering over it.
@@ -7939,6 +7939,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 2024910080}
   floor: {fileID: 1592321526}
+  sandboxLevel: 0
 --- !u!4 &2068222003
 Transform:
   m_ObjectHideFlags: 0

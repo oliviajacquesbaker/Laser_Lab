@@ -3187,7 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Two Way Mirrors
+  - Title: TWO WAY MIRRORS
     Message: When a laser hits a two way mirror, 50% of the laser will be reflected,
       and the other 50% will pass through. This works on both sides of the object.
     image: {fileID: 11400000, guid: e59069803316a07439c319ae96aa2209, type: 2}
@@ -3344,6 +3344,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1037383238}
   floor: {fileID: 2141147489}
+  sandboxLevel: 0
 --- !u!4 &958401521
 Transform:
   m_ObjectHideFlags: 0

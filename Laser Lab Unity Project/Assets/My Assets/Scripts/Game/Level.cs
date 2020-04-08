@@ -11,6 +11,8 @@ public class Level : MonoBehaviour
 
     public Vector2Int size { get { return board.Size; } }
 
+    public bool sandboxLevel = false;
+
     private void Start()
     {
 

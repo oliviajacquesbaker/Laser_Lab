@@ -62,6 +62,9 @@ public class LevelSelect : MonoBehaviour
 
             bool levelAvailable = newLevelCount >= 1;
 
+            if (difficulty >= LevelSet.Difficulty.SANDBOX)
+                levelAvailable = true;
+
             selectObject.SetLevel(set.levels[i], i, this, levelAvailable, complete);
             if (!complete)
             {

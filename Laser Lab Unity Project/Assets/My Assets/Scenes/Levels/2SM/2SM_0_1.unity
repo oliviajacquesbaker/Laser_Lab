@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Two Sided Mirrors
+  - Title: TWO SIDED MIRRORS
     Message: Two sided mirrors act like two mirrors stuck together. Both sides reflect
       the laser.
     image: {fileID: 11400000, guid: ab76bb8fc62bea1498a575b6942ce8cd, type: 2}
@@ -2988,6 +2988,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1462703290}
   floor: {fileID: 1979213197}
+  sandboxLevel: 0
 --- !u!4 &1161662185
 Transform:
   m_ObjectHideFlags: 0

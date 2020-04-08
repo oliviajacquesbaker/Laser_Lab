@@ -153,6 +153,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1376273249}
   floor: {fileID: 592213641}
+  sandboxLevel: 0
 --- !u!4 &2257295
 Transform:
   m_ObjectHideFlags: 0
@@ -2180,7 +2181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Prisms
+  - Title: PRISMS
     Message: A prism will split up the colors of a laser. Green will always come
       out directly in front of where the laser entered. Red and blue will come from
       the sides; rotate the prism to change which color comes from which side.

@@ -259,7 +259,7 @@ public class GameManager : MonoBehaviour
 
         level.board.OnLaserPathCalculated();
 
-        if (success && !waiting)
+        if (success && !waiting && !level.sandboxLevel)
             StartCoroutine(OnWinCoroutine());
     }
 
@@ -411,7 +411,7 @@ public class GameManager : MonoBehaviour
                     WallObject wall = target as WallObject;
                     Vector2Int pos = wall.getPos();
 
-                    if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+                    if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && selectedObjectIndex > -1)
                     {
                         audioPlayer.PlayClip(dropSound);
                         SelectObject(-1);

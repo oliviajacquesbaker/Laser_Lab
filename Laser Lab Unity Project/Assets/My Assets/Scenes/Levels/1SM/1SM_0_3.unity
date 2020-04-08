@@ -912,7 +912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messages:
-  - Title: Blocks
+  - Title: BLOCKS
     Message: If your laser hits a block, or the unreflective side of a mirror, it
       will be blocked. Try manipulating the laser to go around these obstacles.
     image: {fileID: 11400000, guid: f7ff40f6e1d20e241a27026a819e6da4, type: 2}
@@ -6398,6 +6398,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 1686593890}
   floor: {fileID: 1288216421}
+  sandboxLevel: 0
 --- !u!4 &2066752219
 Transform:
   m_ObjectHideFlags: 0
