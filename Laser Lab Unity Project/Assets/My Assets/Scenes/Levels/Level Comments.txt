@@ -1,0 +1,75 @@
+1sm_1_1 two of the mirrors are not required
+1SM_2_1 you can cut off the laser from the beginning directly towards the receiver
+2SM_1_2 same issue as 1SM_2_1
+2SM_1_3 the two sided mirror is not required
+(Good use of two sided mirror in 2SM_2_1)
+(I really like 2SM_2_2)
+2SM_2_3 it is possible to avoid using the two sided mirror
+2SM_3_1 can be completed without using 1 two sided mirror and 2 one sided mirrors
+C&P_1_3 You can avoid the pre-placed mirrors for the most part by directing the laser upwards before the first mirror
+(I like the use of receiver ranges in 1WM_1_3)
+(Amazing use of one way mirrors in 1WM_2_1)
+1WM_2_2 can be completed without one of the one sided mirrors
+1WM_2_3 can be completed without one of the one sided mirrors. I would recommend removing one as it is a pretty interesting solution without one, though I haven't see the original solution.
+1WM_3_1 can be completed without one of the one sided mirrors
+(good use of blocks and tiles in 1WM_3_2)
+1WM_3_3 can be completed without one of the one sided mirrors
+
+===Second review section===
+(I like 1WM_4_1 because the obvious solutions to me required more mirrors)
+(I'm liking the difficulty of these levels. Your designation of the difficulty levels is great)
+1WM_4_3 can be completed without one of the one sided mirrors. The solution seemed to easy, so adding tiles might help.
+1WM_5_1 feels a little to strait forward for me. Maybe move stuff around a little and add a 2 sided mirror somewhere.
+(P_1_3 is a really good use of unmoveable objects. love it!)
+P_2_2 can be completed without one of the two way mirrors. Also, the use of the greater than mode on the receiver seems to be pointless and just confused me.
+P_2_3 can be completed without the two way mirror
+P_3_1 can be completed without one of the one way mirrors (I would remove the mirrors from this and the previous one and swap them)
+(P_3_2 was pretty interesting to think about the power levels)
+(I like the use of the locked mirror in P_3_3 because the level makes you use it)
+P_4_1 is good, though I found an interesting solution if you remove one prism and and add one more one way mirror. (Finally finished that level after like 10 minutes with what you gave me, and I found a solution that doesn't use two of the one sided mirrors (surprised myself). I still don't know what your solution is lol)
+P_4_2 is possible without 1 one sided mirror and 1 one way mirror
+
+===Section 3===
+2SM_1_1 does not require the two sided mirror
+2SM_2_2 has two solutions, which is fine, but you can add colors to force one. I messaged you in discord about this.
+2SM_2_3 does not require the player to re-use the two sided mirror. Adding two tiles in the middle should fix that.
+1WM_1_3 the upper side of the two sidded mirror can be ignored. Add a tile in front of the receiver.
+1WM_3_1 there are two solutions: use purple and green or use red, green, and blue. You can leave both if you want.
+1WM_4_1 does not require one of the one sided mirrors
+
+===Section 4===
+1WM_4_2 Not all pieces are used to the fullest. No change necessary. I messaged you in discord about this one.
+(I like 1WM_4_3. Looks like that's one you updated. Really good!)
+P_0_1 I think the prism spawns at a random rotation. Can you change it to spawn at the wrong rotation for the tutorial?
+P_4_1 is still possible without two of the one sided mirrors. You may not have gotten to fixing it. Maybe we talked about it before, but I don't remember.
+P_4_3 is possible with only using the white laser and about half of the pieces. Might need a fair bit of work.
+
+===Section 5===
+2WM_1_1 can be completed without two of the one sided mirrors
+2WM_1_3 can be completed without two of the one sided mirrors
+2WM_2_1 can be completed without one of the one way mirrors, though it is slightly more difficult
+2WM_3_2 can be completed without one of the one sided mirrors
+(2WM levels after this were either tested or too difficult for me to finish quickly)
+(DG_1_2 is pretty cool)
+DG_2_2 can be completed without one of the one sided mirrors
+(I like the double use of the diffraction grid in DG_2_3, DG_3_1, and DG_3_2 (I'm gonna stop adding levels to this comment now lol))
+DG_4_1 can be completed without three of the one sided mirrors. Probably needs tiles
+(DG levels after this were either tested or too difficult for me to finish quickly)
+Try to find a least common denominator for all levels.
+
+
+high power levels:
+2WM_5_1 - 16
+2WM_5_3 - 12
+2WM_6_1 - 26.5 ????
+2WM_6_2 - 10
+2WM_6_3 - 10
+DG_4_2 - 10
+DG_5_1 - 9
+
+
+broken levels:
+2WM_5_3 - 11.95313=12
+DG_3_2 - 0.9960938=1
+DG_6_1 - 1.96875=2
+((those aren't all of them, just wanted to note a few so we had some test/sample cases))

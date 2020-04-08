@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78843626aff39f7478c5ea021fb9b553, type: 3}
+  m_Name: Tile Set 1
+  m_EditorClassIdentifier: 
+  environment:
+    Corner:
+      Tile: {fileID: 3381460199996579860, guid: 1e3eb7ab41aa1184fba9640a131f3275,
+        type: 3}
+      modelOrientation: 0
+    Floor:
+      Tile: {fileID: 3014878516828843915, guid: 08e5b7d09a737f447b2654663e445b4e,
+        type: 3}
+      modelOrientation: 0
+    Outside:
+      Tile: {fileID: 7036378881821477431, guid: 86aa97d6c776f724b9ec7fb627336557,
+        type: 3}
+      modelOrientation: 0
+  pieces:
+  - objectType: WallObjectBlank
+    Tile: {fileID: 5192146748251734285, guid: 085679e9118eff948b55b5dd807b6eea, type: 3}
+    modelOrientation: 0
+  - objectType: WallObjectLaser
+    Tile: {fileID: 5192146748251734285, guid: 4300fa04aa5440b4989d366cbf42a74d, type: 3}
+    modelOrientation: 0
+  - objectType: WallObjectReceiver
+    Tile: {fileID: 5192146748251734285, guid: d398b7fc4a875f64599fbfcfdb79dbc2, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectOneSideMirror
+    Tile: {fileID: 3641432526562211745, guid: 91185bb6a396b6d418ab468cfddba835, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectTwoSideMirror
+    Tile: {fileID: 3641432526562211745, guid: 7099088ff2292e644a020964d40dc922, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectOneWayMirror
+    Tile: {fileID: 3641432526562211745, guid: 60c472e90d35ec94e8c995a5850bbbd2, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectTwoWayMirror
+    Tile: {fileID: 3641432526562211745, guid: 6c62b206903608646b8d672a73c03774, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectBlock
+    Tile: {fileID: 3641432526562211745, guid: a059e326e69c3e04c9a7f0a8e0270619, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectTile
+    Tile: {fileID: 14320823589140244, guid: 837053c91c03bf547ad357df14cae5b1, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectPrism
+    Tile: {fileID: 3641432526562211745, guid: 7901df34e9157ef4ba4585477c833257, type: 3}
+    modelOrientation: 0
+  - objectType: BoardObjectDiffractionGrid
+    Tile: {fileID: 3641432526562211745, guid: dcd7aeafed4dec74282fdfa509ce104d, type: 3}
+    modelOrientation: 0

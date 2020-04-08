@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ba1cfd0a0222841868af7b09b37f87, type: 3}
+  m_Name: Release Set V1
+  m_EditorClassIdentifier: 
+  ID: 1
+  SceneOffset: 4
+  levels:
+  - name: INTRODUCTION 1
+    difficulty: 0
+  - name: INTRODUCTION 2
+    difficulty: 0
+  - name: INTRODUCTION 3
+    difficulty: 0
+  - name: BASIC MIRRORS 1
+    difficulty: 1
+  - name: BASIC MIRRORS 2
+    difficulty: 1
+  - name: BASIC MIRRORS 3
+    difficulty: 2
+  - name: COLORS AND POWER
+    difficulty: 0
+  - name: RECEIVER MODES
+    difficulty: 0
+  - name: COLOR AND POWER 1
+    difficulty: 1
+  - name: COLOR AND POWER 2
+    difficulty: 1
+  - name: COLOR AND POWER 3
+    difficulty: 1
+  - name: TWO SIDED MIRRORS
+    difficulty: 0
+  - name: TWO SIDED MIRRORS 1
+    difficulty: 1
+  - name: TWO SIDED MIRRORS 2
+    difficulty: 1
+  - name: TWO SIDED MIRRORS 3
+    difficulty: 1
+  - name: TWO SIDED MIRRORS 4
+    difficulty: 2
+  - name: TWO SIDED MIRRORS 5
+    difficulty: 2
+  - name: TWO SIDED MIRRORS 6
+    difficulty: 2
+  - name: TWO SIDED MIRRORS 7
+    difficulty: 3
+  - name: ONE WAY MIRRORS
+    difficulty: 0
+  - name: ONE WAY MIRRORS 1
+    difficulty: 1
+  - name: ONE WAY MIRRORS 2
+    difficulty: 1
+  - name: ONE WAY MIRRORS 3
+    difficulty: 1
+  - name: ONE WAY MIRRORS 4
+    difficulty: 2
+  - name: ONE WAY MIRRORS 5
+    difficulty: 2
+  - name: ONE WAY MIRRORS 6
+    difficulty: 2
+  - name: ONE WAY MIRRORS 7
+    difficulty: 3
+  - name: ONE WAY MIRRORS 8
+    difficulty: 3
+  - name: ONE WAY MIRRORS 9
+    difficulty: 3
+  - name: ONE WAY MIRRORS 10
+    difficulty: 4
+  - name: ONE WAY MIRRORS 11
+    difficulty: 4
+  - name: ONE WAY MIRRORS 12
+    difficulty: 4
+  - name: ONE WAY MIRRORS 13
+    difficulty: 5
+  - name: PRISMS
+    difficulty: 0
+  - name: PRISMS 1
+    difficulty: 1
+  - name: PRISMS 2
+    difficulty: 1
+  - name: PRISMS 3
+    difficulty: 1
+  - name: PRISMS 4
+    difficulty: 2
+  - name: PRISMS 5
+    difficulty: 2
+  - name: PRISMS 6
+    difficulty: 2
+  - name: PRISMS 7
+    difficulty: 3
+  - name: PRISMS 8
+    difficulty: 3
+  - name: PRISMS 9
+    difficulty: 3
+  - name: PRISMS 10
+    difficulty: 4
+  - name: PRISMS 11
+    difficulty: 4
+  - name: PRISMS 12
+    difficulty: 4
+  - name: PRISMS 13
+    difficulty: 5
+  - name: PRISMS 14
+    difficulty: 5
+  - name: PRISMS 15
+    difficulty: 5
+  - name: PRISMS 16
+    difficulty: 6
+  - name: TWO WAY MIRRORS
+    difficulty: 0
+  - name: TWO WAY MIRRORS 1
+    difficulty: 1
+  - name: TWO WAY MIRRORS 2
+    difficulty: 1
+  - name: TWO WAY MIRRORS 3
+    difficulty: 1
+  - name: TWO WAY MIRRORS 4
+    difficulty: 2
+  - name: TWO WAY MIRRORS 5
+    difficulty: 2
+  - name: TWO WAY MIRRORS 6
+    difficulty: 2
+  - name: TWO WAY MIRRORS 7
+    difficulty: 3
+  - name: TWO WAY MIRRORS 8
+    difficulty: 3
+  - name: TWO WAY MIRRORS 9
+    difficulty: 3
+  - name: TWO WAY MIRRORS 10
+    difficulty: 4
+  - name: TWO WAY MIRRORS 11
+    difficulty: 4
+  - name: TWO WAY MIRRORS 12
+    difficulty: 4
+  - name: TWO WAY MIRRORS 13
+    difficulty: 5
+  - name: TWO WAY MIRRORS 14
+    difficulty: 5
+  - name: TWO WAY MIRRORS 15
+    difficulty: 5
+  - name: TWO WAY MIRRORS 16
+    difficulty: 6
+  - name: TWO WAY MIRRORS 17
+    difficulty: 6
+  - name: TWO WAY MIRRORS 18
+    difficulty: 6
+  - name: DIFFRACTION GRIDS
+    difficulty: 0
+  - name: DIFFRACTION GRIDS 1
+    difficulty: 1
+  - name: DIFFRACTION GRIDS 2
+    difficulty: 1
+  - name: DIFFRACTION GRIDS 3
+    difficulty: 1
+  - name: DIFFRACTION GRIDS 4
+    difficulty: 2
+  - name: DIFFRACTION GRIDS 5
+    difficulty: 2
+  - name: DIFFRACTION GRIDS 6
+    difficulty: 2
+  - name: DIFFRACTION GRIDS 7
+    difficulty: 3
+  - name: DIFFRACTION GRIDS 8
+    difficulty: 3
+  - name: DIFFRACTION GRIDS 9
+    difficulty: 3
+  - name: DIFFRACTION GRIDS 10
+    difficulty: 4
+  - name: DIFFRACTION GRIDS 11
+    difficulty: 4
+  - name: DIFFRACTION GRIDS 12
+    difficulty: 4
+  - name: DIFFRACTION GRIDS 13
+    difficulty: 5
+  - name: DIFFRACTION GRIDS 14
+    difficulty: 5
+  - name: DIFFRACTION GRIDS 15
+    difficulty: 5
+  - name: DIFFRACTION GRIDS 16
+    difficulty: 6
+  - name: DIFFRACTION GRIDS 17
+    difficulty: 6
+  - name: DIFFRACTION GRIDS 18
+    difficulty: 6
+  - name: CREDITS
+    difficulty: 8
+  - name: SANDBOX
+    difficulty: 7

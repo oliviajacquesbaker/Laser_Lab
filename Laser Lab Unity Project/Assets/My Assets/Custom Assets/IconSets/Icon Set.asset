@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f614bbf14c71e478a082587c6e02d2, type: 3}
+  m_Name: Icon Set
+  m_EditorClassIdentifier: 
+  icons:
+  - ClassName: BoardObjectOneSideMirror
+    Sprite: {fileID: 21300000, guid: 6319f6df8e558b2468a49099fc189d2d, type: 3}
+  - ClassName: BoardObjectTwoSideMirror
+    Sprite: {fileID: 21300000, guid: 14fde5c3bd85da042999f1badee5681b, type: 3}
+  - ClassName: BoardObjectOneWayMirror
+    Sprite: {fileID: 21300000, guid: 6e69c3579ca10214d89cb6e15804d83e, type: 3}
+  - ClassName: BoardObjectTwoWayMirror
+    Sprite: {fileID: 21300000, guid: 39bb3f5def0c0954898c4b83215bb241, type: 3}
+  - ClassName: BoardObjectBlock
+    Sprite: {fileID: 21300000, guid: d49fef87577545345b161261e018c47b, type: 3}
+  - ClassName: BoardObjectTile
+    Sprite: {fileID: 21300000, guid: 837bf1f730344384b8056317ef1f19cb, type: 3}
+  - ClassName: BoardObjectPrism
+    Sprite: {fileID: 21300000, guid: 85efa3840615beb4fbbc61894298f818, type: 3}
+  - ClassName: BoardObjectDiffractionGrid
+    Sprite: {fileID: 21300000, guid: 4d188de0f3e98f0429a781fc86804cc1, type: 3}
