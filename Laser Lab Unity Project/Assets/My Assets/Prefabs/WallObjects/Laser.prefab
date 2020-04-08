@@ -434,6 +434,7 @@ MonoBehaviour:
   outTextR: {fileID: 3275553512503578373}
   outTextG: {fileID: 4063468809628612104}
   outTextB: {fileID: 1603216103438649654}
+  GUI_Objects: {fileID: 1089443434399339571}
 --- !u!1 &6226894395728426804
 GameObject:
   m_ObjectHideFlags: 0

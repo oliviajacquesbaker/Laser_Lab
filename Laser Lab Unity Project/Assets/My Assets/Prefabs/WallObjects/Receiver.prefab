@@ -354,6 +354,7 @@ MonoBehaviour:
   reqTextR: {fileID: 8575346031207448578}
   reqTextG: {fileID: 3376318212505264502}
   reqTextB: {fileID: 7172080275456897150}
+  GUI_Objects: {fileID: 73076173903459894}
 --- !u!1 &5277094831439383208
 GameObject:
   m_ObjectHideFlags: 0
