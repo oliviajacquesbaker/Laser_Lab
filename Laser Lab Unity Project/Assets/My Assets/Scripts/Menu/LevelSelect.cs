@@ -35,10 +35,6 @@ public class LevelSelect : MonoBehaviour
             if (set.getSceneNumber(i) >= SceneManager.sceneCountInBuildSettings || set.getSceneNumber(i) < 4)
                 continue;
 
-            GameObject newObject = Instantiate(LevelSelectObjectPrefab, transform);
-            LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
-
-            tmpList.Add(selectObject);
             bool complete = true;
             LevelSet.Difficulty difficulty = set.levels[i].difficulty;
 
@@ -65,11 +61,21 @@ public class LevelSelect : MonoBehaviour
             if (difficulty >= LevelSet.Difficulty.SANDBOX)
                 levelAvailable = true;
 
-            selectObject.SetLevel(set.levels[i], i, this, levelAvailable, complete);
+            if (newLevelCount >= 0 || levelAvailable)
+            {
+
+                GameObject newObject = Instantiate(LevelSelectObjectPrefab, transform);
+                LevelSelectObject selectObject = newObject.GetComponent<LevelSelectObject>();
+
+                tmpList.Add(selectObject);
+
+                selectObject.SetLevel(set.levels[i], i, this, levelAvailable, complete);
+            }
+
             if (!complete)
             {
                 newLevelCount--;
-                newLevelCount = Mathf.Clamp(newLevelCount, 0, MaxAvailableLevelsInSection);
+                newLevelCount = Mathf.Min(newLevelCount, MaxAvailableLevelsInSection);
             }
         }
 
