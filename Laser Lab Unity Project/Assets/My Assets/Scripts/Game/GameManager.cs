@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -75,6 +76,8 @@ public class GameManager : MonoBehaviour
         CalculateLaserPaths();
         PositionCamera();
         GenerateBackground();
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneAt(1));
     }
 
     private IEnumerator tutorialCoroutine(TutorialMessageQueue queue)
