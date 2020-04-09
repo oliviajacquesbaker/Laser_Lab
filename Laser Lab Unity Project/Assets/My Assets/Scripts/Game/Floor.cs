@@ -46,7 +46,7 @@ public class Floor : MonoBehaviour
         {
             for (int j = 0; j < Height; j++)
             {
-                GameObject tile = Instantiate(FloorTile.Tile);
+                GameObject tile = UnityEditor.PrefabUtility.InstantiatePrefab(FloorTile.Tile) as GameObject;
                 tile.transform.position = new Vector3(i, 0, j);
                 tile.transform.Rotate(0, -90 * (int)FloorTile.modelOrientation, 0);
                 floorTiles[i + Width * j] = tile;

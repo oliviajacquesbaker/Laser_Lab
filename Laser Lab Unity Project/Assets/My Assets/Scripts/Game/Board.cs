@@ -538,7 +538,7 @@ public class Board : MonoBehaviour
         }
 
         //instantiate model
-        GameObject newWallObject = Instantiate(piece.Tile);
+        GameObject newWallObject = UnityEditor.PrefabUtility.InstantiatePrefab(piece.Tile) as GameObject;
 
         //configure gameobject
         newWallObject.name = "Wall (" + pos.x + "," + pos.y + ")";
@@ -591,7 +591,7 @@ public class Board : MonoBehaviour
         }
 
         //instantiate model
-        GameObject newWallObject = Instantiate(piece.Tile);
+        GameObject newWallObject = UnityEditor.PrefabUtility.InstantiatePrefab(piece.Tile) as GameObject;
 
         //configure gameobject
         newWallObject.name = "Wall (" + pos.x + "," + pos.y + ")";
@@ -633,7 +633,7 @@ public class Board : MonoBehaviour
         }
 
         //instantiate model
-        GameObject newBoardObject = Instantiate(piece.Tile);
+        GameObject newBoardObject = UnityEditor.PrefabUtility.InstantiatePrefab(piece.Tile) as GameObject;
 
         //configure gameobject
         newBoardObject.name = "Board Object (" + pos.x + "," + pos.y + ")";
@@ -681,7 +681,7 @@ public class Board : MonoBehaviour
         }
 
         //instantiate model
-        GameObject newBoardObject = Instantiate(piece.Tile);
+        GameObject newBoardObject = UnityEditor.PrefabUtility.InstantiatePrefab(piece.Tile) as GameObject;
 
         //configure gameobject
         newBoardObject.name = "Board Object (" + pos.x + "," + pos.y + ")";
@@ -722,7 +722,7 @@ public class Board : MonoBehaviour
         }
 
         //instantiate model
-        GameObject newWallObject = Instantiate(piece.Tile);
+        GameObject newWallObject = UnityEditor.PrefabUtility.InstantiatePrefab(piece.Tile) as GameObject;
 
         //configure gameobject
         newWallObject.name = "Corner (" + pos.x + "," + pos.y + ")";
