@@ -52,7 +52,7 @@ public class WallObjectLaser : WallObject, ILaserEmitter
     {
         Laser newLaser = new Laser(redOut, greenOut, blueOut);
         Color lightColor = new Color(redOut, greenOut, blueOut, 1);
-        renderer_.materials[2].SetColor("_EmissiveColor", lightColor);
+        renderer_.materials[2].SetColor("_EmissionColor", lightColor);
         return new Laser[] { newLaser };
     }
     public override void OnHoverEnter()

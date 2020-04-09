@@ -118,12 +118,12 @@ public class WallObjectReceiver : WallObject, ILaserReceiver
 
         if (check)
         {
-            renderer_.materials[1].SetColor("_EmissiveColor", Color.green);
+            renderer_.materials[1].SetColor("_EmissionColor", Color.green);
             return true;
         }
         else
         {
-            renderer_.materials[1].SetColor("_EmissiveColor", Color.red);
+            renderer_.materials[1].SetColor("_EmissionColor", Color.red);
             return false;
         }
     }

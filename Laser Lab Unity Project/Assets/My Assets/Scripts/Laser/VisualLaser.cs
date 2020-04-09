@@ -26,7 +26,7 @@ public class VisualLaser : MonoBehaviour
 
         lineRenderer.SetPositions(new Vector3[] { origin, end });
         Vector3 color = new Vector3(laser.red * 2, laser.green * 2, laser.blue * 2);
-        lineRenderer.material.SetColor("_EmissiveColor", new Color(color.x, color.y, color.z));
+        lineRenderer.material.SetColor("_EmissionColor", new Color(color.x, color.y, color.z));
 
     }
 }
