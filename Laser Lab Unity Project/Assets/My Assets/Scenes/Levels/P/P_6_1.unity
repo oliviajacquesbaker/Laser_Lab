@@ -3769,6 +3769,7 @@ MonoBehaviour:
   tileSet: {fileID: 11400000, guid: ce8d3252364537d41ad654ea3dce9046, type: 2}
   board: {fileID: 2071325692}
   floor: {fileID: 1822030115}
+  sandboxLevel: 0
 --- !u!4 &741610829
 Transform:
   m_ObjectHideFlags: 0
