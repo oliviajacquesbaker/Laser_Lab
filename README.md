@@ -16,11 +16,11 @@ In each level, the user is shown a board with at least one laser and at least on
 
 Simple pieces, such as one sided mirrors, two sided mirrors, blocks, and tiles all do as expected. 
 
-![Simple Game Pieces](https://drive.google.com/file/d/1R_d6pmCEuRxAkULtk2H4sGzENdXLJo_O/view?usp=sharing)
+![Simple Game Pieces](https://user-images.githubusercontent.com/61722674/78993023-c26c7a80-7b0a-11ea-9946-7b14bdded106.PNG)
 
 More complex pieces, such as prisms, two way mirrors, one way mirrors, and diffraction grids help the user to split up the power or colors of the laser, should the receiver have special requirements it needs met.
 
-![Complex Game Pieces](https://drive.google.com/file/d/1VsNNb9mK-zuA8iaa-0BG7Lk9tL5vO7rI/view?usp=sharing)
+![Complex Game Pieces](https://user-images.githubusercontent.com/61722674/78993073-e465fd00-7b0a-11ea-945b-bd135a2ad1c0.PNG)
 
 Depending on the level, pieces can be restricted by only allowing certain forms of user interraction, such as limitations on movement and rotation. Pieces can also be set to already be placed upon level load-in, creating obstacles for the user.
 
