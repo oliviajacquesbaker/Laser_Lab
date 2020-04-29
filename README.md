@@ -4,9 +4,19 @@ This is a simple laser puzzle game built in Unity. The goal of each level is to 
 
 ## Download & Testing
 
+[Windows (Installer)](https://github.com/piptstc/Laser_Lab/raw/master/Builds/Full%20Game/Installer/Laser%20Lab%20-%20x86%20Setup.exe)
+
+[Windows (Zip)](https://github.com/piptstc/Laser_Lab/raw/master/Builds/Full%20Game/Zipped/Laser%20Lab%20-%20Windows.zip)
+
+[Mac (Zip)](https://github.com/piptstc/Laser_Lab/raw/master/Builds/Full%20Game/Zipped/Laser%20Lab%20-%20Mac.zip)
+
+[Linux (Zip)](https://github.com/piptstc/Laser_Lab/raw/master/Builds/Full%20Game/Zipped/Laser%20Lab%20-%20Linux.zip)
+
 To run the game on Windows, either download the zip version, extract all the files into a folder, and run "Laser Lab.exe", or download the installer version and run the installer. 
 
-To run the game on Mac, download the file and unzip it, then open "Laser Lab.app"
+To run the game on Mac, download the Mac zip file and unzip it, then open "Laser Lab - Mac.app".
+
+To run the game on Linux, download the Linux zip file and unzip it, then open "Laser Lab - Linux.x86_64".
 
 ## Current Game State
 
